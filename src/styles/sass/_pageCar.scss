@@ -1,0 +1,763 @@
+$tittlesFonts: "Roboto Condensed", sans-serif;
+$contenidoFonts: "Roboto", sans-serif;
+$contenido2: "Montserrat", sans-serif;
+$otro: 'Lato', sans-serif;
+
+@mixin bordeBox {
+  border: solid 1px #e3e3e3;
+  box-shadow: 0 0 5px rgba(84, 84, 84, 0);
+  box-sizing: border-box;
+}
+
+.contenedor-car {
+  position: relative;
+
+  .carshop {
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+  }
+
+}
+
+.insignia-car {
+  position: absolute;
+  top: -6px;
+  right: 10px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.container-car {
+  padding-top: 1em;
+
+  .box-car {
+    width: 90vw;
+    margin: auto;
+    gap: 10px;
+    display: grid;
+    grid-template-columns: 70% 30%;
+
+    .contendor-infor-car {
+      gap: 4px;
+      display: flex;
+      flex-direction: column;
+
+      .box1 {
+        @include bordeBox();
+        background-color: #f4f4f4;
+        height: 40px;
+        display: flex;
+        align-items: center;
+
+        .carrito-text {
+          font-size: 18px;
+          padding: 10px;
+          font-family: $tittlesFonts;
+          color: #213C65;
+        }
+
+        .count {
+          background-color: #243a5e;
+          color: white;
+          border-radius: 50%;
+          padding: 0 5px;
+        }
+
+
+      }
+
+      .box2 {
+        overflow-y: auto;
+        max-height: 600px;
+        overflow-wrap: break-word;
+        font-family: $contenidoFonts;
+        height: auto;
+        padding: 5px;
+        @include bordeBox();
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        .car-empty {
+          font-family: $otro;
+          padding: 20px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          p {
+            font-size: 15px;
+          }
+        }
+
+        .add-product {
+          box-shadow: 0 0 5px 1px rgb(217, 217, 217);
+          width: 15em;
+          margin: 1em auto;
+          border: none;
+          border-radius: 20px;
+          padding: 7px 10px;
+          background-color: #f4f4f4;
+          transition: all ease 0.3s;
+
+          &:hover {
+            background-color: #0d6efd;
+            color: white;
+          }
+        }
+
+        .card-product {
+          margin: 0;
+          padding: 0;
+          display: flex;
+          flex-direction: column;
+          padding: 0 20px;
+          transition: all 0.3s;
+          @include bordeBox();
+
+          &:hover {
+            color: #213C65;
+          }
+
+          .item-sub {
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            gap: 25px;
+            padding-bottom: 10px;
+          }
+
+          .cont-lis-delete {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .img-car-shop {
+              width: 9em;
+              padding: 10px;
+              transition: all ease 0.4s;
+
+              &:hover {
+                scale: 1.1;
+              }
+            }
+
+            ul {
+              box-shadow: none;
+              flex-direction: column;
+              gap: 2px;
+            }
+
+            li {
+              padding: 0;
+              font-size: 13px;
+              display: flex;
+              align-items: center;
+              max-width: 350px;
+            }
+
+            .delete {
+              margin-right: 2em;
+              color: red;
+              background-color: white;
+              border: none;
+              font-size: 16px;
+
+              .icon {
+                &:hover {
+                  animation: junping 3s linear infinite;
+                  transform: rotate(10deg);
+
+                  @keyframes junping {
+
+                    0%,
+                    20%,
+                    50%,
+                    80%,
+                    100% {
+                      transform: translateY(0);
+                    }
+
+                    40% {
+                      transform: translateY(-3px) rotate(10deg);
+                    }
+
+                    60% {
+                      transform: translateY(-5px) rotate(-20deg);
+                    }
+                  }
+                }
+              }
+
+
+
+            }
+          }
+        }
+
+        .loged-user-from-car {
+          padding: 2em 20px;
+
+          .content-modal-for-loggin {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+
+            span {
+              margin: 0;
+              padding: 0;
+              font-family: $contenido2;
+              font-size: 14px;
+            }
+
+            .contenedor-btn-custome {
+              display: flex;
+              width: 50%;
+              justify-content: center;
+              gap: 30px;
+
+              .btn-custome {
+                padding: 10px 30px;
+                transition: all 0.3s;
+              }
+
+            }
+
+          }
+
+        }
+
+      }
+
+      .box-entrega {
+        height: auto;
+        @include bordeBox();
+        padding: 20px;
+        font-family: $contenidoFonts;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .envio-programado {
+          cursor: pointer;
+          margin-bottom: 10px;
+          padding: 25px 5px;
+          @include bordeBox();
+          transition: all ease 0.5s;
+          border-radius: 5px;
+
+          .contenido {
+            display: none;
+            padding: 10px;
+            background-color: white;
+            height: auto;
+            margin: 30px;
+            text-align: center;
+          }
+
+          .contenido div {
+            display: flex;
+            margin-top: 1em;
+            justify-content: center;
+
+          }
+
+
+          &.expanded .contenido {
+            display: block;
+            height: 40px;
+          }
+
+          .check-container {
+            .hidden-checkbox {
+              position: absolute;
+              left: -9999px;
+            }
+
+            .custom-checkbox {
+              margin-left: 10px;
+              width: 20px;
+              height: 20px;
+              border: 2px solid #333;
+              border-radius: 50%;
+              cursor: pointer;
+              font-size: 18px;
+              transition: background-color 0.3s;
+              position: relative;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+
+              .circle {
+                position: absolute;
+                width: 14px;
+                height: 14px;
+                border-radius: 50%;
+              }
+
+              &.checked {
+                background-color: white;
+                color: #fff;
+                border: blue 2px solid;
+
+                .circle {
+                  background-color: blue;
+                  border: solid 1px white;
+                }
+              }
+
+              &:hover {
+                background-color: #f0f0f0;
+              }
+            }
+
+            .contenedor-label-delivery {
+              display: flex;
+              align-items: flex-start;
+              justify-content: space-between;
+
+              .truck {
+                margin: 0 20px 0 10px;
+                font-size: 28px;
+                margin-top: -5px;
+              }
+
+              .label-de {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                font-size: 18px;
+              }
+
+              .value {
+                margin-right: 20px;
+              }
+            }
+          }
+
+        }
+
+        .delivery-program {
+          .contenido {
+            width: 100%;
+            margin: 1em 0 2em 0;
+          }
+        }
+      }
+    }
+
+    .contenedor-summary {
+      gap: 4px;
+      display: flex;
+      flex-direction: column;
+
+      .box3 {
+        background-color: #f4f4f4;
+        @include bordeBox();
+        height: 40px;
+        padding: 5px;
+
+        .summary-text {
+          font-size: 18px;
+          margin-left: 10px;
+          font-family: $tittlesFonts;
+        }
+
+      }
+
+      .box4 {
+        @include bordeBox();
+        background-color: #f4f4f4;
+        font-family: $contenidoFonts;
+        padding: 10px;
+
+        h3 {
+          font-size: 20px;
+          font-weight: bold;
+        }
+
+        .costo {
+          font-size: 13px;
+        }
+
+        .cont-btn {
+          display: flex;
+          flex-direction: column;
+          width: 80%;
+          margin: 0 auto;
+
+          .message {
+            color: red;
+            height: 20px;
+            font-size: 11px;
+            text-align: center;
+            margin: 0 0 15px 0;
+            font-weight: bold;
+          }
+
+          .btn-comtinue {
+            width: 90%;
+            margin: auto;
+            color: white;
+            background-color: #0d6efd;
+
+            &:hover {
+              background-color: opacify($color: #345c98, $amount: 0);
+            }
+          }
+        }
+
+        .line {
+          font-weight: lighter;
+          color: gray;
+        }
+
+
+
+      }
+
+    }
+
+    .contenedor-box-text {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      .box-text {
+        border-style: dotted;
+        padding: 5px;
+        margin-bottom: 10px;
+        margin: 0;
+        height: auto;
+        display: flex;
+        gap: 10px;
+
+        div {
+          gap: 0;
+          display: flex;
+          flex-direction: column;
+          height: auto;
+        }
+
+        h5 {
+          font-size: 15px;
+          font-weight: bold;
+          margin: 0;
+        }
+
+        p {
+          font-size: 12px;
+          line-height: 14px;
+          margin: 0;
+          text-wrap: wrap !important;
+        }
+
+        strong {
+          font-size: 12px;
+          margin: 0;
+        }
+
+        a {
+          font-size: 11px;
+          margin: -1px 0 0 0;
+          transition: all ease .3s;
+        }
+
+        a:hover {
+          color: #0d6efd;
+        }
+
+        .icon1 {
+          font-size: 70px;
+        }
+
+        .icon2 {
+          font-size: 45px;
+        }
+
+        .icon3 {
+          width: 250px;
+          height: 250px;
+          margin-top: -100px;
+        }
+      }
+    }
+
+  }
+
+  .steps {
+    margin-bottom: 1em;
+  }
+
+}
+
+.modal-content {
+  .modal-header {
+    padding: 0 !important;
+
+    .btn-close {
+      color: red;
+      font-size: 15px;
+      padding: 10px 12px;
+    }
+  }
+
+  .content-use {
+    padding: 15px;
+
+    label {
+      margin: 0 0 0 5px;
+    }
+
+    .outh {
+      p {
+        font-family: $otro;
+        line-height: 19px;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+      }
+
+      .btn-content {
+        padding: 10px 0;
+        display: grid;
+        gap: 10px;
+
+
+
+        .btn-invitado {
+          border-radius: 3px;
+          color: #444444 !important;
+          font-weight: bold;
+          text-transform: uppercase;
+          background-color: #e3e3e3 !important;
+          border: 0;
+
+          &:hover {
+            background-color: #5e9dfb !important;
+            color: white !important;
+          }
+        }
+
+        .btn {
+          transition: all ease 0.3s;
+          font-size: 12px;
+          padding: 8px 15px;
+          color: white;
+          border-radius: 3px;
+          text-transform: uppercase;
+
+
+        }
+      }
+    }
+
+    .modal-envio {
+      font-family: $otro;
+
+      h1 {
+        color: black !important;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      p {
+        margin: 1em 0;
+        line-height: 18px;
+        font-size: 14px;
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      .icon {
+        font-size: 10px;
+        margin-left: 5px;
+      }
+
+      .btn {
+        margin: 20px 0;
+        float: right;
+        width: 100%;
+        font-size: 17px;
+      }
+
+      .error {
+        color: red;
+      }
+
+      .details-text {
+        font-size: 15px;
+        text-wrap: wrap;
+        line-height: 20px;
+        margin: 0;
+      }
+
+    }
+
+
+  }
+
+
+}
+
+
+@media (min-width: 300px) and (max-width: 500px) {
+  .container-car {
+    .box-car {
+      .contendor-infor-car {
+        .box2 {
+          .loged-user-from-car {
+            font-size: 11px;
+            text-align: left;
+            line-height: 13px;
+
+            .content-modal-for-loggin {
+              .contenedor-btn-custome {
+                margin: 0 auto;
+                width: 100%;
+
+                .btn {
+                  width: 100px;
+                  font-size: 8px;
+                }
+
+
+              }
+            }
+
+          }
+
+          .card-product {
+            .cont-lis-delete {
+              gap: 5px;
+
+              .data-products {
+                padding: 0;
+              }
+
+              .delete {
+                font-size: 13px;
+                margin: 0;
+                width: 80px;
+              }
+            }
+          }
+        }
+
+        .box-entrega {
+          .delivery-program {
+            .envio-programado {
+              span {
+                font-size: 13px;
+              }
+            }
+
+          }
+
+        }
+
+      }
+    }
+
+  }
+
+
+}
+
+
+
+/* Estilos para dispositivos pequeños */
+@media (max-width: 768px) {
+  section {
+    .steps {
+      span {
+        font-size: 10px;
+      }
+    }
+
+  }
+
+  .container-car {
+    .box-car {
+      margin-top: 2em;
+      grid-template-columns: 1fr;
+
+      .contenedor-summary .box4 .contenedor-box-text {
+        .box-text {
+          .icon1 {
+            width: 100px;
+            height: 70px;
+          }
+
+          .icon2 {
+            width: 100px;
+            height: 70px;
+          }
+
+          .icon3 {
+            width: 200px;
+            height: 100px;
+            margin-top: -20px;
+            padding-left: 20px;
+          }
+        }
+
+      }
+
+    }
+
+  }
+
+  .contenedor-car {
+    position: relative;
+    width: 100px;
+
+    .insignia-car {
+      position: absolute;
+      left: 39px;
+    }
+  }
+
+}
+
+
+/* Estilos para dispositivos medianos */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container-car {
+    width: 95vw;
+    margin: auto;
+
+    .box-car {
+      .contendor-infor-car {
+        .box-entrega {
+          .contenido {
+            width: 100%;
+            margin: auto;
+          }
+        }
+      }
+    }
+
+    .contenedor-summary {
+      .box4 {
+        h3 {
+          font-size: 15px !important;
+        }
+      }
+    }
+  }
+
+}

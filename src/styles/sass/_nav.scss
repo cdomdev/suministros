@@ -1,0 +1,446 @@
+$tittlesFonts: "Roboto Condensed", sans-serif;
+$contenidoFonts: "Roboto", sans-serif;
+$contenido2: "Montserrat", sans-serif;
+
+
+$color-principal: #243a5e;
+$color-complementario: #f2efe1;
+
+// barra de navegacion 
+.nav-custom {
+    background-color: white;
+    box-shadow: 2px 2px 4px rgba(84, 84, 84, 0.4), -2px -2px 1px rgba(255, 0, 0, 0.4);
+    font-family: $contenidoFonts ;
+
+    .header-nav {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .header {
+            width: 100%;
+            justify-content: space-between;
+            display: flex;
+            align-items: center;
+
+            .contenedor-search {
+                width: 33%;
+                display: flex;
+                .form-control {
+                    background-color:#EEEEEE;
+                    border-radius: 0px;
+                    color: black;
+                    box-sizing: border-box;
+                    font-family: $contenido2;
+                    padding: 14px 10px;
+                    font-size: 14px;
+                    border: none;
+                }
+
+                .btn {
+                    border-radius: 0px;
+                }
+
+                .btn-icon {
+                    border: solid 1px rgb(197, 197, 197);
+                    padding: 0 15px;
+                    background-color: #909193;
+                    color: white;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+
+                    .icon {
+                        font-size: 20px;
+                    }
+                }
+
+                .input-nav {
+                    justify-content: center;
+                    height: 39px;
+                    display: flex;
+                    width: 90%;
+                    align-self: center;
+
+                    ::placeholder {
+                        font-weight: lighter;
+                        font-size: 14px;
+                        opacity: 80%;
+                    }
+                }
+            }
+
+            .navbar-brand {
+                padding-left: 1em;
+            }
+
+        }
+
+        .content-icons-nav {
+            width: auto;
+            padding: 0 5px;
+            padding-right: 2em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+
+            span {
+                font-size: 8px;
+                transition: all ease 0.3s;
+                color: gray;
+
+                &:hover {
+                    scale: 1.1;
+                    cursor: pointer;
+                    color: black;
+                }
+            }
+
+            .contenedor-car {
+                flex-direction: column;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .carshop {
+                    margin-bottom: -2px;
+                }
+            }
+
+            .pedidos div {
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+                display: flex;
+                gap: 3px;
+                margin-bottom: -7px;
+
+                .box-pedidos {
+                    width: 32px;
+                    height: 32px;
+                    cursor: pointer;
+
+                }
+            }
+
+            .perfil div {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: -3px;
+                gap: 6px;
+
+                .MuiAvatar-circular {
+                    width: 36px;
+                    height: 36px;
+                }
+            }
+
+
+
+        }
+
+        .menu-navegacion {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            font-family: $contenidoFonts;
+          
+
+            .nav-list {
+                justify-content: flex-start;
+                align-items: start;
+                margin-left: 5em;
+                display: flex;
+                gap: 20px;
+                transition: all ease 0.4s;
+                font-size: 14px;
+               
+
+            }
+
+            .nav-link-custom {
+                padding: 5px 0;
+                transition: all color 0.4s ease;
+                text-decoration: none;
+
+                &:hover {
+                    color: rgb(158, 158, 207);
+                }
+
+            }
+
+            .ofertas {
+                color: #1ca1db;
+                font-weight: bold;
+            }
+
+            .contenedor-search {
+                display: none;
+            }
+
+            .menu-container {
+                display: flex;
+                justify-content: center;
+
+                .menu-item {
+                    position: relative;
+                    margin-top: 5px;
+                    cursor: pointer;
+                    font-style: normal;
+                    font-weight: 500;
+                    
+                    &:hover .submenu {
+                        opacity: 1;
+                        transition: all ease 0.3s;
+                        margin-right: 0;
+                        pointer-events: auto;
+                    }
+
+
+                    .submenu {
+                        opacity: 0;
+                        pointer-events: none;
+                        position: absolute;
+                        top: 100%;
+                        left: 0;
+                        right: 0;
+                        width: 11em;
+                        background-color: #fff;
+                        justify-content: flex-start;
+                        display: flex;
+                        transition: all 0.5s ease;
+                        box-shadow: 2px 2px 4px rgba(107, 107, 107, 0.1);
+
+                        ul {
+                            list-style: none;
+
+                            li {
+                                margin-top: 10px;
+
+                            }
+
+                            a {
+                                text-decoration: none;
+                            }
+
+                        }
+
+                        .nav-link-item {
+                            font-size: 14px;
+                            font-weight: 500;
+                            color: #1c1c1c;
+
+                            &:hover {
+                                color: #213C65;
+                                text-decoration: underline !important;
+                            }
+                        }
+
+                    }
+
+                }
+
+
+            }
+
+
+
+
+
+        }
+
+    }
+
+    .logotipo {
+        width: 12em;
+        cursor: pointer;
+    }
+
+
+
+
+    .btn-custom-movil {
+        color: white;
+        background-color: #f2efe1;
+    }
+
+
+}
+
+
+
+// /* Estilos para dispositivos de 300px a 499px */
+@media (min-width: 300px) and (max-width: 499px) {
+    .nav-custom .header-nav .header {
+        .contenedor-search {
+            display: none;
+        }
+        .contenedor-car{
+            .insignia-car{
+                left: 15px;
+            }
+        }
+
+    }
+
+
+}
+
+/* Estilos para dispositivos pequeños */
+@media (max-width: 768px) {
+    .nav-custom .header-nav {
+        hr {
+            display: none;
+        }
+
+        .header {
+            .navbar-brand {
+                padding: 0;
+
+                .logotipo {
+                    width: 7em;
+                }
+            }
+
+            .contenedor-search {
+                .form-control {
+                    font-size: 9px;
+                }
+            }
+
+            .navbar-toggler {
+                .navbar-toggler-icon {
+                    width: 1em;
+                    height: 1em;
+                }
+            }
+
+            .content-icons-nav {
+                padding: 0;
+                gap: 6px;
+
+                .contenedor-car {
+                    width: 40px;
+                    .insignia-car{
+                        left: 15px;
+                    }
+                }
+
+                .pedidos {
+                    .box-pedidos {
+                        width: 50px;
+                    }
+                }
+
+                span {
+                    font-size: 7px;
+                }
+
+            }
+        }
+    }
+
+    .offcanvas {
+        width: 80% !important;
+
+        .contenedor-search {
+            display: flex;
+            margin: 10px 0;
+
+            .input-nav {
+                width: 70%;
+
+                .form-control {
+                    border-radius: 1px;
+                    background-color: #eeeeee;
+                    font-size: 10px;
+                }
+            }
+
+            .btn-icon {
+                border: solid 1px rgb(217, 216, 216);
+                padding: 0 10px;
+                background-color: #909193;
+            }
+        }
+
+        .offcanvas-body {
+            .nav-link-custom {
+                color: #213C65;
+                padding: 4px 0;
+                font-size: 15px;
+                text-decoration: none;
+
+            }
+        }
+    }
+
+
+}
+
+/* Estilos para dispositivos medianos */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .nav-custom .header-nav .header {
+        .contenedor-search {
+            width: 30%;
+        }
+        .content-icons-nav {
+            flex-direction: row;
+
+            .contenedor-car {
+                width: 40px;
+            }
+        }
+
+    }
+
+    .offcanvas {
+        .contenedor-search {
+            display: flex;
+            margin: 10px 0;
+
+            .input-nav {
+                width: 70%;
+
+                .form-control {
+                    border-radius: 1px;
+                    font-size: 10px;
+                }
+            }
+
+            .btn-icon {
+                border: solid 1px rgb(217, 216, 216);
+                padding: 0 10px;
+            }
+        }
+
+        .offcanvas-body {
+            a {
+                text-decoration: none;
+                color: black;
+            }
+
+            ul li {
+                list-style: none;
+            }
+
+            .nav-link-custom {
+                color: #213C65;
+                padding: 4px 0;
+                font-size: 15px;
+                text-decoration: none;
+
+            }
+        }
+    }
+}
+
+/* Estilos para dispositivos grandes */
+@media (min-width: 1025px) {
+    // .nav-custom .nav-custom .header-nav .header {
+    //     // background-color: #1c1c1c;
+    // }
+}

@@ -1,0 +1,285 @@
+$tittlesFonts: "Roboto Condensed", sans-serif;
+$contenidoFonts: "Roboto", sans-serif;
+$contenido2: "Montserrat", sans-serif;
+
+
+
+
+$color-principal: #243a5e;
+$color-complementario: #f2efe1;
+
+@mixin bordeBox {
+    border: solid 1px #d9d9d9;
+    box-shadow: 0 0 5px rgba(84, 84, 84, 0);
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.body-content {
+    .container-ofertas {
+        display: grid;
+        padding: 5px;
+        gap: 10px;
+        grid-template-columns: 25% 75%;
+        .section-add-ofertas {
+            .add-ofertas {
+                @include bordeBox();
+                height: auto;
+                max-width: 400px;
+                padding: 15px;
+                border-radius: 1px;
+                font-family: $contenidoFonts;
+                background-color: white;
+
+                .title-add-ofertas {
+                    font-size: 20px;
+                    font-family: $tittlesFonts;
+                    color: #243a5e;
+                    margin-bottom: 20px;
+                }
+
+                .label-date {
+                    padding-left: 20px;
+                    font-size: 12px;
+                    color: #243a5e;
+                }
+
+                label {
+                    margin: 0;
+                }
+
+                .text {
+                    font-family: $contenidoFonts;
+                    font-size: 13px;
+                    margin: 0;
+                    padding: 0;
+                    color: #243a5e;
+                    text-align: justify;
+                    margin-top: 2em;
+                    line-height: 16px;
+                }
+
+                .container-popover {
+                    display: flex;
+                    justify-content: center;
+                }
+
+                .container-btn-ofertas {
+                    display: flex;
+                    justify-content: center;
+                }
+
+
+            }
+        }
+
+
+        .section-listado-ofertas {
+            background-color: white;
+            width: 100%;
+            @include bordeBox();
+            padding: 5px;
+            border-radius: 1px;
+
+            .accordion {
+                .accordion-button {
+                    border-radius: 1px;
+                    text-transform: uppercase;
+                    color: #243a5e;
+                }
+            }
+
+            .title-list-ofertas {
+                font-family: $tittlesFonts;
+                color: #243a5e;
+                padding: 20px;
+            }
+
+            .ofertas-no-disponibles {
+                color: #243a5e;
+                font-size: 17px;
+                font-family: $tittlesFonts;
+                padding: 10px 0;
+                margin: 0 auto;
+                text-align: center;
+            }
+
+            .body-ofertas-acordeon {
+                display: flex;
+                gap: 3em;
+                max-height: 300px;
+
+                .content-buttons-section {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                }
+            }
+
+            .text-oferta {
+                font-family: $contenido2;
+                color: #243a5e;
+            }
+
+            .sale {
+                color: red;
+            }
+
+            .text-producto-oferta {
+                font-family: $tittlesFonts;
+            }
+
+            ul {
+                max-height: 150px;
+                overflow: auto;
+            }
+
+            li {
+                list-style: disc;
+                font-size: 14px;
+                color: #243a5e;
+                font-family: $contenido2;
+            }
+
+        }
+
+    }
+
+
+
+
+
+}
+
+.popover {
+    border-radius: 1px;
+
+    .popover-header {
+        margin-top: 1px;
+        border-radius: 1px;
+        background-color: #06409d;
+        color: white;
+    }
+
+    .popover-body {
+        max-height: 300px;
+        overflow-y: auto;
+    }
+}
+
+
+
+.modal-ofertas-delete {
+
+    .title-modal-delete {
+        color: red;
+        font-family: $tittlesFonts;
+        padding: 10px;
+        font-size: 19px;
+        text-align: center;
+    }
+
+    .w-ofertas {
+        display: block;
+        width: 80px;
+        margin: auto;
+        height: 80px;
+        color: red;
+    }
+
+    .content-button-ofertas {
+        display: flex;
+        gap: 10px;
+        justify-content: end;
+        padding: 10px;
+
+        .btn {
+            width: 45%;
+            margin: auto;
+        }
+    }
+
+    .text-delete-oferta {
+        font-family: $contenidoFonts;
+        text-align: center;
+    }
+
+    .t {
+        color: red;
+        text-transform: uppercase;
+        margin-left: 5px;
+    }
+}
+
+.modal-ofertas-update {
+    font-family: $contenido2;
+
+    .header-modal-update {
+        border: none;
+
+        .title-modal-update {
+            font-family: $tittlesFonts;
+        }
+    }
+
+    .text-ofertas {
+        text-align: left;
+        font-size: 15px;
+        line-height: 17px;
+        padding: 20px 0 0 10px;
+        margin: 0;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .body-modal-ofertas-update {
+        padding: 0 10px;
+        color: #243a5e;
+        text-align: center;
+
+        .label-date {
+            font-size: 12px;
+            color: #243a5e;
+        }
+    }
+
+    .content-button-ofertas {
+        padding: 20px;
+        display: flex;
+        justify-content: end;
+
+        .btn {
+            width: 100%;
+
+        }
+    }
+}
+
+
+
+// /* Estilos para dispositivos de 300px a 499px */
+@media (min-width: 300px) and (max-width: 499px) {
+    .container-ofertas {
+       
+        .section-add-ofertas {
+            .add-ofertas {
+                width: 300px;
+                padding: 12px !important;
+            }
+
+        }
+        .section-listado-ofertas {
+            width: 90% !important;
+            margin: auto;
+        }
+
+    }
+}
+
+/* Estilos para dispositivos pequeños */
+@media (max-width: 768px) {}
+
+/* Estilos para dispositivos medianos */
+@media (min-width: 769px) and (max-width: 1024px) {}

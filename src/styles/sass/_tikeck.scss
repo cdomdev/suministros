@@ -1,0 +1,220 @@
+$tittlesFonts: "Roboto Condensed", sans-serif;
+$contenidoFonts: "Roboto", sans-serif;
+$contenido2: "Montserrat", sans-serif;
+$otro: 'Lato', sans-serif;
+
+
+.container {
+    .ticket {
+        position: relative;
+        box-sizing: border-box;
+        width: 50%;
+        height: auto;
+        margin: 150px auto 0;
+        padding: 20px;
+        background: #FBFBFB;
+        box-shadow: 0px 0px 10px #a7a7a7;
+        padding: 20px;
+
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            height: 6px;
+            width: 100%;
+        }
+
+        &:before {
+            top: -5px;
+            background: radial-gradient(circle, transparent, transparent 50%, #FBFBFB 50%, #FBFBFB 100%) -7px -8px / 16px 16px repeat-x,
+        }
+
+        &:after {
+            bottom: -5px;
+            background: radial-gradient(circle, transparent, transparent 50%, #FBFBFB 50%, #FBFBFB 100%) -7px -2px / 16px 16px repeat-x,
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+
+            .ticket-text {
+                margin: 0;
+                text-transform: uppercase;
+                color: rgb(0, 163, 0);
+                font-size: 25px;
+                opacity: 50%;
+            }
+
+            .icon {
+                font-size: 35px;
+                transform: rotate(-10deg);
+                color: rgb(0, 163, 0);
+                opacity: 50%;
+            }
+        }
+
+        .body {
+            margin: 2em 0;
+
+            h2 {
+                font-size: 20px;
+                text-align: center;
+                text-transform: uppercase;
+                margin: 2em 0;
+            }
+
+            span {
+                text-transform: uppercase;
+            }
+
+            p {
+                font-family: $otro;
+                font-size: 16px;
+            }
+
+            hr {
+                border-style: dashed;
+            }
+
+            .productos {
+                margin-top: 1em;
+                font-family: $otro;
+
+                .unidad {
+                    justify-content: space-between;
+                    padding: 0 20px;
+                    display: flex;
+                    gap: 20px;
+
+                    ul {
+                        margin: 0;
+                        padding: 0;
+                    }
+
+                    li {
+                        list-style: none;
+                        font-size: 15px;
+                    }
+                }
+            }
+
+            .total {
+                padding: 0 20px;
+                justify-content: end;
+                display: flex;
+                justify-content: space-between;
+                .send{
+                    display: flex;
+                    gap: 10px;
+                    span{
+                        font-weight: bold;
+                    }
+                    ul{
+                        list-style: none;
+                        margin: 0;
+                        padding:0;
+                    }
+                }
+            }
+
+            .datos-envio {
+                padding: 0 20px;
+                display: flex;
+                justify-content: space-between;
+
+                p {
+                    text-transform: capitalize;
+                    font-weight: bold;
+                    font-size: 14px;
+                    text-align: left;
+                    margin: 0;
+                }
+
+            }
+
+            .footer {
+                border: solid 1px gray;
+                border-style: dashed;
+                padding: 20px;
+                background-color: #e5e5e5;
+
+                p {
+                    text-align: left;
+                    font-style: italic;
+                    font-size: 14px;
+                }
+            }
+        }
+
+        .btn-content {
+            display: flex;
+            justify-content: center;
+
+            .btn {
+                width: 15em;
+                border-radius: 3px;
+                margin: 20px 0;
+            }
+
+        }
+
+    }
+}
+
+
+// /* Estilos para dispositivos de 300px a 499px */
+@media (min-width: 300px) and (max-width: 499px) {
+    .container {
+        .ticket {
+            width: 100% !important;
+            h1{
+                font-size: 15px !important;
+            }
+            h2 {
+                font-size: 15px !important;
+            }
+            span{
+                font-size: 12px !important;
+            }
+            p{
+                font-size: 11px !important;
+            }
+            .datos-envio{
+                gap: 10px;
+            }
+          
+            li {
+                font-size: 14px !important;
+            }
+        }
+        
+    }
+
+
+}
+
+/* Estilos para dispositivos pequeños */
+@media (max-width: 768px) {
+    .container {
+        .ticket {
+            margin: -3em auto 2em auto;
+            width: 70%;
+            h2 {
+                font-size: 15px !important;
+            }
+
+            .body .productos{
+                li {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+
+
+}

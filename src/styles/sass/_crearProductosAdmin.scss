@@ -1,0 +1,296 @@
+@mixin bordeBox {
+    border: solid 1px #dadada;
+    box-shadow: 0 0 5px rgba(84, 84, 84, 0);
+    box-sizing: border-box;
+}
+
+
+$tittlesFonts: "Roboto Condensed", sans-serif;
+$contenidoFonts: "Roboto", sans-serif;
+$contenido2: "Montserrat", sans-serif;
+
+
+$color-principal: #243a5e;
+$color-complementario: #f2efe1;
+
+// estilos para la pagina de crear productos seccion de administrador
+
+.body-content {
+    height: auto;
+
+    .layout-crear-productos {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        padding: 2px;
+
+        .content {
+            display: flex;
+            padding: 15px;
+            height: 100vh;
+            flex-wrap: wrap;
+            flex-direction: row;
+            gap: 20px;
+            font-family: $contenidoFonts;
+
+            .container-card {
+                .productos-cards {
+                    width: 16em;
+                    padding: 20px;
+                    max-width: 19em;
+                    height: auto;
+                    @include bordeBox();
+                    justify-content: center;
+                    border-radius: 5px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    img {
+                        width: 8em;
+                    }
+
+                    span {
+                        font-size: 14px;
+                    }
+
+
+                    .details {
+                        display: flex;
+                        flex-direction: column;
+                        max-width: 17em;
+                        width: 100%;
+
+                        .description {
+                            overflow-wrap: break-word;
+                            word-wrap: break-word;
+                            white-space: pre-wrap;
+                            margin: 0;
+                            font-size: 14px;
+                            line-height: 18px;
+
+                        }
+
+                    }
+
+                    .content-btn-card {
+                        width: 100%;
+                        display: flex;
+                        gap: 10px;
+                        align-items: center;
+                        justify-content: center;
+                        margin: 10px 0;
+
+                        .btn {
+                            width: 40%;
+                        }
+
+                        .edit-form {
+                            .btn {
+                                width: 100px;
+                            }
+                        }
+                    }
+                }
+            }
+
+
+        }
+
+
+        .sidebar {
+            max-width: 600px;
+            width: 400px;
+            display: flex;
+            flex-direction: column;
+
+            .add {
+                margin: 0;
+            }
+
+            .textarea-crear {
+                display: block;
+                padding: 10px;
+                border-radius: 5px;
+                background-color: rgb(236, 236, 236);
+                border: none;
+                margin: 5px auto;
+                width: 90%;
+                color: black;
+                border-color: transparent;
+                outline: 0;
+                margin-top: 1em;
+            }
+
+            .custom-file-upload {
+                padding: 7px 10px;
+                cursor: pointer;
+                color: #333;
+                border-radius: 4px;
+                background-color: #6c757d;
+                color: white;
+                margin-top: -1px;
+
+                .uploap {
+                    width: 20px;
+                    margin: -1px 4px 0 0;
+                }
+            }
+
+            .contenedor-refStock {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 5px;
+
+                .form-ref {
+                    width: 50%;
+                }
+            }
+
+            .container-btn-add {
+                display: flex;
+                border: none;
+                justify-content: center;
+            }
+
+            .container-btn-save {
+                display: flex;
+                border: none;
+                justify-content: center;
+            }
+
+
+            .btn-custom {
+                width: 150px;
+            }
+
+            .text-titles-admin {
+                margin-top: -0.5rem;
+                font-size: 20px;
+                text-align: center;
+            }
+
+        }
+
+        .sidebar div {
+            background-color: white;
+            width: 100%;
+            padding: 20px;
+            margin: auto;
+            font-family: $contenidoFonts;
+            margin: auto;
+            word-wrap: break-word;
+            box-sizing: border-box;
+            padding: 20px;
+            border-radius: 3px;
+            @include bordeBox();
+            // box-shadow: 0 0 5px rgb(199, 199, 199);
+            margin: 10px 0;
+            align-items: center;
+            overflow: hidden;
+
+            label {
+                padding-left: 10px;
+                font-size: 14px;
+            }
+
+            input {
+                font-size: 14px;
+            }
+        }
+
+        .text-shadow {
+            text-wrap: wrap;
+            opacity: 50%;
+            color: #333;
+            font-size: 20px;
+        }
+
+        .btn-save {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+
+            .container-btn-save {
+                .btn {
+                    width: 100%;
+                    border-radius: 10px;
+                    padding: 12px 50px;
+                    text-transform: uppercase;
+                    font-size: 14px;
+                }
+            }
+
+        }
+
+
+    }
+
+
+}
+
+
+// modal para editar productos en el componente crear
+.modal-content {
+    .modal-header {
+        .modal-title {
+            padding-left: 16px;
+            font-family: $tittlesFonts;
+        }
+    }
+
+    .modal-body-editar {
+        text-align: left;
+
+        h3 {
+            font-size: 19px;
+        }
+
+        .btn {
+            width: 100%;
+        }
+
+        label {
+            padding-left: 10px;
+            font-size: 14px;
+        }
+
+        .message {
+            height: 20px;
+            padding-top: 5px;
+            font-size: 15px;
+            text-align: center;
+            color: green;
+            margin: 10px 0;
+        }
+    }
+
+}
+
+
+
+// // /* Estilos para dispositivos de 300px a 499px */
+// @media (min-width: 300px) and (max-width: 499px) {
+//     .layout-crear-productos{
+//         display: grid;
+//         grid-template-columns: 1fr;
+//     } 
+// }
+
+// /* Estilos para dispositivos pequeños */
+// @media (max-width: 768px) {
+//     .layout-crear-productos .content  .container-card .productos-cards{
+//         width: 10rem;
+
+//     }
+// }
+
+// /* Estilos para dispositivos medianos */
+// @media (min-width: 769px) and (max-width: 1024px) {
+//     .layout-crear-productos {
+//         background-color: #243a5e;
+//         width: 13rem ;
+//     }
+
+// }

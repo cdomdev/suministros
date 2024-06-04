@@ -1,0 +1,44 @@
+$tittlesFonts: "Roboto Condensed", sans-serif;
+$contenidoFonts: "Roboto", sans-serif;
+$contenido2: "Montserrat", sans-serif;
+
+
+$color-principal: #243a5e;
+$color-complementario: #f2efe1;
+
+@mixin bordeBox {
+  border: solid 1px #dbdbdb;
+  box-shadow: 0 0 5px rgba(133, 133, 133, 0);
+  box-sizing: border-box;
+  border-radius: 1px;
+}
+
+
+.body-content .container-data-users {
+  .table-user {
+    padding: 10px;
+    @include bordeBox();
+    width: 99%;
+    h2{
+      background-color: #032e6e;
+      padding: 10px 0;
+      color: white;
+    }
+    .table-responsive {
+
+      .table {
+        td {
+          .btn-orders{
+            border: none;
+            background: transparent;
+          }
+        }
+      }
+    }
+
+    .thead-table-users {
+      background-color: #1976d2;
+      color: $color-complementario;
+    }
+  }
+}

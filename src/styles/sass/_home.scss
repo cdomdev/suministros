@@ -1,0 +1,492 @@
+$tittlesFonts: "Roboto Condensed", sans-serif;
+$contenidoFonts: "Roboto", sans-serif;
+$contenido2: "Montserrat", sans-serif;
+
+
+$color-complementario: #f2efe1;
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    scrollbar-width: none !important;
+    overflow-y: none !important;
+}
+
+h1 {
+    font-size: 20px !important;
+}
+
+h2 {
+    font-size: 19px !important;
+}
+
+h3 {
+    font-size: 18px !important;
+}
+
+a {
+    text-decoration: none !important;
+    color: black;
+}
+
+p {
+    font-family: $contenido2;
+}
+
+
+/* La barra de desplazamiento completa */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* El "track" de la barra de desplazamiento */
+::-webkit-scrollbar-track {
+    background: #ececec; 
+    border-radius: 10px;
+}
+
+/* El pulgar (thumb) de la barra de desplazamiento */
+::-webkit-scrollbar-thumb {
+    background: #d0d0d0;
+    border-radius: 10px;
+    height: 10px;
+}
+
+/* El pulgar (thumb) cuando esté en hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+
+
+// carrusel 
+
+.carrusel {
+    justify-content: center;
+    width: 100vw;
+    margin: 0 auto;
+    display: flex;
+    height: auto;
+    margin-top: -10px;
+
+    .carousel-image {
+        object-fit: unset;
+        background-size: cover;
+        object-position: center;
+        overflow: hidden;
+        height: 450px;
+    }
+
+    .text-carrusel {
+        left: -250px;
+        top: 25%;
+        justify-content: left;
+        flex-direction: column;
+        align-items: center;
+        display: flex;
+
+        h4 {
+            color: #07224e;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        h5 {
+            text-align: left;
+            font-family: $contenido2;
+            font-weight: bold;
+            font-size: 14px;
+            text-wrap: wrap;
+            color: #243a5e;
+            font-weight: bold;
+        }
+
+        a {
+            color: white;
+            background-color: #0d6efd;
+            width: 15%;
+            padding: 7px 0;
+            border-radius: 5px;
+            margin: 1em 0;
+        }
+
+    }
+
+}
+
+
+
+// componente de perfil de usuarios
+
+.popover-user-profile {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 6px 2px rgb(216, 216, 216);
+    border-radius: 10px;
+
+    .name-user-profile {
+        color: #243a5e;
+        text-align: center;
+    }
+
+    .btn-profile-users {
+        width: 60%;
+        background-color: white;
+        color: #243a5e;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+            background-color: white;
+            color: red;
+        }
+
+        text-align: left;
+    }
+
+    .icon-btn-off {
+        margin: -3px 5px 0 0;
+        font-size: 19px;
+    }
+}
+
+
+// home 
+
+
+.contenido {
+    width: 80vw;
+    margin: auto;
+    font-family: $contenidoFonts;
+
+    h1 {
+        margin: 2em 0 20px 0;
+        text-align: center;
+        font-weight: 600;
+        font-family: $tittlesFonts;
+    }
+
+    p {
+        font-size: 16px;
+        text-wrap: wrap;
+        text-align: left;
+        line-height: 20px;
+        margin: 0 auto;
+    }
+
+    h2 {
+        font-weight: 600;
+        text-align: left;
+        font-size: 20px;
+    }
+
+    .card-categorias {
+        gap: 1em;
+        padding: 10px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(18rem, 0.7fr));
+
+        a {
+            background-size: cover;
+            height: 12rem;
+            max-height: 12rem;
+            position: relative;
+            display: flex;
+            justify-content: center;
+
+            .img {
+                object-fit: cover;
+                background-size: cover;
+                border-radius: 15px;
+                width: 100%;
+                height: 12rem;
+                transition: all ease 0.5s;
+                box-shadow: 0 0 5px 2px rgb(218, 218, 218);
+
+                &:hover {
+                    box-shadow: 0 0 5px 2px rgb(166, 166, 166);
+                }
+            }
+
+            span {
+                position: absolute;
+                z-index: 2;
+                bottom: 5px;
+                right: 0;
+                left: 0;
+                text-align: center;
+                color: white;
+                font-size: 18px;
+                text-shadow: 0 0 3px rgb(69, 69, 69);
+            }
+        }
+    }
+
+    h3 {
+        text-align: center;
+        margin: 4em 0;
+        font-weight: bold;
+    }
+
+    .svg {
+        display: flex;
+        justify-content: space-around;
+        p{
+            font-size: 12px;
+            opacity: 90%;
+            margin: 0;
+            line-height: 12px;
+            text-align: center;
+        }
+        hr{
+            border: solid 1px ;
+        }
+        .svg-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+
+            h4 {
+                font-weight: bold;
+                font-size: 15px;
+                margin: 0;
+            }
+            .icon{
+                width: 50px;
+                height: 80px;
+                margin: 0 0 -10px 0;
+            }
+
+            .animated-truck {
+                float: right;
+                width: 60px;
+                height: 60px;
+                font-size: 80px;
+                animation: moveTruck 3s linear infinite;
+            }
+
+            @keyframes moveTruck {
+                0% {
+                    transform: translateX(0);
+                }
+
+                50% {
+                    transform: translateX(50px);
+                }
+
+                100% {
+                    transform: translateX(0);
+                }
+            }
+
+        }
+    }
+
+
+}
+
+
+
+
+
+
+/* Estilos para dispositivos de 300px a 499px */
+@media (min-width: 300px) and (max-width: 499px) {
+    .carrusel {
+        .text-carrusel {
+            top: -13% !important;
+
+
+            h4 {
+                color: #07224e;
+                font-weight: bold;
+                font-size: 13px !important;
+            }
+
+            h5 {
+                font-size: 8px !important;
+                margin: 0;
+            }
+
+            a {
+                font-size: 10px !important;
+                margin: 0;
+                width: 25% !important;
+            }
+
+            .carousel-control-next {
+                .carousel-control-next-icon {
+                    width: 1rem !important;
+                }
+            }
+
+            .carousel-control-prev {
+                .carousel-control-prev-icon {
+                    width: 1rem !important;
+                }
+            }
+
+        }
+
+    }
+}
+
+
+
+/* Estilos para dispositivos pequeños */
+@media (max-width: 768px) {
+    .carrusel {
+        height: auto;
+        margin-top: -5em;
+
+        .carousel-image {
+            object-fit: unset;
+            object-position: center;
+            overflow: hidden;
+            height: auto;
+        }
+
+        .text-carrusel {
+            left: 0;
+            top: 25%;
+            right: 0;
+            justify-content: left;
+            flex-direction: column;
+            align-items: center;
+            display: flex;
+
+            h4 {
+                color: #07224e;
+                font-weight: bold;
+                font-size: 20px;
+            }
+
+            h5 {
+                text-align: left;
+                font-family: $contenido2;
+                font-weight: bold;
+                font-size: 14px;
+                text-wrap: wrap;
+                color: #243a5e;
+                font-weight: bold;
+            }
+
+            a {
+                color: white;
+                background-color: #0d6efd;
+                width: 15%;
+                padding: 7px 0;
+                border-radius: 5px;
+                margin: 1em 0;
+            }
+
+        }
+
+    }
+
+    .contenido {
+        width: 95vw;
+
+        h1 {
+            font-size: 18px;
+        }
+
+        h2 {
+            font-size: 19px;
+        }
+
+        .txt {
+            font-size: 12px;
+            text-align: center;
+        }
+
+        p {
+            font-size: 13px;
+            font-size: 13px;
+            line-height: 16px;
+            text-wrap: wrap;
+        }
+
+        .card-categorias {
+            justify-content: center;
+
+            a {
+                .img {
+                    object-fit: cover;
+                    background-size: cover;
+                    width: 90%;
+                    height: 12rem;
+
+                }
+            }
+        }
+
+        .jumping-text {
+            margin: 1em 0;
+        }
+
+
+
+        .svg {
+
+
+            .svg-content {
+
+
+                span {
+                    font-size: 10px;
+                    margin: 0;
+                }
+
+
+            }
+        }
+
+
+
+
+    }
+}
+
+
+/* Estilos para dispositivos medianos */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    .carrusel {
+        margin-top: -4em;
+        height: auto;
+
+        .carousel-image {
+            object-fit: unset;
+            object-position: center;
+            overflow: hidden;
+            height: 250px;
+        }
+
+        .carousel-caption {
+            h5 {
+                font-size: 13px;
+
+            }
+
+            p {
+                font-size: 10px;
+            }
+
+        }
+
+        .carousel-indicators {
+            button {
+                width: 18px;
+            }
+        }
+
+    }
+
+
+}
+
+/* Estilos para dispositivos grandes */
+@media (min-width: 1025px) {}

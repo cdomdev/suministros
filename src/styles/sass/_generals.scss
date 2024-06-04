@@ -1,0 +1,182 @@
+$tittlesFonts: "Roboto Condensed", sans-serif;
+$contenidoFonts: "Roboto", sans-serif;
+$contenido2: "Montserrat", sans-serif;
+
+
+// insignia del car en las paginas
+.icon-container {
+  position: fixed;
+  left: 20px;
+  top: 85%;
+  z-index: 1000;
+  padding: 20px;
+  animation: jumpingCar 0.7s infinite alternate;
+
+  .icon-car {
+    padding: 7px;
+    width: 50px;
+    position: relative;
+    height: 50px;
+    border-radius: 50%;
+    background-color: blue;
+    color: white;
+    cursor: pointer;
+  }
+
+  .insignia {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 30px;
+    border-radius: 50%;
+    padding: 0 7px;
+    background-color: rgb(240, 0, 0);
+    color: white;
+  }
+
+  @keyframes jumpingCar {
+    0% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-8px);
+    }
+
+    100% {
+      transform: translateY(0);
+    }
+  }
+}
+
+// icono de whatsapp
+.cotainer-btn-whatsapp {
+  position: fixed;
+  right: 20px;
+  top: 85%;
+  z-index: 1000;
+  padding: 20px;
+
+  .content {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    position: relative;
+    border-radius: 50%;
+    background-color: rgb(37, 211, 102);
+    animation: pulse 1.5s infinite;
+    box-shadow: 0 0 20px 2px rgb(206, 206, 206);
+    .icon {
+      font-size: 40px;
+      color: white;
+    }
+
+  
+
+  }
+
+ 
+
+  .content-num {
+    position: absolute;
+    top: 15px; 
+    z-index: 2;
+    right: 20px; 
+    background-color: red; 
+    color: white; 
+    border-radius: 50%;
+    padding: 2px 6px; 
+    font-size: 0.6rem; 
+    font-weight: bold; 
+    .content-num span {
+      display: block;
+      text-align: center;
+    }
+  }
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+
+    50% {
+      transform: scale(1.1);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
+
+}
+
+
+
+// notifications en las pages
+
+.container-notification {
+  position: fixed;
+  top: 20%;
+  right: 0;
+  z-index: 1000;
+  padding: 20px;
+  color: white;
+}
+
+// Loader en componentes
+.container-loader-component {
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  span {
+    font-size: 14px;
+    color: #213C65;
+    font-weight: 500;
+  }
+
+  .spinner-border-sm {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+.container-loader-page {
+  position: fixed;
+  top: 50%;
+  text-align: center;
+  right: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+
+  .spiner-page {
+    align-self: center;
+  }
+
+  span {
+    font-weight: 800;
+    font-size: 25px;
+    font-family: $contenidoFonts;
+    color: #213C65;
+  }
+}
+
+
+
+
+// /* Estilos para dispositivos de 300px a 499px */
+@media (min-width: 300px) and (max-width: 499px) {
+  .cotainer-btn-whapsapp {
+    right: 20px;
+  
+  }
+}
+
+/* Estilos para dispositivos pequeños */
+@media (max-width: 768px) {
+
+}

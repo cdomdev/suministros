@@ -1,0 +1,251 @@
+$tittlesFonts: "Roboto Condensed", sans-serif;
+$contenidoFonts: "Roboto", sans-serif;
+$contenido2: "Montserrat", sans-serif;
+
+
+
+.modal-content {
+    margin: auto;
+    width: 90%;
+
+    .login-form {
+        font-family: $contenidoFonts;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .fav-login {
+            align-self: center;
+            width: 7em;
+        }
+
+        h1 {
+            margin: 10px 0 40px 0;
+            text-align: center;
+        }
+
+        label {
+            text-align: left;
+            font-size: 14px;
+            color: #030303cc;
+            margin: 0;
+        }
+
+        .btn-custome-goolgle {
+            background-color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+            margin: 0 0 1em 0;
+            display: flex;
+            border: solid 1px #e3e6e8;
+            height: 40px;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.4s;
+            color: black;
+            font-size: 14px;
+
+            .icon-google {
+                .icon {
+                    width: 30px;
+                }
+            }
+
+            &:hover {
+                background-color: #4889f4;
+                color: white;
+            }
+        }
+
+
+
+        .contenedor-liner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+
+            .o {
+                color: #213C65;
+                font-size: 12px;
+                font-weight: bold;
+            }
+
+            .liner-separator {
+                border: 1px solid #213C65;
+                width: 50%;
+            }
+        }
+
+        .login-custome {
+            width: 100%;
+            border-radius: 5px;
+            margin: 0 auto;
+        }
+
+        .btn-submit {
+            width: 100%;
+            border-radius: 5px;
+            margin: 0 auto;
+        }
+
+    }
+
+    .btn-alter-modal {
+        border: none;
+        color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-family: $contenidoFonts;
+        cursor: pointer;
+        font-size: 14px;
+
+        a {
+            text-decoration: underline !important;
+            margin-left: 10px;
+        }
+
+        a:hover {
+            color: rgb(60, 21, 202);
+        }
+
+    }
+
+    .btn-recovery {
+        text-decoration: underline !important;
+        float: right;
+        cursor: pointer;
+        font-size: 14px;
+        margin: 6px 4px 0 0;
+        color: rgb(75, 75, 251);
+    }
+}
+
+
+
+
+.btn-close-custom,
+.footer-modal-custom {
+    border: none;
+}
+
+
+
+
+
+@media (min-width: 600px) and (max-width: 768px) {
+
+    .modal-content {
+        margin: auto;
+        width: 95%;
+
+        .login-form {
+            margin: 0 auto;
+
+            .contenedor-liner {
+                display: flex;
+
+            }
+
+            .login-custome {
+                margin: 0 auto;
+            }
+
+            .btn-recovery {
+                font-size: 14px;
+            }
+
+           
+
+        }
+
+    }
+
+    .page-register {
+        margin-top: -2em;
+    }
+
+}
+
+@media (min-width: 300px) and (max-width: 420px) {
+    .modal-content {
+        margin: auto;
+        width: 95%;
+
+        .login-form {
+            margin: 0 auto;
+
+            .btn-custome-goolgle {
+                width: 100%;
+            }
+
+            .form-login {
+                width: 100%;
+            }
+
+            .contenedor-liner {
+                display: flex;
+            }
+
+            .login-custome {
+                margin: 0 auto;
+                width: 100%;
+            }
+
+            .btn-recovery {
+                font-size: 14px;
+            }
+
+            .btn-submit {
+                width: 100%;
+            }
+
+        }
+
+        .form-register {
+            .form-login {
+                width: 100%;
+            }
+
+            .btn-custome-goolgle {
+                width: 100%;
+            }
+
+            .contenedor-liner {
+                display: flex;
+
+                .liner-separator {
+                    width: 7em;
+                }
+            }
+
+            .login-custome {
+                margin: 0 auto;
+                width: 100%;
+            }
+
+            .btn-recovery {
+                font-size: 14px;
+            }
+
+            .btn-submit {
+                width: 100%;
+            }
+
+        }
+    }
+
+    .page-register {
+        margin-top: -2em;
+        width: 350px;
+        padding: 0;
+    }
+
+
+
+
+}

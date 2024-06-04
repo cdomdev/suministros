@@ -1,0 +1,104 @@
+$tittlesFonts: "Roboto Condensed", sans-serif;
+$contenidoFonts: "Roboto", sans-serif;
+$contenido2: "Montserrat", sans-serif;
+
+.f-footer-container{
+    .svg {
+        display: flex;
+        justify-content: space-around;
+        p{
+            font-size: 12px;
+            margin: 0;
+            line-height: 12px;
+            text-align: center;
+        }
+        hr{
+            border: solid 1px ;
+            margin: 0;
+        }
+        .svg-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+
+            h4 {
+                font-weight: bold;
+                font-size: 15px;
+                margin: 0;
+            }
+            .icon{
+                width: 50px;
+                height: 80px;
+                margin: 0 0 -10px 0;
+            }
+
+            .animated-truck {
+                float: right;
+                width: 60px;
+                height: 60px;
+                font-size: 80px;
+                animation: moveTruck 3s linear infinite;
+            }
+
+            @keyframes moveTruck {
+                0% {
+                    transform: translateX(0);
+                }
+
+                50% {
+                    transform: translateX(50px);
+                }
+
+                100% {
+                    transform: translateX(0);
+                }
+            }
+
+        }
+    }
+
+    footer {
+        // background-color: #fcfcfc;
+        .footer-container {
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            padding-top: 1em;
+            h5 {
+                font-family: $tittlesFonts;
+                font-size: 16px;
+                color:#333;
+                font-weight: bold;
+            }
+    
+            ul {
+                font-size: 14px;
+                font-family: $contenido2;
+                padding: 0;
+                line-height: 25px;
+                text-align: left;
+    
+                li {
+                    list-style: none;
+                    
+                    .what {
+                        color: green;
+                    }
+                }
+                a{
+                    transition: all ease 0.3s;
+                    color:#6b6c6d ;
+                    font-style: normal;
+                    font-weight: normal;
+                }
+                a:hover{
+                    color: rgb(36, 36, 145);
+                }
+    
+            }
+    
+        }
+    }
+
+}

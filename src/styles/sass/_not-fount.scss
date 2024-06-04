@@ -1,0 +1,48 @@
+
+
+
+$tittlesFonts: "Roboto Condensed", sans-serif;
+$contenidoFonts: "Roboto", sans-serif;
+$contenido2: "Montserrat", sans-serif;
+$otro: 'Lato', sans-serif;
+
+.not-fount{
+    margin-top: 5em;
+    display: flex;
+    font-family: $otro;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1{
+        font-size: 40px;
+        color: rgb(142, 136, 136);
+        opacity: 50%;
+        margin: 0;
+    }
+    .svg-not-fount{
+        fill:#767575;
+    }
+    p{
+        font-size: 15px;
+        color: #525252;
+        margin: 10px 0;
+        font-family: $contenidoFonts;
+    }
+    a{
+        text-decoration: none;
+        border: solid 1px;
+        padding: 8px 25px;
+        margin: 10px 0;
+        color: rgb(230, 230, 230);
+        border-radius: 20px;
+        text-transform: uppercase;
+        background-color:#1976d2;
+        border: none;
+        box-shadow: 0 0 20px 5px rgb(202, 202, 202);
+        transition: all ease 0.3s;
+        &:hover{
+            box-shadow: 0 0 5px rgb(165, 165, 165);
+
+        }
+    }
+}
