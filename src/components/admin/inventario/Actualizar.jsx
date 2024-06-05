@@ -13,10 +13,10 @@ export const Actualizar = ({ producto, setProductos }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const [selectedCategoria, setSelectedCategoria] = useState(
-    producto.categoria_padre_id || ""
+    producto.categoria_id || ""
   );
   const [selectedSubCategoria, setSelectedSubCategoria] = useState(
-    producto.categoria_id || ""
+    producto.subcategoria_id || ""
   );
 
   const { setShowToast, setToastMessage, setBgToast } = useNotification();
@@ -84,8 +84,8 @@ export const Actualizar = ({ producto, setProductos }) => {
     const updatedReferencia =
       referenciaRef.current.value || producto.referencia;
 
-    const updatedCategoria = selectedCategoria || producto.categoria_padre_id;
-    const updatedSubcategoria = selectedSubCategoria || producto.categoria_id;
+    const updatedCategoria = selectedCategoria || producto.categoria_id;
+    const updatedSubcategoria = selectedSubCategoria || producto.subcategoria_id;
 
     //  nuevo objeto con la informacion el producto
     const productosActualizado = {
@@ -94,11 +94,10 @@ export const Actualizar = ({ producto, setProductos }) => {
       valor: updatedValor,
       description: updatedDescripcion,
       referencia: updatedReferencia,
-      categoria_padre_id: updatedCategoria,
-      categoria_id: updatedSubcategoria,
+      categoria_id: updatedCategoria,
+      subcategoria_id: updatedSubcategoria,
     };
 
-    console.log("Productos Actualizado:", productosActualizado);
     // Validar si hay cambios en el producto
     const hasChanges = !isEqual(productosActualizado, producto);
 
@@ -194,8 +193,8 @@ export const Actualizar = ({ producto, setProductos }) => {
               className="mt-2"
               value={selectedCategoria}>
               <option value="">
-                {producto.categoria_padre
-                  ? producto.categoria_padre.nombre
+                {producto.categoria
+                  ? producto.categoria.nombre
                   : "Selecciona una categoría"}
               </option>
               {categorias.map((categoria) => (
@@ -210,8 +209,8 @@ export const Actualizar = ({ producto, setProductos }) => {
               onChange={handleSubcategoryChange}
               value={selectedSubCategoria}>
               <option value="">
-                {producto.Categorium
-                  ? producto.Categorium?.nombre
+                {producto.subcategoria
+                  ? producto.subcategoria.nombre
                   : "Selecciona una subcategoría"}
               </option>
               {subcategorias.map((subcategoria) => (

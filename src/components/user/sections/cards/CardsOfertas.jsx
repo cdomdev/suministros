@@ -71,7 +71,7 @@ const CardsOfertas = () => {
                       oferta.descuento
                     ).toLocaleString("es-CO")}
                   </li>
-                  <Link to={`/suministros/details-ofertas/${producto.nombre}`}>
+                  <Link to={`/suministros/details-ofertas/${producto.title}`}>
                     <Button
                       onClick={() => navigateDetailOfertas(producto, ofertas)}>
                       Ver producto

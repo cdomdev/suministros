@@ -17,7 +17,6 @@ export const FormAdd = ({
 }) => {
   return (
     <div className="add">
-      <h2 className="text-titles-admin">Añadir productos </h2>
       <Form onSubmit={getFormValues}>
         <Form.Label>Marca del producto</Form.Label>
         <Form.Control
@@ -135,7 +134,7 @@ export const FormAdd = ({
             className="btn btn-custom mt-2"
             variant="primary"
             type="submit">
-            Añadir
+           Agregar producto
           </Button>
         </span>
       </Form>

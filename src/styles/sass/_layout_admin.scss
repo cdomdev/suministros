@@ -41,6 +41,7 @@ $contenido2: "Montserrat", sans-serif;
         padding: 0;
         grid-area: content;
         @include bordeBox();
+        height: auto ;
     }
 }
 

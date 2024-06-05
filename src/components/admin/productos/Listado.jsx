@@ -4,6 +4,8 @@ import { Editar } from "./Editar";
 import { Delete } from "./Delete";
 import { getDataStorage } from "../../../utils/getDataStorage";
 import { NotificationToast } from "../../../utils/ComponentsUtils";
+import {formateValue} from '../../../utils/funtionsProducts'
+
 export const Listado = ({ listadoState, setListadoState }) => {
   useEffect(() => {
     setListadoState(getDataStorage("productos"));
@@ -30,7 +32,7 @@ export const Listado = ({ listadoState, setListadoState }) => {
                   </span>
                   <span>
                     <strong>Valor: $ </strong>
-                    {producto.valor}
+                    {formateValue(parseInt(producto.valor))}
                   </span>
                   <span>
                     <strong>Cantidad: </strong>

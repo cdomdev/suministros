@@ -8,7 +8,6 @@ export const Filtros = ({
   precioSeleccionado,
   handlePrecioChange,
 }) => {
-  console.log(productos);
   return (
     <>
       <Form.Select
@@ -17,7 +16,7 @@ export const Filtros = ({
         value={categoriaSeleccionada}>
         <option value="">Categorias</option>
         {[
-          ...new Set(productos.map((producto) => producto.Categorium?.nombre)),
+          ...new Set(productos.map((producto) => producto.subcategoria.nombre)),
         ].map((categoria, index) => (
           <option key={index}>{categoria}</option>
         ))}

@@ -22,12 +22,11 @@ $color-complementario: #f2efe1;
         display: flex;
         flex-direction: row;
         width: 100%;
-        padding: 2px;
-
+        padding:5px 2px 2em 5px;
         .content {
             display: flex;
             padding: 15px;
-            height: 100vh;
+            height:auto;
             flex-wrap: wrap;
             flex-direction: row;
             gap: 20px;
@@ -74,22 +73,14 @@ $color-complementario: #f2efe1;
                     }
 
                     .content-btn-card {
+                       width: 100%;
+                       margin-top: 1em;
+                       gap: 10px;
+                       display: flex;
+                       flex-direction: column;
+                       .btn{
                         width: 100%;
-                        display: flex;
-                        gap: 10px;
-                        align-items: center;
-                        justify-content: center;
-                        margin: 10px 0;
-
-                        .btn {
-                            width: 40%;
-                        }
-
-                        .edit-form {
-                            .btn {
-                                width: 100px;
-                            }
-                        }
+                       }
                     }
                 }
             }
@@ -176,27 +167,29 @@ $color-complementario: #f2efe1;
         .sidebar div {
             background-color: white;
             width: 100%;
-            padding: 20px;
+            min-width: 380px;
+            padding: 15px;
             margin: auto;
             font-family: $contenidoFonts;
-            margin: auto;
             word-wrap: break-word;
             box-sizing: border-box;
-            padding: 20px;
             border-radius: 3px;
             @include bordeBox();
-            // box-shadow: 0 0 5px rgb(199, 199, 199);
             margin: 10px 0;
             align-items: center;
             overflow: hidden;
 
             label {
-                padding-left: 10px;
+                padding-left: 5px;
                 font-size: 14px;
+                margin: 0;
             }
 
             input {
                 font-size: 14px;
+            }
+            .btn{
+                width: 100%;
             }
         }
 
@@ -204,6 +197,7 @@ $color-complementario: #f2efe1;
             text-wrap: wrap;
             opacity: 50%;
             color: #333;
+            text-align: center;
             font-size: 20px;
         }
 

@@ -14,7 +14,7 @@ const CocinasCategoria = () => {
           <CardCategorias
             rutaCategoria={"cocinas"}
             nombreCategoria={"Cocinas"}
-          />
+          />  
         </div>
       </div>
       <IconNavigateCar />

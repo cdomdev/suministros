@@ -26,7 +26,7 @@ export const Delete = ({ setListadoState, id }) => {
   return (
     <Button
       className="btn-custom"
-      variant="primary"
+      variant="danger"
       onClick={() => borrarProducto()}>
       Borrar
     </Button>

@@ -6,7 +6,7 @@ const Pisos = () => {
   return (
     <section>
       <div className="migajas">
-        <Migajas categoriaRuta={"Pisos y paredes"} subcategoriaRuta={"Pisos"} />
+        <Migajas categoriaRuta={"Pisos y paredes"} subcategoriaRuta={"Pisos ceramicos"} />
       </div>
       <div className="container-productos">
         <div className="contenedor-grid-products">
@@ -22,7 +22,7 @@ const Pisos = () => {
             </p>
           </div>
           <CardSubcategorias
-            RutaSubCategoria={"pisos"}
+            RutaSubCategoria={"pisosceramicos"}
             nombreSubcategoria={"Pisos"}
             unidad={"Mt"}
           />

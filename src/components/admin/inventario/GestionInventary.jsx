@@ -46,7 +46,7 @@ const GestionInventary = () => {
   const productosFiltrados = productos.filter((producto) => {
     return (
       !categoriaSeleccionada ||
-      producto.Categorium?.nombre.trim() === categoriaSeleccionada
+      producto.subcategoria.nombre.trim() === categoriaSeleccionada
     );
   });
 
@@ -108,11 +108,11 @@ const GestionInventary = () => {
                         </span>
                         <span>
                           <strong>Categoria: </strong>
-                          {producto.categoria_padre?.nombre || "Sin categoría"}
+                          {producto.categoria.nombre || "Sin categoría"}
                         </span>
                         <span>
                           <strong>Subcategoria: </strong>
-                          {producto.Categorium?.nombre || "Sin subcategoría"}
+                          {producto.subcategoria.nombre || "Sin subcategoría"}
                         </span>
                       </div>
                     </div>

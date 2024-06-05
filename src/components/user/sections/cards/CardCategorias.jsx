@@ -18,11 +18,13 @@ const CardCategorias = ({ rutaCategoria, nombreCategoria }) => {
 
   const navigate = useNavigate();
 
+  const encodedCategorias = encodeURIComponent(rutaCategoria)
+
   // Solcicitud de las categorias
   useEffect(() => {
     const fetchData = async () => {
       await axios
-        .get(`${API_HOST}/categoria-padre/${rutaCategoria}`)
+        .get(`${API_HOST}/categorias/${encodedCategorias}`)
         .then((response) => {
           if (response.status === 200) {
             setCategorias(response.data.productos);
@@ -40,6 +42,7 @@ const CardCategorias = ({ rutaCategoria, nombreCategoria }) => {
     setSubCategorias(obtenerSubCategorias(categorias));
     setMarcasUnicas(obtenerMarcasUnicas(categorias));
   }, [categorias]);
+
 
   // Función para manejar cambios de acuerdo a las subcategorias
   const handleCategoriaChange = (subcategoria) => {
@@ -69,7 +72,7 @@ const CardCategorias = ({ rutaCategoria, nombreCategoria }) => {
   const productosFiltro = categorias.filter((producto) => {
     const subcategoria =
       !categoriaSeleccionada ||
-      producto.Categorium.nombre === categoriaSeleccionada;
+      producto.subcategoria.nombre === categoriaSeleccionada;
     const marca =
       marcaSeleccionada.length === 0 ||
       marcaSeleccionada.includes(producto.title);

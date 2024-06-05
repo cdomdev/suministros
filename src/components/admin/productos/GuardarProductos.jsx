@@ -23,6 +23,8 @@ export const GuardarProductos = ({ listadoState, setListadoState }) => {
         image: producto.image,
       }));
 
+      console.log(updatedList)
+
       const response = await axios.post(`${API_HOST}/api/guardarproductos`, {
         productos: updatedList,
       });

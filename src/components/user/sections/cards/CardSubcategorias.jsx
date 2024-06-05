@@ -20,15 +20,18 @@ const CardSubcategorias = ({
   const [marcasSeleccionada, setMarcasSeleccionada] = useState([]);
   const [precioSeleccionado, setPrecioSeleccionado] = useState("");
 
+
+  const encodedSubcategorias = encodeURIComponent(RutaSubCategoria)
+
   const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
       await axios
-        .get(`${API_HOST}/categorias/${RutaSubCategoria}`)
+        .get(`${API_HOST}/subcategorias/${encodedSubcategorias}`)
         .then((response) => {
           if (response.status === 200) {
-            setProductos(response.data.categoria.Productos);
+            setProductos(response.data.productos);
           }
         })
         .catch((error) => {
@@ -58,7 +61,7 @@ const CardSubcategorias = ({
   function navigateDetail(producto) {
     localStorage.setItem("selectedProduct", JSON.stringify(producto));
     localStorage.setItem("categroyselectedProduct", JSON.stringify(productos));
-    navigate(`/suministros/details/${producto.title}`);
+    navigate(`/suministros/details/${producto.nombre}`);
   }
 
   const handlePrecioChange = (e) => {

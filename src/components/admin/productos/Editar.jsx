@@ -41,7 +41,7 @@ export const Editar = ({ producto, setListadoState }) => {
     );
     if (productoActualizado) {
       setBgToast("success");
-      setToastMessage("¡Producto actulizado!");
+      setToastMessage("Producto actulizado");
       setShowToast(true);
     }
   };
@@ -49,7 +49,7 @@ export const Editar = ({ producto, setListadoState }) => {
   return (
     <div className="edit-form">
       <Button
-        variant="primary"
+        variant="secondary"
         className="btn-custome"
         onClick={() => setShowModal(true)}>
         Editar

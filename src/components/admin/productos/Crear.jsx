@@ -77,6 +77,7 @@ export const Crear = ({ setListadoState }) => {
     setSelectedSubCategoria(event.target.value);
   };
 
+
   const getFormValues = async (e) => {
     e.preventDefault();
 
@@ -102,9 +103,9 @@ export const Crear = ({ setListadoState }) => {
       !nombre ||
       imagesToSend.length === 0
     ) {
-      setBgToast("success");
+      setBgToast("danger");
       setShowToast(true);
-      setToastMessage("Se agrego un nuevo producto");
+      setToastMessage("Faltan datos para crear el producto");
       return;
     }
 
@@ -143,8 +144,8 @@ export const Crear = ({ setListadoState }) => {
           cantidad: cantidad,
           referencia: referencia,
           image: imageUrls[0],
-          categoriaPadre_id: selectedCategoria,
-          categoria_id: selectedSubCategoria,
+          categoria_id:  selectedCategoria,
+          subcategoria_id: selectedSubCategoria,
           categoria: selectedCategoryName,
           subCategoria: selectedSubCategoryName,
         };
@@ -156,6 +157,7 @@ export const Crear = ({ setListadoState }) => {
           localStorage.setItem("productos", JSON.stringify(newListado));
           return newListado;
         });
+
 
         setProductState({
           title: "",

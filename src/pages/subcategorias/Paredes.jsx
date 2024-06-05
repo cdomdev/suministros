@@ -25,7 +25,7 @@ const Paredes = () => {
               </p>
             </div>
             <CardSubcategorias
-              RutaSubCategoria={"pisos"}
+              RutaSubCategoria={"paredes"}
               nombreSubcategoria={"Paredes"}
               unidad={"Mt"}
             />
