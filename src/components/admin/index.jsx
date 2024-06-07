@@ -3,7 +3,9 @@ import { lazy } from "react";
 export const NotExisting = lazy(() => import("./404-page/404"));
 export const HomeAdmin = lazy(() => import("./Home/HomeAdmin"));
 export const NavAdmin = lazy(() => import("./Nav/NavAdmin"));
-export const GestionInventary = () => import("./inventario/GestionInventary");
+export const GestionInventary = lazy(() =>
+  import("./inventario/GestionInventary")
+);
 export const GestionUsuarios = lazy(() => import("./usuarios/GestionUsuarios"));
 export const Admin = lazy(() => import("./productos/Admin"));
 export const Ofertas = lazy(() => import("./ofertas/Ofertas"));

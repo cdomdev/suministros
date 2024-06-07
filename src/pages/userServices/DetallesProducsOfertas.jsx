@@ -95,12 +95,9 @@ const DetalleProductsOfertas = () => {
                 <strong>Precio:</strong>
                 <span>$ {formateValue(productoConDescuento.valor)}</span>
               </div>
-              <strong>{productoConDescuento.nombre}</strong>
-
               <div className="text">
                 <p>{productoConDescuento.description}</p>
               </div>
-
               <div className="contendor-quantity">
                 <div className="quantity">
                   <button className="decrement" onClick={handleDecrement}>

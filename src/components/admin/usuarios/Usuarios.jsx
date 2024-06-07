@@ -23,7 +23,7 @@ const Usuarios = () => {
   return (
     <div className="table-user">
       <h2 className="text-center">Usuarios</h2>
-      {usuarios.length === 0 || usuarios === null ? (
+      {(usuarios && usuarios.length === 0) || usuarios === null ? (
         <span>No hay pedido de usuarios</span>
       ) : (
         <Table striped bordered hover size="sm" responsive>

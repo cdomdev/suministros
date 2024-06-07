@@ -39,11 +39,12 @@ export const Pedidos = () => {
               closeButton
               style={{ border: "none", padding: "0 10px" }}
             />
+            <hr />
             <Modal.Body>
-              <h4>
-                Quieres llevar un registro o hacer seguimiento de tus compras,
-                inicia sesion o registrate para ir a tu perfil
-              </h4>
+              <p>
+                Inicia sesion o regitrate y disfruta de todos los beneficios que
+                suministros tiene para ti.
+              </p>
               <LoginModal
                 setIsLoggedIn={setIsLoggedIn}
                 controlComponent={(handleShow) => (
@@ -52,6 +53,12 @@ export const Pedidos = () => {
                   </Button>
                 )}
               />
+              <Button
+                variant="light"
+                className="cancelar"
+                onClick={handleClosePedidos}>
+                cancelar
+              </Button>
             </Modal.Body>
           </Modal>
         )}

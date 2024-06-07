@@ -18,7 +18,7 @@ const CardCategorias = ({ rutaCategoria, nombreCategoria }) => {
 
   const navigate = useNavigate();
 
-  const encodedCategorias = encodeURIComponent(rutaCategoria)
+  const encodedCategorias = encodeURIComponent(rutaCategoria);
 
   // Solcicitud de las categorias
   useEffect(() => {
@@ -42,7 +42,6 @@ const CardCategorias = ({ rutaCategoria, nombreCategoria }) => {
     setSubCategorias(obtenerSubCategorias(categorias));
     setMarcasUnicas(obtenerMarcasUnicas(categorias));
   }, [categorias]);
-
 
   // Función para manejar cambios de acuerdo a las subcategorias
   const handleCategoriaChange = (subcategoria) => {
@@ -82,7 +81,7 @@ const CardCategorias = ({ rutaCategoria, nombreCategoria }) => {
   function navigateDetail(producto) {
     localStorage.setItem("selectedProduct", JSON.stringify(producto));
     localStorage.setItem("categroyselectedProduct", JSON.stringify(categorias));
-    navigate(`/suministros/details/${producto.title}`);
+    navigate(`/suministros/details/${producto.nombre}`);
   }
 
   return (

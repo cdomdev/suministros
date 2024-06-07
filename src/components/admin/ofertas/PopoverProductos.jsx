@@ -5,7 +5,6 @@ export const PopoverProductos = ({
   listaProductos,
   handleProductSelection,
   selectedProducts,
-  ref,
 }) => {
   const [show, setShow] = useState(false);
   const [target, setTarget] = useState(null);
@@ -20,7 +19,7 @@ export const PopoverProductos = ({
   };
 
   return (
-    <div ref={ref}>
+    <div className="container-popover">
       <Button variant="secondary" onClick={handleClick}>
         Seleccionar productos para la oferta
       </Button>
@@ -34,12 +33,9 @@ export const PopoverProductos = ({
         show={show}
         target={target}
         placement="top-start"
-        container={ref}
         containerPadding={20}>
         <Popover id="popover-contained">
-          <Popover.Header as="h3">
-            Productos
-          </Popover.Header>
+          <Popover.Header as="h3">Productos</Popover.Header>
           <Popover.Body>
             {Array.isArray(listaProductos) &&
               listaProductos.map((producto) => (

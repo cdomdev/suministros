@@ -23,8 +23,6 @@ export const InfoCar = () => {
     return total;
   };
 
-  console.log(cartItems);
-
   return (
     <>
       <div className="box2">

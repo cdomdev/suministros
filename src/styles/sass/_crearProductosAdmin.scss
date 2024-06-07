@@ -205,8 +205,18 @@ $color-complementario: #f2efe1;
             position: fixed;
             right: 20px;
             bottom: 20px;
-
             .container-btn-save {
+                .spinner-container{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 10px;
+                    
+                    p{
+                        margin: 0;
+                        text-transform: uppercase;
+                    }
+                }
                 .btn {
                     width: 100%;
                     border-radius: 10px;

@@ -3,6 +3,7 @@ import { NotificationToast, getDataSesionStorega } from "../../../../utils";
 import { useNotification, useCarShop } from "../../../../hook";
 import { IoCartOutline } from "../../../../assets/icons/reactIcons";
 import NotProduct from "./NotProduct";
+import { formateValue } from "../../../../utils/funtionsProducts";
 
 const Results = () => {
   const [busqueda, setBusqueda] = useState([]);
@@ -42,7 +43,8 @@ const Results = () => {
                 <li className="title">{producto.title}</li>
                 <li className="text">{producto.nombre}</li>
                 <li className="valor">
-                  $ {producto.valor} <span className="unidad"></span>
+                  $ {formateValue(parseInt(producto.valor))}{" "}
+                  <span className="unidad"></span>
                 </li>
               </div>
               <div className="icons">

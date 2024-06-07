@@ -22,7 +22,6 @@ const CardsOfertas = () => {
         .then((response) => {
           if (response.status === 200) {
             setOfertas(response.data.ofertas || []);
-            console.log(response.data.ofertas);
           }
         })
         .catch((error) => {
@@ -71,7 +70,7 @@ const CardsOfertas = () => {
                       oferta.descuento
                     ).toLocaleString("es-CO")}
                   </li>
-                  <Link to={`/suministros/details-ofertas/${producto.title}`}>
+                  <Link to={`/suministros/details-ofertas/${producto.nombre}`}>
                     <Button
                       onClick={() => navigateDetailOfertas(producto, ofertas)}>
                       Ver producto

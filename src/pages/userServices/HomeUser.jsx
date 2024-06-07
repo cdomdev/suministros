@@ -30,9 +30,8 @@ export const HomeUser = () => {
           </p>
         </div>
         <h3 className="jumping-text">¡Tu visión, nuestra misión!</h3>
-        
       </div>
-      <BtnWhatsapp/>
+      <BtnWhatsapp />
       <IconNavigateCar />
     </>
   );

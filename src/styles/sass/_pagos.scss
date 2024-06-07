@@ -331,7 +331,14 @@ section{
 .modal-content{
     padding: 10px ;
     font-family: $otro;
+    .modal-header{
+        border: none;
+    }
+    hr{
+        margin: 10px 0 0 0;
+    }
     .content-use{
+        
         .pago-content{
             h4{
                 font-size: 19px;
@@ -360,6 +367,9 @@ section{
                     padding: 9px 0;
                     text-transform: uppercase;
                     font-size: 13px;
+                }
+                .btn-light{
+                    background-color: #ebebeb;
                 }
             }
         }

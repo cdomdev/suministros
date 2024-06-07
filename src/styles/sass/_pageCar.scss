@@ -507,14 +507,15 @@ $otro: 'Lato', sans-serif;
 .modal-content {
   .modal-header {
     padding: 0 !important;
-
     .btn-close {
       color: red;
       font-size: 15px;
       padding: 10px 12px;
     }
   }
-
+  hr{
+    margin: 10px 0 0 0;
+  }
   .content-use {
     padding: 15px;
 
@@ -559,9 +560,8 @@ $otro: 'Lato', sans-serif;
           color: white;
           border-radius: 3px;
           text-transform: uppercase;
-
-
         }
+       
       }
     }
 

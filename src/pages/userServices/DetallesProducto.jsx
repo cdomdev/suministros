@@ -108,7 +108,9 @@ const DetallesProducto = () => {
           <hr />
           <div>
             <>
-              <h3 className="text-center mt-3">Productos relacionados</h3>
+              <h3 className="text-center mt-3">
+                Tambien te podria interesar...
+              </h3>
               <div className="sideProducts-relacionados">
                 <CarProductsRelationados />
               </div>

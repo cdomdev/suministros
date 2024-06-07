@@ -33,6 +33,7 @@ export const PagoUser = () => {
         keyboard={false}>
         <div>
           <Modal.Header closeButton></Modal.Header>
+          <hr />
           <div className="content-use">
             <Informacion handleClose={handleClose} />
           </div>
@@ -123,7 +124,7 @@ const Informacion = ({ handleClose }) => {
           <Button variant="primary" onClick={handleClose}>
             Cambiar el metodo de pago
           </Button>
-          <Button variant="success" onClick={finnalyBuy} disabled={loading}>
+          <Button variant="light" onClick={finnalyBuy} disabled={loading}>
             {loading ? (
               <Spinner animation="border" role="status" size="sm" />
             ) : (

@@ -43,7 +43,7 @@ import {
 } from "../components/user/sections/pedidos/RutasPedido";
 import { LoaderPage } from "../utils/ComponentsUtils";
 
-// import { ProbarComponentes } from "../pages/ProbarComponentes";
+import { ProbarComponentes } from "../pages/ProbarComponentes";
 import { RecoverForm } from "../components/user/sections/passwordRecovery/RecoverForm";
 import { Footer } from "../components/user/sections/footer/Footer";
 
@@ -153,7 +153,7 @@ export const DashboardUser = () => {
             element={<Ticket />}
           />
 
-          {/* <Route path="/pruebas" element={<ProbarComponentes />} /> */}
+          <Route path="/pruebas" element={<ProbarComponentes />} />
 
           {/* rutas anidadas */}
           <Route path="/suministros/user/" element={<PedidosPage />}>

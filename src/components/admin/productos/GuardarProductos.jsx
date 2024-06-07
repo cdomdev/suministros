@@ -23,8 +23,6 @@ export const GuardarProductos = ({ listadoState, setListadoState }) => {
         image: producto.image,
       }));
 
-      console.log(updatedList)
-
       const response = await axios.post(`${API_HOST}/api/guardarproductos`, {
         productos: updatedList,
       });
@@ -60,6 +58,7 @@ export const GuardarProductos = ({ listadoState, setListadoState }) => {
         <Button variant="success" onClick={handleGuardarProducto}>
           {isLoading ? (
             <div className="spinner-container">
+              <p>Guardando productos</p>
               <Spinner animation="border" role="status" size="sm" />
             </div>
           ) : (

@@ -29,11 +29,11 @@ export const Sidebar = () => {
       }
     };
 
-    const email = dataLocal.email;
+    const email = dataLocal?.email;
     if (email) {
       fetchData();
     }
-  }, [dataLocal.email]);
+  }, [dataLocal?.email]);
 
   return (
     <div>
@@ -41,14 +41,14 @@ export const Sidebar = () => {
         <>
           <div className="avatar">
             <Avatar
-              alt={dataSesion.name}
-              src={dataSesion.picture}
+              alt={dataSesion?.name}
+              src={dataSesion?.picture}
               sx={{ cursor: "pointer" }}
               className="avatar-icon"
             />
           </div>
           <div className="data">
-            <h1>Hola!</h1>
+            <h1>¡Hola!</h1>
             <h2>{dataSesion.name}</h2>
             <div className="box">
               <p>

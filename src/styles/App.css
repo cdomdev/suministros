@@ -55,8 +55,7 @@
   position: relative;
   border-radius: 50%;
   background-color: rgb(37, 211, 102);
-  animation: pulse 1.5s infinite;
-  box-shadow: 0 0 20px 2px rgb(206, 206, 206);
+  box-shadow: 0 0 10px 1px rgb(206, 206, 206);
 }
 .cotainer-btn-whatsapp .content .icon {
   font-size: 40px;
@@ -64,30 +63,19 @@
 }
 .cotainer-btn-whatsapp .content-num {
   position: absolute;
-  top: 15px;
+  top: 10px;
   z-index: 2;
-  right: 20px;
+  right: 18px;
   background-color: red;
   color: white;
   border-radius: 50%;
-  padding: 2px 6px;
-  font-size: 0.6rem;
+  padding: 2px 7px;
+  font-size: 0.75rem;
   font-weight: bold;
 }
 .cotainer-btn-whatsapp .content-num .content-num span {
   display: block;
   text-align: center;
-}
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
 }
 
 .container-notification {
@@ -1098,6 +1086,16 @@
   right: 20px;
   bottom: 20px;
 }
+.body-content .layout-crear-productos .btn-save .container-btn-save .spinner-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.body-content .layout-crear-productos .btn-save .container-btn-save .spinner-container p {
+  margin: 0;
+  text-transform: uppercase;
+}
 .body-content .layout-crear-productos .btn-save .container-btn-save .btn {
   width: 100%;
   border-radius: 10px;
@@ -1502,13 +1500,15 @@
   margin-top: 2em;
   line-height: 16px;
 }
-.body-content .container-ofertas .section-add-ofertas .add-ofertas .container-popover {
-  display: flex;
-  justify-content: center;
+.body-content .container-ofertas .section-add-ofertas .add-ofertas .container-popover .btn {
+  width: 100%;
 }
 .body-content .container-ofertas .section-add-ofertas .add-ofertas .container-btn-ofertas {
   display: flex;
   justify-content: center;
+}
+.body-content .container-ofertas .section-add-ofertas .add-ofertas .container-btn-ofertas .btn {
+  width: 100%;
 }
 .body-content .container-ofertas .section-listado-ofertas {
   background-color: white;
@@ -1724,7 +1724,7 @@ p {
   margin: 0 auto;
   display: flex;
   height: auto;
-  margin-top: -10px;
+  margin-top: -8px;
 }
 .carrusel .carousel-image {
   object-fit: unset;
@@ -2592,6 +2592,9 @@ p {
   font-size: 15px;
   padding: 10px 12px;
 }
+.modal-content hr {
+  margin: 10px 0 0 0;
+}
 .modal-content .content-use {
   padding: 15px;
 }
@@ -3057,31 +3060,23 @@ p {
 .modal-pedido .modal-content {
   padding: 10px;
 }
+.modal-pedido .modal-content hr {
+  margin: 10px 0 0 0;
+}
 .modal-pedido .modal-content .modal-body {
   font-family: "Lato", sans-serif;
   display: block;
   line-height: 18px;
 }
-.modal-pedido .modal-content .modal-body h4 {
-  font-size: 16px !important;
-  margin: 0;
-  text-wrap: wrap;
-}
-.modal-pedido .modal-content .modal-body ul {
-  margin: 0;
-  padding: 0;
-}
-.modal-pedido .modal-content .modal-body ul li {
-  font-size: 14px;
-  list-style: none;
-}
-.modal-pedido .modal-content .modal-body ul .icon {
-  color: #243a5e;
-  margin-right: 3px;
+.modal-pedido .modal-content .modal-body p {
+  margin: 0 0 10px 0;
 }
 .modal-pedido .modal-content .modal-body .btn {
-  margin: 1em 0 0 0;
+  margin: 10px 0 0 0;
   width: 100%;
+}
+.modal-pedido .modal-content .modal-body .cancelar {
+  background-color: #ebebeb;
 }
 
 .main-pedidos {
@@ -3128,7 +3123,6 @@ p {
 }
 .main-pedidos .sidebar .data h1 {
   font-size: 25px;
-  color: #243a5e;
   font-family: "Roboto Condensed", sans-serif;
   text-align: center;
 }
@@ -3265,6 +3259,28 @@ p {
   margin-top: 1em;
 }
 
+@media (min-width: 300px) and (max-width: 499px) {
+  .main-pedidos .body .body-profile {
+    font-size: 10px;
+  }
+}
+@media (max-width: 768px) {
+  .main-pedidos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .main-pedidos .body {
+    width: 100%;
+  }
+  .main-pedidos .data {
+    justify-content: center;
+    width: 50%;
+    align-items: center;
+  }
+}
+/* Estilos para dispositivos medianos */
 .container-details {
   width: 95vw;
   margin: 0 auto;
@@ -4016,6 +4032,12 @@ section .details .summary .box4 .send {
   padding: 10px;
   font-family: "Lato", sans-serif;
 }
+.modal-content .modal-header {
+  border: none;
+}
+.modal-content hr {
+  margin: 10px 0 0 0;
+}
 .modal-content .content-use .pago-content h4 {
   font-size: 19px;
   text-align: center;
@@ -4043,6 +4065,9 @@ section .details .summary .box4 .send {
   padding: 9px 0;
   text-transform: uppercase;
   font-size: 13px;
+}
+.modal-content .content-use .pago-content .buttons-content .btn-light {
+  background-color: #ebebeb;
 }
 
 @media (max-width: 768px) {

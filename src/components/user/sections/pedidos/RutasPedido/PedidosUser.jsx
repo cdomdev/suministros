@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { BiArrowBack } from "react-icons/bi";
 import axios from "axios";
-import { getDataStorage, LoaderComponent } from "../../../../../utils";
+import { getDataStorage } from "../../../../../utils";
 import { API_HOST } from "../../../../../config/config";
 
 const PedidosUser = () => {
@@ -13,8 +13,6 @@ const PedidosUser = () => {
     setDataLocal(getDataStorage("userOnValidateScesOnline"));
   }, []);
 
-  console.log(pedidos);
-  console.log(dataLocal);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -22,7 +20,6 @@ const PedidosUser = () => {
           `${API_HOST}/user/listar-pedidos/${dataLocal.id}`
         );
         if (response.status === 200) {
-          console.log(response.data);
           setPedidos(response.data.pedidos);
         }
       } catch (e) {
@@ -30,11 +27,11 @@ const PedidosUser = () => {
       }
     };
 
-    const email = dataLocal.email;
+    const email = dataLocal?.email;
     if (email) {
       fetchData();
     }
-  }, [dataLocal.email]);
+  }, [dataLocal?.email]);
 
   return (
     <div className="body-deatils">
@@ -77,7 +74,7 @@ const PedidosUser = () => {
             </div>
           ))
         ) : (
-          <LoaderComponent />
+          <p>No tienes pedidos</p>
         )}
       </div>
     </div>

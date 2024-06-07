@@ -120,7 +120,7 @@ const Informacion = ({ setShow }) => {
         <Button variant="primary" onClick={handleClose}>
           Cambiar el metodo de pago
         </Button>
-        <Button variant="success" onClick={finnalyBuy} disabled={loading}>
+        <Button variant="secondary" onClick={finnalyBuy} disabled={loading}>
           {loading ? (
             <Spinner animation="border" role="status" size="sm" />
           ) : (
