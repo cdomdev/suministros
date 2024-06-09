@@ -1,6 +1,6 @@
 import { IconNavigateCar } from "../../utils";
 import Results from "../../components/user/sections/buscador/Results";
-import { BtnWhatsapp } from "../../utils/ComponentsUtils";
+import { BtnWhatsapp } from "../../utils";
 
 const BuscadorPage = () => {
   return (
@@ -13,7 +13,7 @@ const BuscadorPage = () => {
           </div>
         </div>
         <IconNavigateCar />
-        <BtnWhatsapp/>
+        <BtnWhatsapp />
       </section>
     </>
   );

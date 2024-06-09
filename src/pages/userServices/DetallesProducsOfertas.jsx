@@ -10,9 +10,10 @@ import {
   IconNavigateCar,
   NotificationToast,
   getDataStorage,
+  BtnWhatsapp,
+  LoaderComponent,
 } from "../../utils";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { BtnWhatsapp, LoaderComponent } from "../../utils/ComponentsUtils";
 import { calcalateDiscount, formateValue } from "../../utils/funtionsProducts";
 
 const DetalleProductsOfertas = () => {

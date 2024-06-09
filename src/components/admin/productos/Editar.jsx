@@ -12,7 +12,7 @@ export const Editar = ({ producto, setListadoState }) => {
     e.preventDefault();
 
     const target = e.target;
-    const productosAlmacenados = getDataStorage('productos');
+    const productosAlmacenados = getDataStorage("productos");
     const indice = productosAlmacenados
       ? productosAlmacenados.findIndex((p) => p.id === id)
       : -1;
@@ -28,10 +28,13 @@ export const Editar = ({ producto, setListadoState }) => {
       referencia: target.referencia.value || producto.referencia,
       categoria: producto.categoria,
       categoria_id: producto.categoria_id,
-      categoriaPadre: producto.categoriaPadre,
-      categoriaPadre_id: producto.categoriaPadre_id,
+      subcategoria: producto.subcategoria,
+      subcategoria_id: producto.subcategoria_id,
     };
+    console.log(producto);
 
+    console.log(productosAlmacenados);
+    console.log(productoActualizado);
     productosAlmacenados[indice] = productoActualizado;
     localStorage.setItem("productos", JSON.stringify(productosAlmacenados));
     setListadoState((prevListado) =>

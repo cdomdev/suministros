@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { Formik, Field, ErrorMessage } from "formik";
-import { NotificationToast } from "../../../../utils";
-import { API_HOST } from "../../../../config/config";
+import { NotificationToast } from "../../../../../utils";
+import { API_HOST } from "../../../../../config/config";
 import { Form, Button, Spinner } from "react-bootstrap";
-import { useNotification } from "../../../../hook";
-import { SuccessRequest } from "./SuccessRequest";
+import { useNotification } from "../../../../../hook";
+import SuccessRequest from "./SuccessRequest";
 import axios from "axios";
-import { BtnWhatsapp } from "../../../../utils/ComponentsUtils";
+import { BtnWhatsapp } from "../../../../../utils/ComponentsUtils";
 
-export const RecoverForm = () => {
+const RecoverForm = () => {
   const [user, setUser] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [data, setData] = useState([]);
@@ -50,8 +50,8 @@ export const RecoverForm = () => {
             <h1>Solicitud para restablecer contraseña</h1>
             <p>
               Por motivos de seguridad, tu clave olvidada debe ser reemplazada
-              por una nueva. <br /> Ingresa el mail que
-              registraste en suministros
+              por una nueva. <br /> Ingresa el mail que registraste en
+              suministros
             </p>
             <Formik
               initialValues={{
@@ -104,7 +104,9 @@ export const RecoverForm = () => {
           </>
         )}
       </div>
-      <BtnWhatsapp/>
+      <BtnWhatsapp />
     </div>
   );
 };
+
+export default RecoverForm;

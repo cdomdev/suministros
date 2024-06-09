@@ -6,7 +6,7 @@ import { Actualizar } from "./Actualizar";
 import Layout from "../layout/Layout";
 import { Filtros } from "./Filtros";
 import { NotificationToast } from "../../../utils";
-import { LoaderComponent } from "../../../utils/ComponentsUtils";
+import { LoaderComponent } from "../../../utils";
 import { API_HOST } from "../../../config/config";
 import { formateValue } from "../../../utils/funtionsProducts";
 

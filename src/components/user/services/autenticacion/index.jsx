@@ -1,6 +1,8 @@
-import { lazy } from 'react'
+import { lazy } from "react";
 
-export const Login = lazy(() =>import('./Login'))
-export const LoginModal = lazy(() =>import('./LoginModal'))
-export const Register = lazy(() =>import('./Register'))
-export const GoogleLogin = lazy(() =>import('./Google/GoogleLogin'))
+export const GoogleLogin = lazy(() => import("./Google/GoogleLogin"));
+export const RecoverForm = lazy(() => import("./passwordRecovery/RecoverForm"));
+export const ResetSucess = lazy(() => import("./passwordRecovery/ResetSucces"));
+export const SucessRequest = lazy(() =>
+  import("./passwordRecovery/SuccessRequest")
+);

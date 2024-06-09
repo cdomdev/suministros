@@ -1,6 +1,5 @@
 import { CardSubcategorias } from "../../components/user/sections/cards";
-import { IconNavigateCar, Migajas } from "../../utils";
-import { BtnWhatsapp } from "../../utils/ComponentsUtils";
+import { IconNavigateCar, Migajas, BtnWhatsapp } from "../../utils";
 
 const Limpiadores = () => {
   return (
@@ -35,7 +34,7 @@ const Limpiadores = () => {
         </div>
 
         <IconNavigateCar />
-        <BtnWhatsapp/>
+        <BtnWhatsapp />
       </section>
     </>
   );

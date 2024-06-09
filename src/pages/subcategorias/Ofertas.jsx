@@ -1,6 +1,6 @@
 import { CardsOfertas } from "../../components/user/sections/cards";
 import { Migajas, IconNavigateCar } from "../../utils";
-import { BtnWhatsapp } from "../../utils/ComponentsUtils";
+import { BtnWhatsapp } from "../../utils";
 
 const Ofertas = () => {
   return (

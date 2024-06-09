@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Modal } from "react-bootstrap";
-import { Login, Register } from "./";
+import Login from "./Login";
+import Register from "./Register";
 import { Link, useLocation } from "react-router-dom";
 
 const LoginModal = ({ setIsLoggedIn, controlComponent }) => {
@@ -50,8 +51,8 @@ const LoginModal = ({ setIsLoggedIn, controlComponent }) => {
             setIsLoggedIn={setIsLoggedIn}
             handleLoginSuccess={handleLoginSuccess}
           />
-          <span className="btn-alter-modal" >
-            ¿Ya tienes una cuanta? 
+          <span className="btn-alter-modal">
+            ¿Ya tienes una cuanta?
             <Link onClick={handleShowLoginModal}>¡Inica sesion!</Link>
           </span>
         </>

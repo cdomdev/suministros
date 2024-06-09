@@ -68,7 +68,7 @@ p {
     margin: 0 auto;
     display: flex;
     height: auto;
-    margin-top: -8px;
+    margin-top: -9.5px;
    
     .carousel-image {
         object-fit: unset;
@@ -76,41 +76,6 @@ p {
         object-position: center;
         overflow: hidden;
         height: 450px;
-    }
-
-    .text-carrusel {
-        left: -250px;
-        top: 25%;
-        justify-content: left;
-        flex-direction: column;
-        align-items: center;
-        display: flex;
-
-        h4 {
-            color: #07224e;
-            font-weight: bold;
-            font-size: 20px;
-        }
-
-        h5 {
-            text-align: left;
-            font-family: $contenido2;
-            font-weight: bold;
-            font-size: 14px;
-            text-wrap: wrap;
-            color: #243a5e;
-            font-weight: bold;
-        }
-
-        a {
-            color: white;
-            background-color: #0d6efd;
-            width: 15%;
-            padding: 7px 0;
-            border-radius: 5px;
-            margin: 1em 0;
-        }
-
     }
 
 }

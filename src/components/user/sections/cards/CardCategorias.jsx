@@ -132,6 +132,7 @@ const CardCategorias = ({ rutaCategoria, nombreCategoria }) => {
                   effect="blur"
                   alt="not found"
                   className="img-products"
+                  loading="lazy"
                 />
                 <div className="contenido-card">
                   <li className="title">{producto.title}</li>

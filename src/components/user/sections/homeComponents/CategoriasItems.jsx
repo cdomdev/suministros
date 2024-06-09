@@ -9,7 +9,13 @@ export const CategoriasCards = () => {
   return (
     <>
       <Link to={"/suministros/baños"}>
-        <LazyLoadImage effect="blur" src={baños} alt="baños" className="img" />
+        <LazyLoadImage
+          effect="blur"
+          loading="lazy"
+          src={baños}
+          alt="baños"
+          className="img"
+        />
         <span>Baños</span>
       </Link>
       <Link to={"/suministros/cocinas"}>
@@ -18,15 +24,28 @@ export const CategoriasCards = () => {
           src={cocinas}
           alt="cocinas"
           className="img"
+          loading="lazy"
         />
         <span>cocinas</span>
       </Link>
       <Link to={"/suministros/construccionyremodelacion"}>
-        <LazyLoadImage effect="blur" src={constr} alt="const" className="img" />
+        <LazyLoadImage
+          effect="blur"
+          src={constr}
+          alt="const"
+          loading="lazy"
+          className="img"
+        />
         <span>construccion y remodelacion</span>
       </Link>
       <Link to={"/suministros/pisosyparedes"}>
-        <LazyLoadImage effect="blur" src={pisos} alt="pisos" className="img" />
+        <LazyLoadImage
+          effect="blur"
+          src={pisos}
+          alt="pisos"
+          className="img"
+          loading="lazy"
+        />
         <span>Pisos y paredes</span>
       </Link>
     </>

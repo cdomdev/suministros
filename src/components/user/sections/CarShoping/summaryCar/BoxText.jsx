@@ -5,7 +5,7 @@ import {
   BsCardChecklist,
 } from "../../../../../assets/icons/reactIcons";
 
-export const BoxText = () => {
+const BoxText = () => {
   return (
     <>
       <div className="contenedor-box-text">
@@ -28,7 +28,9 @@ export const BoxText = () => {
               gratis
             </p>
             <strong>
-              <Link to={'/suministros/costos-y-tiempos-de-envios'}>Consulte terminos en costos de envios</Link>
+              <Link to={"/suministros/costos-y-tiempos-de-envios"}>
+                Consulte terminos en costos de envios
+              </Link>
             </strong>
           </div>
         </div>
@@ -49,3 +51,5 @@ export const BoxText = () => {
     </>
   );
 };
+
+export default BoxText;

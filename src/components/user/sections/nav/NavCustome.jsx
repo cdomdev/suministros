@@ -1,8 +1,9 @@
 import { Outlet, NavLink, Link } from "react-router-dom";
+import { lazy } from "react";
 import { Container, Nav, Navbar, Offcanvas } from "react-bootstrap";
 import { ContenidoSubmenus } from "./ContenidoSubmenus";
-import { BoxIcons } from "./BoxIcons";
-import { Buscador } from "../buscador";
+import BoxIcons from "./BoxIcons";
+import Buscador from "../buscador/Buscador";
 import { useUser } from "../../../../hook";
 import LogoImg from "../../../../assets/images/logo.webp";
 
@@ -44,13 +45,13 @@ export const NavCustome = () => {
                 </Offcanvas.Header>
                 <Offcanvas.Body>
                   <Nav className=" flex-grow-1 pe-3 nav-list  align-items-center;">
-                      <ContenidoSubmenus />
-                      <NavLink
-                        to="/suministros/ofertas"
-                        className="nav-link-custom ofertas">
-                        OFERTAS
-                      </NavLink>
-              
+                    <ContenidoSubmenus />
+                    <NavLink
+                      to="/suministros/ofertas"
+                      className="nav-link-custom ofertas">
+                      OFERTAS
+                    </NavLink>
+
                     <Buscador />
                   </Nav>
                 </Offcanvas.Body>

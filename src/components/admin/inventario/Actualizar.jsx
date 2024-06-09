@@ -85,7 +85,8 @@ export const Actualizar = ({ producto, setProductos }) => {
       referenciaRef.current.value || producto.referencia;
 
     const updatedCategoria = selectedCategoria || producto.categoria_id;
-    const updatedSubcategoria = selectedSubCategoria || producto.subcategoria_id;
+    const updatedSubcategoria =
+      selectedSubCategoria || producto.subcategoria_id;
 
     //  nuevo objeto con la informacion el producto
     const productosActualizado = {
@@ -150,6 +151,7 @@ export const Actualizar = ({ producto, setProductos }) => {
             Actulizar informacion del producto
           </Modal.Title>
         </Modal.Header>
+        <hr />
         <NotificationToast text={"Inventario"} />
         <Modal.Body className="modal-body-update-inventory">
           <p className="text-modal-update-inventary">

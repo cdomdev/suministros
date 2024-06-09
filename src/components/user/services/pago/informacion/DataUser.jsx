@@ -8,7 +8,7 @@ import {
   getDataSesionStorega,
   getDataStorage,
 } from "../../../../../utils/getDataStorage";
-import { LoaderComponent } from "../../../../../utils/ComponentsUtils";
+import { LoaderComponent } from "../../../../../utils";
 import { calcularEnvio } from "../../../../../utils/funtionsProducts";
 import { formateValue } from "../../../../../utils/funtionsProducts";
 

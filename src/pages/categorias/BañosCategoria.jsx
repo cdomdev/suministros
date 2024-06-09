@@ -1,6 +1,5 @@
 import { CardCategorias } from "../../components/user/sections/cards";
-import { Migajas, IconNavigateCar } from "../../utils";
-import { BtnWhatsapp } from "../../utils/ComponentsUtils";
+import { Migajas, IconNavigateCar, BtnWhatsapp } from "../../utils";
 
 const BañosCategoria = () => {
   return (
@@ -15,7 +14,7 @@ const BañosCategoria = () => {
         </div>
       </div>
       <IconNavigateCar />
-      <BtnWhatsapp/>
+      <BtnWhatsapp />
     </section>
   );
 };

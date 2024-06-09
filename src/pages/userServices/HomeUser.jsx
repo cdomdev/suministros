@@ -2,7 +2,7 @@ import { Carrusel } from "../../components/user/sections/Carrusel/Carrusel";
 import { CategoriasCards } from "../../components/user/sections/homeComponents/CategoriasItems";
 import { IconNavigateCar } from "../../utils";
 import "../../styles/App.css";
-import { BtnWhatsapp } from "../../utils/ComponentsUtils";
+import { BtnWhatsapp } from "../../utils";
 
 export const HomeUser = () => {
   return (

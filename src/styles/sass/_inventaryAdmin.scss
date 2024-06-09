@@ -184,6 +184,11 @@ $color-complementario: #f2efe1;
 
 
     }
+    .modal-footer{
+        .btn{
+            width: 100%;
+        }
+    }
 
 }
 
@@ -263,6 +268,11 @@ $color-complementario: #f2efe1;
         line-height: 19px;
         text-wrap: wrap;
         margin: 0;
+    }
+    .modal-footer{
+        .btn{
+            width: 100%;
+        }
     }
 
     strong {

@@ -54,6 +54,7 @@ const CardsOfertas = () => {
                     src={producto.image}
                     alt="img"
                     className="image"
+                    loading="lazy"
                   />
                   <li className="name">{producto.title}</li>
 

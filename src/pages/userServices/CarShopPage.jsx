@@ -1,6 +1,6 @@
 import { useCarShop } from "../../hook";
 import { Summary, InfoCar } from "../../components/user/sections/CarShoping";
-import { BtnWhatsapp, Steps } from "../../utils/ComponentsUtils";
+import { BtnWhatsapp, Steps } from "../../utils";
 
 const CarShopPage = () => {
   const { activeStep } = useCarShop();
@@ -30,7 +30,7 @@ const CarShopPage = () => {
             </div>
           </div>
         </section>
-        <BtnWhatsapp/>
+        <BtnWhatsapp />
       </div>
     </>
   );

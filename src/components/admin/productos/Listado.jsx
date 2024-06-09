@@ -1,10 +1,9 @@
 import React, { useEffect } from "react";
-import { Button } from "react-bootstrap";
 import { Editar } from "./Editar";
 import { Delete } from "./Delete";
 import { getDataStorage } from "../../../utils/getDataStorage";
-import { NotificationToast } from "../../../utils/ComponentsUtils";
-import {formateValue} from '../../../utils/funtionsProducts'
+import { NotificationToast } from "../../../utils";
+import { formateValue } from "../../../utils/funtionsProducts";
 
 export const Listado = ({ listadoState, setListadoState }) => {
   useEffect(() => {
@@ -48,7 +47,7 @@ export const Listado = ({ listadoState, setListadoState }) => {
                   </span>
                   <span>
                     <strong>Subcategoria: </strong>
-                    {producto.subCategoria}
+                    {producto.subcategoria}
                   </span>
                   <strong>Descripción:</strong>
                   <p className="description">{producto.description}</p>

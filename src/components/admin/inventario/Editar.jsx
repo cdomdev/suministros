@@ -61,6 +61,7 @@ export const Editar = ({ producto, currentStock, setProductos }) => {
         <Modal.Header closeButton>
           <Modal.Title>Modificar cantidad en inventario</Modal.Title>
         </Modal.Header>
+        <hr />
         <Modal.Body className="modal-body-editar-inventary">
           <p className="text-modal-inventary">
             En esta seccion podra modificar la cantidad en inventario del
@@ -76,11 +77,11 @@ export const Editar = ({ producto, currentStock, setProductos }) => {
           />
         </Modal.Body>
         <Modal.Footer style={{ border: "none" }}>
-          <Button variant="secondary" onClick={() => setShowModal(false)}>
-            Cancelar
-          </Button>
           <Button variant="primary" onClick={handleSaveChanges}>
             Guardar cambios
+          </Button>
+          <Button variant="secondary" onClick={() => setShowModal(false)}>
+            Cancelar
           </Button>
         </Modal.Footer>
       </Modal>

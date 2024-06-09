@@ -20,8 +20,7 @@ const CardSubcategorias = ({
   const [marcasSeleccionada, setMarcasSeleccionada] = useState([]);
   const [precioSeleccionado, setPrecioSeleccionado] = useState("");
 
-
-  const encodedSubcategorias = encodeURIComponent(RutaSubCategoria)
+  const encodedSubcategorias = encodeURIComponent(RutaSubCategoria);
 
   const navigate = useNavigate();
 
@@ -155,6 +154,7 @@ const CardSubcategorias = ({
                   src={producto.image}
                   alt="not found"
                   className="img-products"
+                  loading="lazy"
                 />
                 <div className="contenido-card">
                   <li className="title">{producto.title}</li>
@@ -164,11 +164,9 @@ const CardSubcategorias = ({
                     <span className="unidad"> * {unidad}</span>
                   </li>
                 </div>
-                {/* <Link to={`/suministros/details/${producto.nombre}`}> */}
                 <Button onClick={() => navigateDetail(producto)}>
                   Ver producto
                 </Button>
-                {/* </Link> */}
               </ul>
             ))}
           </>

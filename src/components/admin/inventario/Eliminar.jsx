@@ -54,6 +54,7 @@ export const Elminar = ({ producto, setProductos }) => {
             ¡Esta apunto de eliminar un producto!
           </Modal.Title>
         </Modal.Header>
+        <hr />
         <Modal.Body className="modal-body-delete-inventary">
           <CiWarning className="icon-warning-modal-delete" />
           <span>Se eliminara la cantidad total en el inventario.</span>
@@ -65,14 +66,14 @@ export const Elminar = ({ producto, setProductos }) => {
           </p>
         </Modal.Body>
         <Modal.Footer style={{ border: "none" }}>
+          <Button variant="danger" onClick={handleDelete}>
+            Elimininar producto
+          </Button>
           <Button
             variant="secondary"
-            className="mt-3"
+            className="mt-1"
             onClick={() => setShowModal(false)}>
             Cancelar
-          </Button>
-          <Button variant="danger" className="mt-3" onClick={handleDelete}>
-            Elimininar producto
           </Button>
         </Modal.Footer>
       </Modal>

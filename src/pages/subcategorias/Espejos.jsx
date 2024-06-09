@@ -1,6 +1,5 @@
 import { CardSubcategorias } from "../../components/user/sections/cards";
-import { Migajas, IconNavigateCar } from "../../utils";
-import { BtnWhatsapp } from "../../utils/ComponentsUtils";
+import { Migajas, IconNavigateCar, BtnWhatsapp } from "../../utils";
 
 const Espejos = () => {
   return (
@@ -29,7 +28,7 @@ const Espejos = () => {
         </div>
       </div>
       <IconNavigateCar />
-      <BtnWhatsapp/>
+      <BtnWhatsapp />
     </section>
   );
 };

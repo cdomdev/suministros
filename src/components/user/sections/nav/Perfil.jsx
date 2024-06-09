@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from "react";
-import { UserProfile } from "./perfilUsuario/UserProfile";
-import { LoginModal } from "../../services/autenticacion";
+import React, { lazy, useEffect, useState } from "react";
+const UserProfile = lazy(() => import("./perfilUsuario/UserProfile"));
 import Avatar from "@mui/material/Avatar";
 import { isAuthenticated } from "../../../../helpers/isAuthenticated";
 import EventEmitter from "../../../../hook/EventEmitter";
+const LoginModal = lazy(() =>
+  import("../../services/autenticacion/LoginModal")
+);
 
-export const Perfil = () => {
+const Perfil = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(isAuthenticated());
 
   useEffect(() => {
@@ -53,3 +55,4 @@ export const Perfil = () => {
     </>
   );
 };
+export default Perfil;

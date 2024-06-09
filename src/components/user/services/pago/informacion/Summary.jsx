@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useCarShop } from "../../../../../hook";
-import { LoaderComponent } from "../../../../../utils/ComponentsUtils";
+import { LoaderComponent } from "../../../../../utils";
 import { getDataSesionStorega } from "../../../../../utils/getDataStorage";
 import { calcularEnvio } from "../../../../../utils/funtionsProducts";
 import { formateValue } from "../../../../../utils/funtionsProducts";

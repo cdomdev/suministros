@@ -34,17 +34,17 @@ import {
 } from "../pages";
 
 const NotExisting = lazy(() => import("../components/admin/404-page/404"));
-import { LoginModal } from "../components/user/services/autenticacion";
+import LoginModal from "../components/user/services/autenticacion/LoginModal";
 import { NavCustome } from "../components/user/sections/nav/NavCustome";
 import {
   DataUserUpdate,
   PedidosUser,
   Profile,
 } from "../components/user/sections/pedidos/RutasPedido";
-import { LoaderPage } from "../utils/ComponentsUtils";
+import { LoaderPage } from "../utils";
 
 import { ProbarComponentes } from "../pages/ProbarComponentes";
-import { RecoverForm } from "../components/user/sections/passwordRecovery/RecoverForm";
+import { RecoverForm } from "../components/user/services/autenticacion";
 import { Footer } from "../components/user/sections/footer/Footer";
 
 export const DashboardUser = () => {

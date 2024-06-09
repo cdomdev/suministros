@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { isAuthenticated } from "../../../../../helpers/isAuthenticated";
-import { LoginModal } from "../../../services/autenticacion";
+import LoginModal from "../../../services/autenticacion/LoginModal";
 import { Button, Modal } from "react-bootstrap";
 import { useNavigate } from "react-router";
 import { useCarShop } from "../../../../../hook";
 
-export const BtnContinue = ({ setIsLoggedIn, isLoggedIn }) => {
+const BtnContinue = ({ setIsLoggedIn, isLoggedIn }) => {
   const [show, setShow] = useState(false);
   const { setStep } = useCarShop();
   const [continueAsGuest, setContinueAsGuest] = useState(false);
@@ -44,6 +44,7 @@ export const BtnContinue = ({ setIsLoggedIn, isLoggedIn }) => {
         keyboard={false}>
         <div>
           <Modal.Header closeButton></Modal.Header>
+          <hr />
           <div className="content-use">
             <div className="outh">
               <p>
@@ -78,3 +79,5 @@ export const BtnContinue = ({ setIsLoggedIn, isLoggedIn }) => {
     </>
   );
 };
+
+export default BtnContinue;

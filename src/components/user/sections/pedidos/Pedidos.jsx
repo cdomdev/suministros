@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { isAuthenticated } from "../../../../helpers/isAuthenticated";
 import { Modal, Button } from "react-bootstrap";
-import { LoginModal } from "../../services/autenticacion";
+import LoginModal from "../../services/autenticacion/LoginModal";
 import { BsBoxSeam } from "../../../../assets/icons/reactIcons";
 
-export const Pedidos = () => {
+const Pedidos = () => {
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(isAuthenticated());
   const [showPedidos, setShowPedidos] = useState(false);
@@ -66,3 +66,5 @@ export const Pedidos = () => {
     </div>
   );
 };
+
+export default Pedidos;

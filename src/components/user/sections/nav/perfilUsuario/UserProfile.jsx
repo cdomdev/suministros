@@ -6,7 +6,7 @@ import Avatar from "@mui/material/Avatar";
 import { useUser } from "../../../../../hook";
 import { getDataStorage } from "../../../../../utils/getDataStorage";
 
-export const UserProfile = ({ setIsLoggedIn }) => {
+const UserProfile = ({ setIsLoggedIn }) => {
   const navigate = useNavigate();
   const [data, setData] = useState({});
   const { logout } = useUser();
@@ -77,3 +77,5 @@ export const UserProfile = ({ setIsLoggedIn }) => {
     </OverlayTrigger>
   );
 };
+
+export default UserProfile;

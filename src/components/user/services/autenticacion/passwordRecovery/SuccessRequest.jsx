@@ -1,13 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export const SuccessRequest = ({ data }) => {
-
-
+const SuccessRequest = ({ data }) => {
   if (!data || data.length === 0) {
     return <div className="container-request">Cargando...</div>;
   }
-
 
   return (
     <div className="container-request">
@@ -19,7 +16,9 @@ export const SuccessRequest = ({ data }) => {
           `}
       </p>
 
-      <Link to={'/suministros/home'}>Volver a la pagina de inicio</Link>
+      <Link to={"/suministros/home"}>Volver a la pagina de inicio</Link>
     </div>
   );
 };
+
+export default SuccessRequest;

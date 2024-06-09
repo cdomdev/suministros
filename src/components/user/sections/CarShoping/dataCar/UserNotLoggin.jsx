@@ -1,6 +1,6 @@
 import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router";
-import { LoginModal } from "../../../services/autenticacion";
+import LoginModal from "../../../services/autenticacion/LoginModal";
 
 export const UserNotLoggin = ({ setIsLoggedIn }) => {
   const navigate = useNavigate();

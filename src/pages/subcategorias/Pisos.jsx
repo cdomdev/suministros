@@ -1,12 +1,14 @@
 import { CardSubcategorias } from "../../components/user/sections/cards";
-import { Migajas, IconNavigateCar,  } from "../../utils";
-import { BtnWhatsapp } from "../../utils/ComponentsUtils";
+import { Migajas, IconNavigateCar, BtnWhatsapp } from "../../utils";
 
 const Pisos = () => {
   return (
     <section>
       <div className="migajas">
-        <Migajas categoriaRuta={"Pisos y paredes"} subcategoriaRuta={"Pisos ceramicos"} />
+        <Migajas
+          categoriaRuta={"Pisos y paredes"}
+          subcategoriaRuta={"Pisos ceramicos"}
+        />
       </div>
       <div className="container-productos">
         <div className="contenedor-grid-products">
@@ -29,7 +31,7 @@ const Pisos = () => {
         </div>
       </div>
       <IconNavigateCar />
-      <BtnWhatsapp/>
+      <BtnWhatsapp />
     </section>
   );
 };

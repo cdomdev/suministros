@@ -282,13 +282,14 @@ $color-complementario: #f2efe1;
 //     } 
 // }
 
-// /* Estilos para dispositivos pequeños */
-// @media (max-width: 768px) {
-//     .layout-crear-productos .content  .container-card .productos-cards{
-//         width: 10rem;
-
-//     }
-// }
+/* Estilos para dispositivos pequeños */
+@media (max-width: 768px) {
+    .layout-crear-productos {
+        flex-direction: column !important;
+        justify-content: center;
+        align-items: center;
+    }
+}
 
 // /* Estilos para dispositivos medianos */
 // @media (min-width: 769px) and (max-width: 1024px) {

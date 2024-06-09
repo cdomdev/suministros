@@ -5,7 +5,7 @@ import { PiShoppingCartSimpleThin } from "../../../../../assets/icons/reactIcons
 
 // icono con navegacion al carrito
 // 🎉
-export const IconCar = React.forwardRef(() => {
+const IconCar = React.forwardRef(() => {
   const [cartItemCount, setCartItemCount] = useState(0);
   localStorage.setItem("count", cartItemCount);
   const targetRef = useRef(null);
@@ -35,3 +35,5 @@ export const IconCar = React.forwardRef(() => {
     </>
   );
 });
+
+export default IconCar;

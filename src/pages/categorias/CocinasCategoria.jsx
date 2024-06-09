@@ -1,6 +1,5 @@
-import { Migajas, IconNavigateCar } from "../../utils";
+import { Migajas, IconNavigateCar, BtnWhatsapp } from "../../utils";
 import { CardCategorias } from "../../components/user/sections/cards";
-import { BtnWhatsapp } from "../../utils/ComponentsUtils";
 
 const CocinasCategoria = () => {
   return (
@@ -14,11 +13,11 @@ const CocinasCategoria = () => {
           <CardCategorias
             rutaCategoria={"cocinas"}
             nombreCategoria={"Cocinas"}
-          />  
+          />
         </div>
       </div>
       <IconNavigateCar />
-      <BtnWhatsapp/>
+      <BtnWhatsapp />
     </section>
   );
 };

@@ -3,8 +3,8 @@ import { useCarShop } from "../../../../../hook";
 import { isAuthenticated } from "../../../../../helpers/isAuthenticated";
 import { useNavigate } from "react-router";
 import { Button } from "react-bootstrap";
-import { BoxText } from "./BoxText";
-import { BtnContinue } from "./BtnContinue";
+import { BoxText } from "./";
+import { BtnContinue } from "./";
 import { formateValue } from "../../../../../utils/funtionsProducts";
 
 export const Summary = () => {
@@ -53,7 +53,7 @@ export const Summary = () => {
           <div className="cont-btn">
             {isLoggedIn ? (
               <Button
-                variant="success"
+                variant="primary"
                 onClick={handleContinue}
                 style={{ textTransform: "uppercase", fontSize: "14px" }}>
                 Continuar

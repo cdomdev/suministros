@@ -1,6 +1,5 @@
 import { CardSubcategorias } from "../../components/user/sections/cards";
-import { Migajas, IconNavigateCar } from "../../utils";
-import { BtnWhatsapp } from "../../utils/ComponentsUtils";
+import { Migajas, IconNavigateCar, BtnWhatsapp } from "../../utils";
 
 const Lavaplatos = () => {
   return (
@@ -30,7 +29,7 @@ const Lavaplatos = () => {
         </div>
       </div>
       <IconNavigateCar />
-      <BtnWhatsapp/>
+      <BtnWhatsapp />
     </section>
   );
 };

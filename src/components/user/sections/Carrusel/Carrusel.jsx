@@ -14,6 +14,7 @@ export const Carrusel = () => {
               className="d-block w-100 carousel-image "
               src={img1}
               alt="First slide"
+              loading="lazy"
             />
           </Link>
         </Carousel.Item>
@@ -23,6 +24,7 @@ export const Carrusel = () => {
               className="d-block w-100 carousel-image"
               src={img2}
               alt="Second slide"
+              loading="lazy"
             />
           </Link>
         </Carousel.Item>

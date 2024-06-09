@@ -77,7 +77,6 @@ export const Crear = ({ setListadoState }) => {
     setSelectedSubCategoria(event.target.value);
   };
 
-
   const getFormValues = async (e) => {
     e.preventDefault();
 
@@ -144,10 +143,10 @@ export const Crear = ({ setListadoState }) => {
           cantidad: cantidad,
           referencia: referencia,
           image: imageUrls[0],
-          categoria_id:  selectedCategoria,
+          categoria_id: selectedCategoria,
           subcategoria_id: selectedSubCategoria,
           categoria: selectedCategoryName,
-          subCategoria: selectedSubCategoryName,
+          subcategoria: selectedSubCategoryName,
         };
 
         setListadoState((prevListado) => {
@@ -157,7 +156,6 @@ export const Crear = ({ setListadoState }) => {
           localStorage.setItem("productos", JSON.stringify(newListado));
           return newListado;
         });
-
 
         setProductState({
           title: "",

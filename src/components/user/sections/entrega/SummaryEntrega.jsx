@@ -1,4 +1,4 @@
-import { BoxText } from "../CarShoping";
+import BoxText from "../CarShoping/summaryCar/BoxText";
 import { Button } from "react-bootstrap";
 import { useCarShop, useNotification } from "../../../../hook";
 import { NotificationToast, getDataStorage } from "../../../../utils";

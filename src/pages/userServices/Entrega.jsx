@@ -1,5 +1,5 @@
 import { useCarShop } from "../../hook";
-import { BtnWhatsapp, Steps } from "../../utils/ComponentsUtils";
+import { BtnWhatsapp, Steps } from "../../utils";
 import {
   InfoCarEntrega,
   SummaryEntrega,
@@ -23,7 +23,7 @@ const Entrega = () => {
             </div>
           </div>
         </section>
-        <BtnWhatsapp/>
+        <BtnWhatsapp />
       </div>
     </>
   );

@@ -6,7 +6,7 @@ import {
   AiFillInstagram,
   FaXTwitter,
 } from "../../assets/icons/reactIcons";
-import { BtnWhatsapp } from "../../utils/ComponentsUtils";
+import { BtnWhatsapp } from "../../utils";
 
 const Nosotros = () => {
   return (
@@ -81,7 +81,7 @@ const Nosotros = () => {
             </div>
           </div>
         </Container>
-        <BtnWhatsapp/>
+        <BtnWhatsapp />
       </section>
     </>
   );

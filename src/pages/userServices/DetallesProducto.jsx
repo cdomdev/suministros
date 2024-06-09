@@ -10,9 +10,9 @@ import {
   IconNavigateCar,
   NotificationToast,
   getDataStorage,
+  BtnWhatsapp,
 } from "../../utils";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { BtnWhatsapp } from "../../utils/ComponentsUtils";
 import { formateValue } from "../../utils/funtionsProducts";
 
 const DetallesProducto = () => {
