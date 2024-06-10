@@ -43,7 +43,6 @@ import {
 } from "../components/user/sections/pedidos/RutasPedido";
 import { LoaderPage } from "../utils";
 
-import { ProbarComponentes } from "../pages/ProbarComponentes";
 import { RecoverForm } from "../components/user/services/autenticacion";
 import { Footer } from "../components/user/sections/footer/Footer";
 
@@ -152,8 +151,6 @@ export const DashboardUser = () => {
             path="/purchaseProcessCompleted/:detalles"
             element={<Ticket />}
           />
-
-          <Route path="/pruebas" element={<ProbarComponentes />} />
 
           {/* rutas anidadas */}
           <Route path="/suministros/user/" element={<PedidosPage />}>

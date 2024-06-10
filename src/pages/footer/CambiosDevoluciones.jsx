@@ -1,12 +1,12 @@
 import React from "react";
-import { BtnWhatsapp } from "../../utils/ComponentsUtils";
+import { BtnWhatsapp } from "../../utils";
 
 const CambiosDevoluciones = () => {
   return (
     <div className="container d-flex">
       <div className="page-info col-12">
         <section className="col-12 mb-5">
-          <h1 >Cambios y Devoluciones</h1>
+          <h1>Cambios y Devoluciones</h1>
           <h2>Condiciones Generales</h2>
           <h3>Estado del Producto</h3>
           <ul>
@@ -35,7 +35,8 @@ const CambiosDevoluciones = () => {
           <ul>
             <li>
               Si los productos no han sido recibidos, comuníquese a la línea de
-              atención en Bogotá al  601 560 5000 o a nivel nacional al 3208132305.
+              atención en Bogotá al 601 560 5000 o a nivel nacional al
+              3208132305.
             </li>
           </ul>
         </section>
@@ -64,7 +65,7 @@ const CambiosDevoluciones = () => {
           <ol>
             <li>
               Comuníquese a la línea de atención al cliente 3208132305. o en
-              Bogotá al  601 560 5000.
+              Bogotá al 601 560 5000.
             </li>
             <li>Revisaremos el estado de la entrega.</li>
             <li>
@@ -74,7 +75,7 @@ const CambiosDevoluciones = () => {
           </ol>
         </section>
       </div>
-      <BtnWhatsapp/>
+      <BtnWhatsapp />
     </div>
   );
 };

@@ -18,6 +18,7 @@ export const HomeUser = () => {
         <h2>Visita nuestras categorias</h2>
         <div className="card-categorias">
           <CategoriasCards />
+          {/* <Prueba /> */}
         </div>
         <div>
           <p>

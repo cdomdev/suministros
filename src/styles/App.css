@@ -1349,13 +1349,6 @@
   margin: 0 20px 10px;
   line-height: 19px;
   text-wrap: wrap;
-  margin: 0;
-}
-.modal-delete-inventary .modal-footer .btn {
-  width: 100%;
-}
-.modal-delete-inventary strong {
-  color: black;
 }
 
 .body-content {
@@ -3714,6 +3707,9 @@ section .details {
   justify-content: center;
   font-family: "Lato", sans-serif;
 }
+section .details h3 {
+  padding: 0 !important;
+}
 section .details .info {
   display: flex;
   flex-direction: column;
@@ -3863,6 +3859,10 @@ section .details .info .metodos-pago h4 {
   margin: 0;
   font-size: 18px;
   font-weight: bold;
+  width: 81%;
+  text-align: center;
+  padding: 7px 0px;
+  background-color: #ebebeb;
 }
 section .details .info .metodos-pago p {
   font-size: 12px;

@@ -48,6 +48,7 @@ export const CategoriasCards = () => {
         />
         <span>Pisos y paredes</span>
       </Link>
+      <div className="image_ref_cat_pisos_paredes"></div>
     </>
   );
 };

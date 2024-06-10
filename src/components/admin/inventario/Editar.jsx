@@ -85,6 +85,4 @@ export const Editar = ({ producto, currentStock, setProductos }) => {
           </Button>
         </Modal.Footer>
       </Modal>
-    </>
-  );
-};
+   

@@ -1,6 +1,6 @@
 import { lazy } from "react";
 
-export { DecodedJWT } from "./DecodedJWT";
+export const DecodedJWT = lazy(() => import("./DecodedJWT"));
 export const getTitleFronPath = lazy(() => import("./getTitleFronPath"));
 export { obtenerMarcasUnicas, obtenerSubCategorias } from "./funtionsProducts";
 export { SaveStorage } from "./SaveStorage";

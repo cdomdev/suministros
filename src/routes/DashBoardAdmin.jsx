@@ -15,6 +15,7 @@ import {
 } from "../components/admin";
 import GestionInventary from "../components/admin/inventario/GestionInventary";
 import { SidebarAdmin } from "../components/admin/Sidebar/SidebarAdmin";
+
 const DashboardAdmin = () => {
   const { isAdmin, setIsAdmin } = useUser();
 

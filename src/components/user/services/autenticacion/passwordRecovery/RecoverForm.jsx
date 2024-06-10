@@ -1,19 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Formik, Field, ErrorMessage } from "formik";
-import { NotificationToast } from "../../../../../utils";
+import {
+  NotificationToast,
+  BtnWhatsapp,
+  getDataStorage,
+} from "../../../../../utils";
 import { API_HOST } from "../../../../../config/config";
 import { Form, Button, Spinner } from "react-bootstrap";
 import { useNotification } from "../../../../../hook";
 import SuccessRequest from "./SuccessRequest";
 import axios from "axios";
-import { BtnWhatsapp } from "../../../../../utils/ComponentsUtils";
 
 const RecoverForm = () => {
   const [user, setUser] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [intentos, setIntentos] = useState(0);
   const [data, setData] = useState([]);
+  const [disable, setDisable] = useState(false);
 
   const { setShowToast, setToastMessage, setBgToast } = useNotification();
+
   const handleSubmit = async (values, { setSubmitting }) => {
     setIsLoading(true);
     try {
@@ -26,12 +32,25 @@ const RecoverForm = () => {
         setData(response.data);
       }
     } catch (error) {
-      setBgToast("danger");
-      setShowToast(true);
-      setUser(false);
-      setIsLoading(false);
-      setToastMessage("Algo salio mal, por favor intentalo de nuevo");
-      console.log(error);
+      if (error.response && error.response.status === 400) {
+        setBgToast("danger");
+        setShowToast(true);
+        setUser(false);
+        setIsLoading(false);
+        setIntentos(intentos + 1);
+        setToastMessage(
+          "El correo ingresado no existe, valide e intente nuevamente"
+        );
+      } else {
+        setBgToast("danger");
+        setShowToast(true);
+        setIntentos(intentos + 1);
+        validateIntentos(intentos);
+        setUser(false);
+        setIsLoading(false);
+        setToastMessage("Algo salio mal, por favor intentalo de nuevo");
+        console.log(error);
+      }
     } finally {
       setSubmitting(false);
       setIsLoading(false);
@@ -85,19 +104,23 @@ const RecoverForm = () => {
                       className="text-danger"
                     />
                   </Form.Group>
-                  <Button
-                    variant="primary"
-                    type="submit"
-                    className="btn-recovery-password"
-                    disabled={formik.isSubmitting}>
-                    {isLoading ? (
-                      <div className="spinner-container">
-                        <Spinner animation="border" role="status" size="sm" />
-                      </div>
-                    ) : (
-                      <>Restablecer contraseña</>
-                    )}
-                  </Button>
+                  {intentos && intentos >= 3 ? (
+                    <p>Tu limite de 3 intentos se acabo</p>
+                  ) : (
+                    <Button
+                      variant="primary"
+                      type="submit"
+                      className="btn-recovery-password"
+                      disabled={formik.isSubmitting}>
+                      {isLoading ? (
+                        <div className="spinner-container">
+                          <Spinner animation="border" role="status" size="sm" />
+                        </div>
+                      ) : (
+                        <>Restablecer contraseña</>
+                      )}
+                    </Button>
+                  )}
                 </Form>
               )}
             </Formik>
