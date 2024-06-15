@@ -57,7 +57,6 @@ const FormFormik = ({ formik }) => {
   return (
     <>
       <div className="modal-envio">
-        <h1>Datos para el envio</h1>
         <p>
           Complete el siguiente formulario con sus datos para el envio de su
           compra. Los campos marcados con (*) son obligatorios

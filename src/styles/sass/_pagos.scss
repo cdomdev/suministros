@@ -341,20 +341,21 @@ section{
     font-family: $otro;
     .modal-header{
         border: none;
+       
     }
     hr{
         margin: 10px 0 0 0;
     }
+    h4{
+        font-size: 19px;
+        text-align: center;
+        font-weight: bold;
+    }
+    
     .content-use{
-        
         .pago-content{
-            h4{
-                font-size: 19px;
-                text-align: center;
-                font-weight: bold;
-            }
             ul{
-                padding: 1em 5px;
+                padding: 10px 0px 5px 17px;
                 li{
                     line-height: 16px;
                     font-size: 14px;

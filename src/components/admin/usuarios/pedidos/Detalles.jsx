@@ -4,6 +4,7 @@ import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import { IoArrowUndoOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { StateOrders } from "./StateOrders";
+import { formateValue } from "../../../../utils/funtionsProducts";
 
 const Detalles = () => {
   const [orders, setOrders] = useState([]);
@@ -33,7 +34,7 @@ const Detalles = () => {
                     </span>
                   </Link>
                 </OverlayTrigger>
-                <h1 className="text-center m-3">Detalles de la compra</h1>
+                <h2 className="text-center m-3">Detalles de la compra</h2>
               </div>
               <div className="info-user">
                 <div>
@@ -41,16 +42,25 @@ const Detalles = () => {
                   <p>
                     {" "}
                     <strong>Método de Pago utilizado:</strong>{" "}
-                    {order.metodo_pago}
+                    {order.detalles_pedidos[0]?.metodo_pago}
                   </p>
 
                   <p>
                     {" "}
-                    <strong>Total pagado:</strong> {order.total}
+                    <strong>Total pagado:</strong> ${" "}
+                    {formateValue(
+                      parseInt(order.detalles_pedidos[0]?.total_pago)
+                    )}
                   </p>
                   <p>
                     {" "}
-                    <strong>Cantidad:</strong> {order.cantidad}
+                    <strong>Cantidad:</strong>{" "}
+                    {order.detalles_pedidos[0]?.cantidad} U.N
+                  </p>
+                  <p>
+                    {" "}
+                    <strong>Descuento:</strong>{" "}
+                    {order.detalles_pedidos[0]?.descuento}%
                   </p>
                 </div>
                 <div>

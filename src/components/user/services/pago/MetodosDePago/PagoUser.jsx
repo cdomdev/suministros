@@ -33,7 +33,9 @@ export const PagoUser = () => {
         keyboard={false}>
         <div>
           <Modal.Header closeButton></Modal.Header>
+          <h4>Tenga en cuenta lo siguiente</h4>
           <hr />
+          <h4></h4>
           <div className="content-use">
             <Informacion handleClose={handleClose} />
           </div>
@@ -57,17 +59,6 @@ const Informacion = ({ handleClose }) => {
   const destino = sessionData.destino;
   const costoEnvio = calcularEnvio(destino);
 
-  // Modificar el valor para incluir el costo de envío
-  const updatedCartItems = cartItems.map((item) => {
-    const valorOriginal = parseInt(item.valor, 10);
-    const valorConEnvio = valorOriginal + costoEnvio;
-
-    return {
-      ...item,
-      valor: valorConEnvio.toFixed(2),
-    };
-  });
-
   const combinedData = { ...sessionData, email: localStorageData.email };
 
   const finnalyBuy = async () => {
@@ -81,7 +72,8 @@ const Informacion = ({ handleClose }) => {
       }
       const response = await axios.post(`${API_HOST}/finish/buy/user`, {
         dataUser: combinedData,
-        dataProducts: updatedCartItems,
+        valorEnvio: costoEnvio,
+        dataProducts: cartItems,
         metodoPago: "contra-entrega",
       });
 
@@ -109,7 +101,6 @@ const Informacion = ({ handleClose }) => {
     <>
       <div className="pago-content">
         <NotificationToast text={"Pago"} />
-        <h4>Tenga en cuenta lo siguiente</h4>
         <ul>
           <li className="mb-2">
             En caso de no poder recibir la compra, por favor deje a alguien
@@ -121,15 +112,15 @@ const Informacion = ({ handleClose }) => {
           </li>
         </ul>
         <div className="buttons-content">
-          <Button variant="primary" onClick={handleClose}>
-            Cambiar el metodo de pago
-          </Button>
-          <Button variant="light" onClick={finnalyBuy} disabled={loading}>
+          <Button variant="primary" onClick={finnalyBuy} disabled={loading}>
             {loading ? (
               <Spinner animation="border" role="status" size="sm" />
             ) : (
               "Continuar"
             )}
+          </Button>
+          <Button variant="light" onClick={handleClose}>
+            Cambiar el metodo de pago
           </Button>
         </div>
       </div>

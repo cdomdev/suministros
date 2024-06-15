@@ -43,23 +43,26 @@ const Ticket = () => {
         </div>
         <div className="body">
           <h2>Este es un resumen de tu pedido</h2>
+          <div className="header-products">
+            <span>Productos</span>
+            <span>Detalles</span>
+          </div>
           {item && (
             <div className="productos">
               {item &&
                 item.map((producto) => (
                   <div className="unidad" key={producto.id}>
                     <div>
-                      <span>Productos:</span>
                       <ul>
                         <li>{producto.nombre}</li>
-                        <li>Catidad: {producto.cantidad}</li>
+                        <li>$: {formateValue(parseInt(producto.valor, 10))}</li>
                       </ul>
                     </div>
                     <div>
-                      <span>Precio</span>
                       <ul>
-                        <li>{formateValue(parseInt(producto.valor, 10))}</li>
+                        cantidad: <li>{producto.cantidad} U.N </li>
                       </ul>
+                      <hr />
                     </div>
                   </div>
                 ))}

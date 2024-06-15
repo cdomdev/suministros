@@ -57,6 +57,26 @@ $otro: 'Lato', sans-serif;
     h3 {
         font-weight: bold;
     }
+    .state{
+        background-color: #213C65;
+        padding: 7px 10px;
+        border-radius: 5px;
+        color: white;
+        text-transform: uppercase;
+        margin: 0;
+    }
+    .alistamiento{
+        background-color: red;
+        color: white;
+    }
+    .camino{
+        background-color: aquamarine;
+        color: white;
+    }
+    .entregado{
+        background-color: green;
+        color: white;
+    }
 
     .order {
         font-family: $contenidoFonts;
@@ -110,6 +130,7 @@ $otro: 'Lato', sans-serif;
 
             select {
                 padding: 8px;
+                border-radius: 5px;
             }
         }  
     }

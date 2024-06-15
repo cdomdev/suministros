@@ -8,6 +8,7 @@ import { NotificationToast } from "../../../../utils";
 import { API_HOST } from "../../../../config/config";
 import { GoogleLogin } from "./";
 import axios from "axios";
+import { Formik } from "formik";
 
 const Login = ({ handleCloseModal, handleLoginSuccess }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -112,7 +113,7 @@ const Login = ({ handleCloseModal, handleLoginSuccess }) => {
   return (
     <Form className="login-form" onSubmit={handleSubmit}>
       <NotificationToast text={"Inicio de sesion"} />
-      <img src={imgFav} className="fav-login" alt="Favicon" />
+      <img loading="lazy" src={imgFav} className="fav-login" alt="Favicon" />
       <h1>Bienvenido a suministros</h1>
       <GoogleLogin
         handleCloseModal={handleCloseModal}

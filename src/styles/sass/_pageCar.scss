@@ -516,9 +516,13 @@ $otro: 'Lato', sans-serif;
   hr{
     margin: 10px 0 0 0;
   }
+  h4{
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+  }
   .content-use {
-    padding: 15px;
-
+    padding: 10px 15px 15px 15px;
     label {
       margin: 0 0 0 5px;
     }

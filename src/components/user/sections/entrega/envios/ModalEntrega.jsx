@@ -24,6 +24,7 @@ export const ModalEntrega = ({
           <Modal.Header
             style={{ border: "none", padding: "10px 20px" }}
             closeButton></Modal.Header>
+          <h4>Datos para el envio</h4>
           <hr />
           <div className="content-use">{content}</div>
         </div>

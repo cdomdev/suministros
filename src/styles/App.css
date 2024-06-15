@@ -2572,8 +2572,13 @@ p {
 .modal-content hr {
   margin: 10px 0 0 0;
 }
+.modal-content h4 {
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+}
 .modal-content .content-use {
-  padding: 15px;
+  padding: 10px 15px 15px 15px;
 }
 .modal-content .content-use label {
   margin: 0 0 0 5px;
@@ -4022,13 +4027,13 @@ section .details .summary .box4 .send {
 .modal-content hr {
   margin: 10px 0 0 0;
 }
-.modal-content .content-use .pago-content h4 {
+.modal-content h4 {
   font-size: 19px;
   text-align: center;
   font-weight: bold;
 }
 .modal-content .content-use .pago-content ul {
-  padding: 1em 5px;
+  padding: 10px 0px 5px 17px;
 }
 .modal-content .content-use .pago-content ul li {
   line-height: 16px;
@@ -4189,23 +4194,44 @@ section .details .summary .box4 .send {
 .container .ticket .body hr {
   border-style: dashed;
 }
+.container .ticket .body .header-products {
+  justify-content: space-between;
+  display: flex;
+  padding: 0px 15px;
+}
+.container .ticket .body .header-products span {
+  font-weight: bold;
+}
 .container .ticket .body .productos {
   margin-top: 1em;
   font-family: "Lato", sans-serif;
 }
 .container .ticket .body .productos .unidad {
-  justify-content: space-between;
   padding: 0 20px;
-  display: flex;
   gap: 20px;
 }
 .container .ticket .body .productos .unidad ul {
   margin: 0;
+  justify-content: space-between;
+  gap: 20px;
   padding: 0;
+  display: flex;
+}
+.container .ticket .body .productos .unidad span {
+  font-weight: bold;
 }
 .container .ticket .body .productos .unidad li {
   list-style: none;
   font-size: 15px;
+  max-inline-size: 70%;
+}
+.container .ticket .body .productos .unidad .line {
+  width: 100%;
+  color: red;
+}
+.container .ticket .body .productos .unidad .cantidad {
+  color: #656565;
+  font-weight: 600;
 }
 .container .ticket .body .total {
   padding: 0 20px;
@@ -4230,9 +4256,11 @@ section .details .summary .box4 .send {
   display: flex;
   justify-content: space-between;
 }
+.container .ticket .body .datos-envio span {
+  font-weight: bold;
+}
 .container .ticket .body .datos-envio p {
   text-transform: capitalize;
-  font-weight: bold;
   font-size: 14px;
   text-align: left;
   margin: 0;
@@ -4260,6 +4288,7 @@ section .details .summary .box4 .send {
 
 @media (min-width: 300px) and (max-width: 499px) {
   .container .ticket {
+    margin-top: -4em !important;
     width: 100% !important;
   }
   .container .ticket h1 {
@@ -4284,8 +4313,8 @@ section .details .summary .box4 .send {
 /* Estilos para dispositivos pequeños */
 @media (max-width: 768px) {
   .container .ticket {
-    margin: -3em auto 2em auto;
-    width: 70%;
+    margin: -3em auto 1em auto;
+    width: 100%;
   }
   .container .ticket h2 {
     font-size: 15px !important;
@@ -4624,6 +4653,26 @@ section .details .summary .box4 .send {
 .contenedor-orders-user h3 {
   font-weight: bold;
 }
+.contenedor-orders-user .state {
+  background-color: #213C65;
+  padding: 7px 10px;
+  border-radius: 5px;
+  color: white;
+  text-transform: uppercase;
+  margin: 0;
+}
+.contenedor-orders-user .alistamiento {
+  background-color: red;
+  color: white;
+}
+.contenedor-orders-user .camino {
+  background-color: aquamarine;
+  color: white;
+}
+.contenedor-orders-user .entregado {
+  background-color: green;
+  color: white;
+}
 .contenedor-orders-user .order {
   font-family: "Roboto", sans-serif;
   padding: 10px;
@@ -4673,6 +4722,7 @@ section .details .summary .box4 .send {
 }
 .contenedor-orders-user .order .select-estado select {
   padding: 8px;
+  border-radius: 5px;
 }
 .contenedor-orders-user .loader-details {
   font-size: 20px;

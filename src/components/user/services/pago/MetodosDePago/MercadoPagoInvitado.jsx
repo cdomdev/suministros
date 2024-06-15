@@ -27,25 +27,6 @@ export const MercadoPagoInvitado = () => {
   const destino = data.destino;
   const costoEnvio = calcularEnvio(destino);
 
-  // Calcular el valor total de los productos en el carrito
-  const valorTotalProductos = cartItems.reduce((total, item) => {
-    return total + parseInt(item.valor, 10);
-  }, 0);
-
-  // Calcular el valor total incluyendo el costo de envío
-  const valorTotalConEnvio = valorTotalProductos + costoEnvio;
-
-  // Crear un objeto con los productos originales y el total con envío
-  const updatedCart = {
-    items: cartItems.map((item) => ({
-      ...item,
-      valor: parseInt(item.valor, 10).toFixed(2),
-    })),
-    envio: costoEnvio,
-    valorTotal: valorTotalProductos.toFixed(2),
-    valorTotalConEnvio: valorTotalConEnvio.toFixed(2),
-  };
-
   const createOrder = async () => {
     try {
       if (!cartItems || cartItems.length === 0) {
@@ -59,7 +40,8 @@ export const MercadoPagoInvitado = () => {
       const response = await axios.post(
         `${API_HOST}/finish/buy/mercadopago-invited`,
         {
-          updatedCart,
+          cartItems,
+          costoEnvio,
           data,
           metodoPago: "Mercadopago",
         }

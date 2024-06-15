@@ -79,25 +79,44 @@ $otro: 'Lato', sans-serif;
             hr {
                 border-style: dashed;
             }
+            .header-products{
+                justify-content: space-between;
+                display: flex;
+                padding: 0px 15px;
+                span{
+                    font-weight: bold;
+                }
+            }
 
             .productos {
                 margin-top: 1em;
                 font-family: $otro;
 
                 .unidad {
-                    justify-content: space-between;
                     padding: 0 20px;
-                    display: flex;
                     gap: 20px;
-
                     ul {
                         margin: 0;
+                        justify-content: space-between;
+                        gap: 20px;
                         padding: 0;
+                        display: flex;
                     }
-
+                    span{
+                        font-weight: bold;
+                    }
                     li {
                         list-style: none;
                         font-size: 15px;
+                        max-inline-size: 70%;
+                    }
+                    .line{
+                        width: 100%;
+                        color: red;
+                    }
+                    .cantidad{
+                        color: #656565;
+                        font-weight: 600;
                     }
                 }
             }
@@ -125,10 +144,11 @@ $otro: 'Lato', sans-serif;
                 padding: 0 20px;
                 display: flex;
                 justify-content: space-between;
-
+                span{
+                    font-weight: bold;
+                }
                 p {
                     text-transform: capitalize;
-                    font-weight: bold;
                     font-size: 14px;
                     text-align: left;
                     margin: 0;
@@ -170,6 +190,7 @@ $otro: 'Lato', sans-serif;
 @media (min-width: 300px) and (max-width: 499px) {
     .container {
         .ticket {
+            margin-top: -4em !important;
             width: 100% !important;
             h1{
                 font-size: 15px !important;
@@ -201,8 +222,8 @@ $otro: 'Lato', sans-serif;
 @media (max-width: 768px) {
     .container {
         .ticket {
-            margin: -3em auto 2em auto;
-            width: 70%;
+            margin: -3em auto 1em auto;
+            width: 100%;
             h2 {
                 font-size: 15px !important;
             }

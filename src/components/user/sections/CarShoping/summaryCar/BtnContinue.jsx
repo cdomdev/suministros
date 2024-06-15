@@ -44,6 +44,7 @@ const BtnContinue = ({ setIsLoggedIn, isLoggedIn }) => {
         keyboard={false}>
         <div>
           <Modal.Header closeButton></Modal.Header>
+          <h4>Verifica tus datos</h4>
           <hr />
           <div className="content-use">
             <div className="outh">

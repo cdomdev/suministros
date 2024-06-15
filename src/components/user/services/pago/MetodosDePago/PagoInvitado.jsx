@@ -30,6 +30,8 @@ export const PagoInvitado = () => {
         keyboard={false}>
         <div>
           <Modal.Header closeButton></Modal.Header>
+          <h4>Tenga en cuenta lo siguiente</h4>
+          <hr />
           <div className="content-use">
             <Informacion setShow={setShow} />
           </div>
@@ -56,16 +58,13 @@ const Informacion = ({ setShow }) => {
   const destino = data.destino;
   const costoEnvio = calcularEnvio(destino);
 
-  // Modificar el valor para incluir el costo de envío
-  const updatedCartItems = cartItems.map((item) => {
-    const valorOriginal = parseInt(item.valor, 10);
-    const valorConEnvio = valorOriginal + costoEnvio;
-
-    return {
-      ...item,
-      valor: valorConEnvio.toFixed(2),
-    };
-  });
+  // // Modificar el valor para incluir el costo de envío
+  // const updatedCartItems = cartItems.map((item) => {
+  //   return {
+  //     ...item,
+  //     envio: costoEnvio,
+  //   };
+  // });
 
   const finnalyBuy = async () => {
     setLoading(true);
@@ -78,8 +77,9 @@ const Informacion = ({ setShow }) => {
     try {
       const response = await axios.post(`${API_HOST}/finish/buy/invited`, {
         dataUser: data,
-        dataProducts: updatedCartItems,
-        metodoPago: "contraEntrega",
+        valorEnvio: costoEnvio,
+        dataProducts: cartItems,
+        metodoPago: "contra-entrega",
       });
 
       if (response.status === 200) {
@@ -105,7 +105,6 @@ const Informacion = ({ setShow }) => {
   return (
     <div className="pago-content">
       <NotificationToast text={"Pago"} />
-      <h4>Tenga en cuenta lo siguiente</h4>
       <ul>
         <li className="mb-2">
           En caso de no poder recibir la compra, por favor deje a alguien
@@ -117,15 +116,15 @@ const Informacion = ({ setShow }) => {
         </li>
       </ul>
       <div className="buttons-content">
-        <Button variant="primary" onClick={handleClose}>
-          Cambiar el metodo de pago
-        </Button>
-        <Button variant="secondary" onClick={finnalyBuy} disabled={loading}>
+        <Button variant="primary" onClick={finnalyBuy} disabled={loading}>
           {loading ? (
             <Spinner animation="border" role="status" size="sm" />
           ) : (
             "Continuar"
           )}
+        </Button>
+        <Button variant="light" onClick={handleClose}>
+          Cambiar el metodo de pago
         </Button>
       </div>
     </div>
