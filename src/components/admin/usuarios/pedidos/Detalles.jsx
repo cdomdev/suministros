@@ -5,6 +5,7 @@ import { IoArrowUndoOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { StateOrders } from "./StateOrders";
 import { formateValue } from "../../../../utils/funtionsProducts";
+import { Table } from "react-bootstrap";
 
 const Detalles = () => {
   const [orders, setOrders] = useState([]);
@@ -20,7 +21,9 @@ const Detalles = () => {
   return (
     <>
       <div className="contenedor-orders-user">
-        {orders.length > 0 ? (
+        {orders.length === 0 ? (
+          <span className="loader-details">Cargando datos...</span>
+        ) : (
           orders.map((order) => (
             <div key={order.id} className="order">
               <div className="header">
@@ -37,71 +40,81 @@ const Detalles = () => {
                 <h2 className="text-center m-3">Detalles de la compra</h2>
               </div>
               <div className="info-user">
-                <div>
-                  <h2>Datos de la compra</h2>
-                  <p>
-                    {" "}
-                    <strong>Método de Pago utilizado:</strong>{" "}
-                    {order.detalles_pedidos[0]?.metodo_pago}
-                  </p>
-
-                  <p>
-                    {" "}
-                    <strong>Total pagado:</strong> ${" "}
-                    {formateValue(
-                      parseInt(order.detalles_pedidos[0]?.total_pago)
-                    )}
-                  </p>
-                  <p>
-                    {" "}
-                    <strong>Cantidad:</strong>{" "}
-                    {order.detalles_pedidos[0]?.cantidad} U.N
-                  </p>
-                  <p>
-                    {" "}
-                    <strong>Descuento:</strong>{" "}
-                    {order.detalles_pedidos[0]?.descuento}%
-                  </p>
+                <div className="data-user-table-response">
+                  <h2>Datos del pedido</h2>
+                  <Table striped bordered hover size="sm" responsive>
+                    <thead>
+                      <tr>
+                        <th className="thead-table-users">
+                          Método de Pago utilizado
+                        </th>
+                        <th className="thead-table-users">Total pagado</th>
+                        <th className="thead-table-users">Cantidad</th>
+                        <th className="thead-table-users">Descuento</th>
+                        <th className="thead-table-users">Estado del pago</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>{order.detalles_pedido[0]?.metodo_pago}</td>
+                        <td>
+                          {formateValue(
+                            parseFloat(order.detalles_pedido[0]?.total_pago)
+                          )}
+                        </td>
+                        <td>{order.detalles_pedido[0]?.cantidad}</td>
+                        <td>{order.detalles_pedido[0]?.descuento}</td>
+                        <td>{order.detalles_pedido[0]?.status_detail}</td>
+                      </tr>
+                    </tbody>
+                  </Table>
                 </div>
                 <div>
-                  <h2>Datos del comprador</h2>
-                  <p>
-                    <strong>Nombre:</strong> {dataUser.name || dataUser.nombre}
-                  </p>
-                  <p>
-                    <strong>Email:</strong> {dataUser.email}
-                  </p>
-                  <p>
-                    {" "}
-                    <strong>Telefono: </strong> {dataUser.telefono}
-                  </p>
-                  <p>
-                    {" "}
-                    <strong>Direccion:</strong> {dataUser.direccion}
-                  </p>
-                  <p>
-                    {" "}
-                    <strong>Detalles: </strong> {dataUser.detalles}
-                  </p>
+                  {" "}
+                  <div className="data-user-table-response">
+                    <h2>Datos del comprador </h2>
+                    <Table striped bordered hover size="sm" responsive>
+                      <thead>
+                        <tr>
+                          <th className="thead-table-users">Nombre</th>
+                          <th className="thead-table-users">Correo</th>
+                          <th className="thead-table-users">Telefono</th>
+                          <th className="thead-table-users">Direccion</th>
+                          <th className="thead-table-users">
+                            Detalle adicionales
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>{dataUser.name || dataUser.nombre}</td>
+                          <td>{dataUser.email}</td>
+                          <td>{dataUser.telefono}</td>
+                          <td>{dataUser.direccion}</td>
+                          <td>{dataUser.detalles}</td>
+                        </tr>
+                      </tbody>
+                    </Table>
+                  </div>
                 </div>
               </div>
               <h3 className="text-center m-3 p-0">Productos de la orden</h3>
               <div className="container-product">
-                {order.detalles_pedidos.map((detalle, index) => (
+                {order.detalles_pedido.map((detalle, index) => (
                   <div key={index} className="products-datails">
                     <img src={detalle.Producto.image} alt="img" />
                     <p>Ref: {detalle.Producto.referencia}</p>
                     <p>{detalle.Producto.title}</p>
                     <p>{detalle.Producto.nombre}</p>
-                    <p>$: {detalle.precio_unitario}</p>
+                    <p>
+                      $: {formateValue(parseFloat(detalle.precio_unitario))}
+                    </p>
                   </div>
                 ))}
               </div>
               <StateOrders pedido={order} />
             </div>
           ))
-        ) : (
-          <span className="loader-details">Cargando datos...</span>
         )}
       </div>
     </>

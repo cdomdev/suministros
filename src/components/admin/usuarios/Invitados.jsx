@@ -30,7 +30,7 @@ export const Invitados = () => {
           <Table striped bordered hover size="sm" responsive>
             <thead>
               <tr>
-                <th className="thead-table-users">Id</th>
+                <th className="thead-table-users">Identificador</th>
                 <th className="thead-table-users">Nombre</th>
                 <th className="thead-table-users">E-mail</th>
                 <th className="thead-table-users">Pedidos</th>

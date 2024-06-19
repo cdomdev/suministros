@@ -1,12 +1,10 @@
-
 import { useEffect, useState } from "react";
 import { Form, Button, Table } from "react-bootstrap";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import { useNotification } from "../../../hook";
 import { NotificationToast } from "../../../utils";
 import axios from "axios";
-import {API_HOST} from '../../../config/config'
-
+import { API_HOST } from "../../../config/config";
 
 // crear
 
@@ -25,10 +23,7 @@ export const Crear = ({ setCategorias, url }) => {
       }
 
       const data = { nombre: categoryName };
-      const response = await axios.post(
-        `${API_HOST}/api/${url}`,
-        data
-      );
+      const response = await axios.post(`${API_HOST}/api/${url}`, data);
 
       if (response.status === 200 || response.status === 201) {
         setCategorias(response.data.categorias);
@@ -71,7 +66,7 @@ export const Crear = ({ setCategorias, url }) => {
   );
 };
 
-// Listar 
+// Listar
 export const Listar = ({ setCategorias, url, categorias }) => {
   try {
     useEffect(() => {

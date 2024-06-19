@@ -86,11 +86,24 @@ $otro: 'Lato', sans-serif;
         background-color: #f4f4f4;
         .info-user {
             display: flex;
-            justify-content: space-around;
-            border: 1px;
-            padding: 10px ;
-            border-style: dashed;
-            background-color: white;
+            flex-direction: column;
+            background-color:  #f4f4f4;
+            
+            gap: 10px;
+            .data-user-table-response{
+                border: solid 1px #acacac;
+                background-color: white;
+            }
+            h2{
+                text-align: center;
+                background-color: #39629e;
+                padding: 5px 0;
+                color: #f4f4f4;
+                margin: 0;
+            }
+            table{
+                text-align: center;
+            }
         }
 
         .container-product {
@@ -149,21 +162,16 @@ $otro: 'Lato', sans-serif;
         padding: 0 1em;
     }
     .contenedor-orders-user {
-        margin-left:35px;
         .header{
             .icon{
                 font-size: 30px;
             }
-            h1 {
-                font-size: 16px !important;
-            }
+           
         }
         .order{
-            width: 300px;
+            width: 100%;
             margin: auto;
-            .info-user{
-                flex-direction: column;
-            }
+
             .select-estado{
                 select{
                     width: 150px;
@@ -188,14 +196,11 @@ $otro: 'Lato', sans-serif;
 /* Estilos para dispositivos pequeños */
 @media (max-width: 768px) {
     .contenedor-orders-user {
-        margin-left:35px;
         .header{
             .icon{
                 font-size: 35px;
             }
-            h1 {
-                font-size: 19px !important;
-            }
+        
         }
 
 

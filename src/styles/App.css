@@ -1,4 +1,56 @@
 @charset "UTF-8";
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  scrollbar-width: none !important;
+  overflow-y: none !important;
+}
+
+h1 {
+  font-size: 20px !important;
+}
+
+h2 {
+  font-size: 19px !important;
+}
+
+h3 {
+  font-size: 18px !important;
+}
+
+a {
+  text-decoration: none !important;
+  color: black;
+}
+
+p {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* La barra de desplazamiento completa */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* El "track" de la barra de desplazamiento */
+::-webkit-scrollbar-track {
+  background: #ececec;
+  border-radius: 10px;
+}
+
+/* El pulgar (thumb) de la barra de desplazamiento */
+::-webkit-scrollbar-thumb {
+  background: #d0d0d0;
+  border-radius: 10px;
+  height: 10px;
+}
+
+/* El pulgar (thumb) cuando esté en hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 .icon-container {
   position: fixed;
   left: 20px;
@@ -1138,6 +1190,9 @@
     align-items: center;
   }
 }
+.body-content .container-data-users {
+  padding: 10px 0;
+}
 .body-content .container-data-users .table-user {
   padding: 10px;
   border: solid 1px #dbdbdb;
@@ -1145,19 +1200,17 @@
   box-sizing: border-box;
   border-radius: 1px;
   width: 99%;
+  margin: 0 auto 10px auto;
 }
 .body-content .container-data-users .table-user h2 {
-  background-color: #032e6e;
-  padding: 10px 0;
-  color: white;
+  background-color: #3670c6;
+  padding: 5px 0;
+  color: rgb(235, 235, 235);
+  margin: 0;
 }
 .body-content .container-data-users .table-user .table-responsive .table td .btn-orders {
   border: none;
   background: transparent;
-}
-.body-content .container-data-users .table-user .thead-table-users {
-  background-color: #1976d2;
-  color: #f2efe1;
 }
 
 .body-content .body-components-inventary {
@@ -1673,58 +1726,6 @@
 }
 /* Estilos para dispositivos pequeños */
 /* Estilos para dispositivos medianos */
-body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  scrollbar-width: none !important;
-  overflow-y: none !important;
-}
-
-h1 {
-  font-size: 20px !important;
-}
-
-h2 {
-  font-size: 19px !important;
-}
-
-h3 {
-  font-size: 18px !important;
-}
-
-a {
-  text-decoration: none !important;
-  color: black;
-}
-
-p {
-  font-family: "Montserrat", sans-serif;
-}
-
-/* La barra de desplazamiento completa */
-::-webkit-scrollbar {
-  width: 12px;
-}
-
-/* El "track" de la barra de desplazamiento */
-::-webkit-scrollbar-track {
-  background: #ececec;
-  border-radius: 10px;
-}
-
-/* El pulgar (thumb) de la barra de desplazamiento */
-::-webkit-scrollbar-thumb {
-  background: #d0d0d0;
-  border-radius: 10px;
-  height: 10px;
-}
-
-/* El pulgar (thumb) cuando esté en hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
 .carrusel {
   justify-content: center;
   width: 100vw;
@@ -3763,8 +3764,8 @@ section .details .info .box2 .info .user .card-user {
   width: 250px;
   border: solid 1px;
   border-style: dashed;
-  height: 120px;
-  max-height: 120px;
+  height: auto;
+  min-height: 120px;
 }
 section .details .info .box2 .info .user .card-user .header {
   background-color: #ebebeb;
@@ -3797,8 +3798,8 @@ section .details .info .box2 .info .user .adrres-user {
   width: 200px;
   border: solid 1px;
   border-style: dashed;
-  height: 120px;
-  max-height: 120px;
+  height: auto;
+  min-height: 120px;
 }
 section .details .info .box2 .info .user .adrres-user .header {
   padding: 2px;
@@ -3806,6 +3807,7 @@ section .details .info .box2 .info .user .adrres-user .header {
   font-family: "Lato", sans-serif;
   text-align: left;
   display: flex;
+  height: auto;
   justify-content: center;
   align-items: center;
   gap: 2px;
@@ -3828,19 +3830,24 @@ section .details .info .box2 .info .user .adrres-user ul {
 }
 section .details .info .box2 .info .user .adrres-user ul li {
   line-height: 20px;
+  font-style: normal;
+}
+section .details .info .box2 .info .user .adrres-user ul .details-li {
+  font-size: 13px;
+  line-height: 17px;
 }
 section .details .info .box2 .info .user .total {
   padding: 10px;
   width: 200px;
   border: solid 1px;
   border-style: dashed;
-  height: 120px;
-  max-height: 120px;
+  height: auto;
   margin: 0;
   gap: 10px;
   display: flex;
   align-items: center;
   flex-direction: column;
+  min-height: 120px;
 }
 section .details .info .box2 .info .user .total span {
   font-size: 14px;
@@ -3914,8 +3921,9 @@ section .details .info .metodos-pago div .mercadopago-content .btn-mercadopago .
 }
 section .details .info .metodos-pago div .contra-entrega .btn-pago {
   background-color: #243a5e;
+  border: none;
   border-radius: 8px;
-  padding: 10px 0;
+  padding: 11px 0;
   flex-direction: row;
   display: flex;
   align-items: center;
@@ -4684,11 +4692,23 @@ section .details .summary .box4 .send {
 }
 .contenedor-orders-user .order .info-user {
   display: flex;
-  justify-content: space-around;
-  border: 1px;
-  padding: 10px;
-  border-style: dashed;
+  flex-direction: column;
+  background-color: #f4f4f4;
+  gap: 10px;
+}
+.contenedor-orders-user .order .info-user .data-user-table-response {
+  border: solid 1px #acacac;
   background-color: white;
+}
+.contenedor-orders-user .order .info-user h2 {
+  text-align: center;
+  background-color: #39629e;
+  padding: 5px 0;
+  color: #f4f4f4;
+  margin: 0;
+}
+.contenedor-orders-user .order .info-user table {
+  text-align: center;
 }
 .contenedor-orders-user .order .container-product {
   border: 1px;
@@ -4734,21 +4754,12 @@ section .details .summary .box4 .send {
   .outline-content {
     padding: 0 1em;
   }
-  .contenedor-orders-user {
-    margin-left: 35px;
-  }
   .contenedor-orders-user .header .icon {
     font-size: 30px;
   }
-  .contenedor-orders-user .header h1 {
-    font-size: 16px !important;
-  }
   .contenedor-orders-user .order {
-    width: 300px;
+    width: 100%;
     margin: auto;
-  }
-  .contenedor-orders-user .order .info-user {
-    flex-direction: column;
   }
   .contenedor-orders-user .order .select-estado select {
     width: 150px;
@@ -4764,14 +4775,8 @@ section .details .summary .box4 .send {
 }
 /* Estilos para dispositivos pequeños */
 @media (max-width: 768px) {
-  .contenedor-orders-user {
-    margin-left: 35px;
-  }
   .contenedor-orders-user .header .icon {
     font-size: 35px;
-  }
-  .contenedor-orders-user .header h1 {
-    font-size: 19px !important;
   }
 }
 /* Estilos para dispositivos medianos */

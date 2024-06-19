@@ -5,58 +5,6 @@ $contenido2: "Montserrat", sans-serif;
 
 $color-complementario: #f2efe1;
 
-body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    scrollbar-width: none !important;
-    overflow-y: none !important;
-}
-
-h1 {
-    font-size: 20px !important;
-}
-
-h2 {
-    font-size: 19px !important;
-}
-
-h3 {
-    font-size: 18px !important;
-}
-
-a {
-    text-decoration: none !important;
-    color: black;
-}
-
-p {
-    font-family: $contenido2;
-}
-
-
-/* La barra de desplazamiento completa */
-::-webkit-scrollbar {
-    width: 12px;
-}
-
-/* El "track" de la barra de desplazamiento */
-::-webkit-scrollbar-track {
-    background: #ececec;
-    border-radius: 10px;
-}
-
-/* El pulgar (thumb) de la barra de desplazamiento */
-::-webkit-scrollbar-thumb {
-    background: #d0d0d0;
-    border-radius: 10px;
-    height: 10px;
-}
-
-/* El pulgar (thumb) cuando esté en hover */
-::-webkit-scrollbar-thumb:hover {
-    background: #555;
-}
 
 
 

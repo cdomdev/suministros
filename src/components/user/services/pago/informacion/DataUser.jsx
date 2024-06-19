@@ -42,9 +42,13 @@ export const DataUser = () => {
             <ul>
               {data && data.length !== 0 ? (
                 <>
+                  <strong>Nombre: </strong>
+                  <br />
                   {data.nombre || sesionData.name}{" "}
-                  {data.apellidos || sesionData.apellido}
+                  {data.apellidos || sesionData.apellido} <br />
+                  <strong>Email: </strong>
                   <li>{data.email || sesionData.email}</li>
+                  <strong>Telefono</strong>
                   <li>{data.telefono}</li>
                 </>
               ) : (
@@ -60,8 +64,10 @@ export const DataUser = () => {
           <div>
             {data && data !== null ? (
               <ul>
-                <li>{data.direccion}</li>
-                <li>{data.detalles}</li>
+                <strong>Direccion:</strong>
+                <li> {data.direccion}</li>
+                <strong>Detalles:</strong>
+                <li className="details-li">{data.detalles}</li>
               </ul>
             ) : (
               <LoaderComponent />

@@ -35,9 +35,9 @@ export const StateOrders = ({ pedido }) => {
     }
   };
 
-  const estadoPedido = pedido.detalles_pedidos[0]?.estado_pedido
-    ? pedido.detalles_pedidos[0]?.estado_pedido
-    : "No se a actulizado el estado";
+  const estadoPedido = pedido.detalles_pedido[0]?.estado_pedido
+    ? pedido.detalles_pedido[0]?.estado_pedido
+    : "Pedido sin estado";
 
   const estadoClase = states[estadoPedido] || "";
 

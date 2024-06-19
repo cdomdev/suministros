@@ -4,6 +4,7 @@ import { BiArrowBack } from "react-icons/bi";
 import axios from "axios";
 import { getDataStorage } from "../../../../../utils";
 import { API_HOST } from "../../../../../config/config";
+import { formateValue } from "../../../../../utils/funtionsProducts";
 
 const PedidosUser = () => {
   const [pedidos, setPedidos] = useState([]);
@@ -45,7 +46,7 @@ const PedidosUser = () => {
         {Array.isArray(pedidos) && pedidos.length > 0 ? (
           pedidos.map((pedido) => (
             <div key={pedido.id} className="pedido-contenedor">
-              {pedido.detalles_pedidos.map((detalle) => (
+              {pedido.detalles_pedido.map((detalle) => (
                 <div key={detalle.id} className="body-pedido">
                   <img
                     src={detalle.Producto.image}
@@ -67,9 +68,10 @@ const PedidosUser = () => {
                 </div>
               ))}
               <div className="footer-table">
-                <strong> Cantidad compradas:</strong> {pedido.cantidad} -{" "}
-                <strong>Valor total:</strong>
-                {pedido.total}
+                <strong> Cantidad compradas:</strong>{" "}
+                {pedido.detalles_pedido[0].cantidad} -{" "}
+                <strong>Valor total: </strong>
+                {formateValue(parseFloat(pedido.detalles_pedido[0].total_pago))}
               </div>
             </div>
           ))

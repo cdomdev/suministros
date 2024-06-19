@@ -66,8 +66,8 @@ section{
                             width: 250px;
                             border: solid 1px;
                             border-style: dashed;
-                            height: 120px;
-                            max-height: 120px;
+                            height: auto;
+                            min-height: 120px;
                             .header{
                                 background-color: #ebebeb;
                                 text-align: left;
@@ -100,14 +100,15 @@ section{
                             width: 200px;
                             border: solid 1px;
                             border-style: dashed;
-                            height: 120px;
-                            max-height: 120px;
+                            height: auto;
+                            min-height: 120px;
                             .header{
                                 padding: 2px;
                                 background-color: #ebebeb;
                                 font-family: $otro;
                                 text-align: left;
                                 display: flex;
+                                height: auto;
                                 justify-content: center;
                                 align-items: center;
                                 gap: 2px;
@@ -129,6 +130,11 @@ section{
                                 margin: 5px 0 0 0 ;                                
                                 li{
                                     line-height: 20px;
+                                    font-style: normal;
+                                }
+                                .details-li{
+                                    font-size: 13px;
+                                    line-height: 17px;
                                 }
                             }
                         }
@@ -137,13 +143,13 @@ section{
                             width: 200px;
                             border: solid 1px;
                             border-style: dashed;
-                            height: 120px;
-                            max-height: 120px;
+                            height: auto;
                             margin: 0;
                             gap: 10px;
                             display: flex;
                             align-items: center;
                             flex-direction: column;
+                            min-height: 120px;
                             span{
                                 font-size: 14px;
                                 padding: 4px;
@@ -221,8 +227,9 @@ section{
                     .contra-entrega{
                         .btn-pago{
                             background-color: #243a5e;
+                            border: none;
                             border-radius: 8px;
-                            padding:10px 0;
+                            padding:11px 0;
                             flex-direction: row;
                             display: flex;
                             align-items: center;

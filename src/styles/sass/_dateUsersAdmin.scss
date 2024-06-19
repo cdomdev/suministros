@@ -15,14 +15,17 @@ $color-complementario: #f2efe1;
 
 
 .body-content .container-data-users {
+  padding: 10px 0;
   .table-user {
     padding: 10px;
     @include bordeBox();
     width: 99%;
+    margin: 0 auto 10px auto;
     h2{
-      background-color: #032e6e;
-      padding: 10px 0;
-      color: white;
+      background-color: #3670c6;
+      padding: 5px 0;
+      color: rgb(235, 235, 235);
+      margin: 0;
     }
     .table-responsive {
 
@@ -36,9 +39,6 @@ $color-complementario: #f2efe1;
       }
     }
 
-    .thead-table-users {
-      background-color: #1976d2;
-      color: $color-complementario;
-    }
+    
   }
 }
