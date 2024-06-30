@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
 import { Accordion } from "react-bootstrap";
-import axios from "axios";
 import { Eliminar } from "./Eliminar";
 import { Actualizar } from "./Actualizar";
 import { API_HOST } from "../../../config/config";
-
+import { api } from "../../../config/axios.conf";
+import axios from "axios";
 export const Listado = ({ ofertaListado, setOfertaListado }) => {
   useEffect(() => {
     const fecthData = async () => {
-      await axios
+      await api
         .get(`${API_HOST}/api/listar/ofertas`)
         .then((response) => {
           const { ofertas } = response.data;
@@ -23,9 +23,26 @@ export const Listado = ({ ofertaListado, setOfertaListado }) => {
     fecthData();
   }, []);
 
+  const formatedValueDate = (dateString) => {
+    // Asegurarse de que el valor de fecha sea válido
+    const date = new Date(dateString);
+    if (isNaN(date)) {
+      return "Fecha inválida";
+    }
+
+    const formatedDate = new Intl.DateTimeFormat("es-ES", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      timeZone: "UTC",
+    }).format(date);
+
+    return formatedDate;
+  };
+
   return (
     <div className="section-listado-ofertas">
-      <h4 className="title-list-ofertas">Ofertas vigentes</h4>
+      <h4>Ofertas vigentes</h4>
       <Accordion defaultActiveKey="0">
         {ofertaListado.length === 0 ||
         ofertaListado === "No hay ofertas disponibles" ? (
@@ -34,23 +51,19 @@ export const Listado = ({ ofertaListado, setOfertaListado }) => {
           </p>
         ) : (
           ofertaListado.map((oferta) => (
-            <Accordion.Item key={oferta.id}>
+            <Accordion.Item key={oferta.id} eventKey="0">
               <Accordion.Header>
                 <strong>{oferta.nombre}</strong>
               </Accordion.Header>
               <Accordion.Body>
                 <div className="body-ofertas-acordeon">
                   <div className="oferta-informacion">
-                    <p className="text-oferta">
-                      Descuento:{" "}
-                      <strong className="sale">{oferta.descuento}%</strong>
-                    </p>
-                    <p className="text-oferta">
-                      Fecha de inicio: {oferta.fecha_inicio}
-                    </p>
-                    <p className="text-oferta">
-                      Fecha de fin: {oferta.fecha_fin}
-                    </p>
+                    <strong>Descuento: </strong>
+                    <strong className="sale">{oferta.descuento}%</strong>
+                    <p className="text-oferta">Fecha de inicio:</p>
+                    <span>{formatedValueDate(oferta.fecha_inicio)}</span>
+                    <p className="text-oferta">Fecha de fin:</p>
+                    <span>{formatedValueDate(oferta.fecha_fin)}</span>
                   </div>
                   <div className="productos-de-la-oferta">
                     <h5 className="text-producto-oferta">
@@ -59,10 +72,7 @@ export const Listado = ({ ofertaListado, setOfertaListado }) => {
                     <ul>
                       {oferta.Productos && oferta.Productos.length > 0 ? (
                         oferta.Productos.map((producto) => (
-                          <li key={producto.id}>
-                            {producto.title} - {producto.nombre} - Ref:{" "}
-                            {producto.referencia}
-                          </li>
+                          <li key={producto.id}>{producto.nombre}</li>
                         ))
                       ) : (
                         <li>No hay productos disponibles</li>

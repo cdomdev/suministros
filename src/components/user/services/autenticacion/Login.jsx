@@ -8,7 +8,6 @@ import { NotificationToast } from "../../../../utils";
 import { API_HOST } from "../../../../config/config";
 import { GoogleLogin } from "./";
 import axios from "axios";
-import { Formik } from "formik";
 
 const Login = ({ handleCloseModal, handleLoginSuccess }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -51,7 +50,8 @@ const Login = ({ handleCloseModal, handleLoginSuccess }) => {
       try {
         const URL = `${API_HOST}/user/login`;
         const response = await axios.post(URL, { email1, password });
-        const { token } = response.data;
+        const { accessToken } = response.data;
+        console.log("acesss del inicio ----> ", accessToken);
 
         const { id, name, email, picture, telefono, direccion } = response.data;
         const dataUserSesion = {
@@ -74,7 +74,7 @@ const Login = ({ handleCloseModal, handleLoginSuccess }) => {
           notifyAuthChange(true);
           handleLoginSuccess(true);
           if (userData.role === "admin") {
-            localStorage.setItem("HttpOnlyAdmin", token);
+            localStorage.setItem("HttpOnlyAdmin", accessToken);
             navigate("/admin");
           } else {
             const previousLocation =

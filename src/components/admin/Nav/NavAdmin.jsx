@@ -1,9 +1,14 @@
 import Container from "react-bootstrap/Container";
-import {  Navbar } from "react-bootstrap";
+import { Navbar } from "react-bootstrap";
 import { Outlet, useNavigate, Link } from "react-router-dom";
 import { useUser } from "../../../hook";
-import { AiOutlinePoweroff, IoIosPerson } from "../../../assets/icons/reactIcons";
+import {
+  AiOutlinePoweroff,
+  IoIosPerson,
+} from "../../../assets/icons/reactIcons";
 import LogoImg from "../img/logo.webp";
+import { API_HOST } from "../../../config/config";
+import { api } from "../../../config/axios.conf";
 
 const NavAdmin = () => {
   const { logout } = useUser();
@@ -12,13 +17,25 @@ const NavAdmin = () => {
     navigate("/admin");
   };
 
-  const finnalySection = () => {
-    localStorage.clear();
-    sessionStorage.clear();
-    navigate('/suministros/home')
-    setTimeout(() => {
+  const logoutAdmin = async () => {
+    try {
+      const response = await api.post(`${API_HOST}/logout`);
+      console.log(response.data);
+    } catch (error) {
+      console.log("Erro en el logout", error);
+    }
+  };
+
+  const finnalySection = async () => {
+    try {
+      await logoutAdmin();
+      localStorage.clear();
+      sessionStorage.clear();
+      navigate("/suministros/home");
       logout();
-    }, 2000);
+    } catch (error) {
+      console.error("Error en finallySection:", error);
+    }
   };
 
   return (
@@ -29,7 +46,7 @@ const NavAdmin = () => {
         className=" bg-body-tertiary nav-custome-admin w-100"
         fixed="top">
         <Container className="custom-navbar nav-layout-admin">
-          <Link to="/admin" >
+          <Link to="/admin">
             <img src={LogoImg} alt="img-logo" className="logotipo" />
           </Link>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />

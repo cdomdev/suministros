@@ -10,12 +10,11 @@ import { API_HOST } from "../../../../config/config";
 import { isAuthenticated } from "../../../../helpers/isAuthenticated";
 import { useNavigate } from "react-router";
 
-const Register = ({ handleCloseModal }) => {
+const Register = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(isAuthenticated());
 
-  const navigate = useNavigate();
-
+  // const navigate = useNavigate();
   const { login } = useUser();
   const { setShowToast, setToastMessage, setBgToast } = useNotification();
 
@@ -47,7 +46,6 @@ const Register = ({ handleCloseModal }) => {
     try {
       const URL = `${API_HOST}/user/registro`;
       const response = await axios.post(URL, values);
-      const previousLocation = sessionStorage.getItem("previousLocation");
 
       const { name, email, picture } = response.data;
       const dataUserSesion = {

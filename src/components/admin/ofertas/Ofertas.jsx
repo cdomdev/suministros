@@ -8,7 +8,7 @@ const Ofertas = () => {
   return (
     <>
       <Layout
-        title={"Agregar nuevas ofertas"}
+        title={"Ofertas"}
         component={
           <div className="container-ofertas">
             <section className="section-add-ofertas">

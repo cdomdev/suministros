@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
-import axios from "axios";
 import { useNotification } from "../../../../hook/AppContextProvider";
 import { NotificationToast } from "../../../../utils";
 import { API_HOST } from "../../../../config/config";
+import { api } from "../../../../config/axios.conf";
 
 const states = {
   alistamiento: "alistamiento",
@@ -18,20 +18,27 @@ export const StateOrders = ({ pedido }) => {
 
   const handleChangeEstado = async (e) => {
     try {
-      const response = await axios.post(`${API_HOST}/api/update/state-orders`, {
+      const response = await api.post(`${API_HOST}/api/update/state-orders`, {
         estado: estado,
         id: pedido.id,
       });
 
       if (response.status === 200) {
-        setToastMessage("Estado actualizado");
+        setToastMessage("Estado actualizado con exito");
         setShowToast(true);
         setBgToast("success");
       }
     } catch (error) {
-      setToastMessage("Error en la solicitud");
-      setShowToast(true);
-      setBgToast("danger");
+      if (error.response.status === 403) {
+        setToastMessage("No tienes los permisos para esta operacion");
+        setShowToast(true);
+        setBgToast("danger");
+      } else {
+        setToastMessage("Error en la solicitud");
+        setShowToast(true);
+        setBgToast("danger");
+      }
+      console.log("Error en la actulizacion del estado", error);
     }
   };
 

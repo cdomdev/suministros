@@ -10,6 +10,7 @@ import { useNotification } from "../../../../../hook";
 import { Link } from "react-router-dom";
 import { API_HOST } from "../../../../../config/config";
 import axios from "axios";
+import { api } from "../../../../../config/axios.conf";
 
 const DataUserUpdate = () => {
   const [dataSesion, setDataSesion] = useState({});
@@ -43,15 +44,13 @@ const DataUserUpdate = () => {
     try {
       setIsLoading(true);
       const emailSend = dataSesion.email;
-      const response = await axios.post(
-        `${API_HOST}/user/profile/update`,
-        {
-          email: emailSend,
-          dataUpdate: newDatas,
-        }
-      );
-      const { name, email, picture, telefono, direccion } = response.data;
+      const response = await api.post(`${API_HOST}/user/profile/update`, {
+        email: emailSend,
+        dataUpdate: newDatas,
+      });
+      const { id, name, email, picture, telefono, direccion } = response.data;
       const dataUserSesion = {
+        id: id,
         name: name,
         telefono: telefono,
         direccion: direccion,
@@ -71,11 +70,14 @@ const DataUserUpdate = () => {
       }
     } catch (e) {
       console.log("Error al actulziar datos", e);
-      setShowToast(true);
-      setBgToast("danger");
-      setToastMessage(
-        "Hubo un error al actulizar los datos, intentalo de nuevo"
-      );
+      if (e.response.status === 403) {
+        setShowToast(true);
+        setBgToast("danger");
+        setToastMessage(
+          "No tienes permisos para esta operacion, algo salio mal con tu sesion, iniciala nuevamente"
+        );
+        localStorage.clear();
+      }
     } finally {
       setIsLoading(false);
     }

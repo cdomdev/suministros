@@ -8,7 +8,7 @@ import { useNotification } from "../../hook";
 import axios from "axios";
 import { API_HOST } from "../../config/config";
 import ResetSucces from "../../components/user/services/autenticacion/passwordRecovery/ResetSucces";
-import { BtnWhatsapp } from "../../utils/ComponentsUtils";
+import { BtnWhatsapp } from "../../utils";
 
 const ResetPassword = () => {
   const { setShowToast, setToastMessage, setBgToast } = useNotification();

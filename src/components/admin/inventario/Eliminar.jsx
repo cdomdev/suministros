@@ -1,10 +1,10 @@
 import { Button, Modal } from "react-bootstrap";
 import React, { useState } from "react";
 import { CiWarning } from "react-icons/ci";
-import axios from "axios";
 import { useNotification } from "../../../hook";
 import { NotificationToast } from "../../../utils";
 import { API_HOST } from "../../../config/config";
+import { api } from "../../../config/axios.conf";
 
 export const Elminar = ({ producto, setProductos }) => {
   const [showModal, setShowModal] = useState(false);
@@ -13,23 +13,28 @@ export const Elminar = ({ producto, setProductos }) => {
   //   solcitud para elminar producto seleccionado
 
   const handleDelete = () => {
-    axios
-      .delete(`${API_HOST}/api/productos/${producto.id}/eliminar`, {
+    api
+      .delete(`${API_HOST}/api/inventary/products/delete/${producto.id}`, {
         data: { producto_Id: producto.id },
       })
-      .then((responseProducto) => {
-        if (responseProducto.status === 200) {
-          setProductos(responseProducto.data.daleteUpdate);
+      .then((response) => {
+        if (response.status === 200) {
+          setProductos(response.data.daleteUpdate);
           setBgToast("success");
-          setToastMessage("¡Se elimino un producto!");
+          setToastMessage("Producto eliminado con exito");
           setShowToast(true);
         }
       })
       .catch((error) => {
         console.error(error);
+        if (error.response.status === 403) {
+          setBgToast("danger");
+          setToastMessage("No tienes los permisos para esta operacion");
+          setShowToast(true);
+        }
         setBgToast("danger");
         setToastMessage(
-          "¡Hubo un error al eliminar el producto, intentalo de nuevo!"
+          "Hubo un error al eliminar el producto, intentalo de nuevo"
         );
         setShowToast(true);
       });
@@ -57,21 +62,20 @@ export const Elminar = ({ producto, setProductos }) => {
         <hr />
         <Modal.Body className="modal-body-delete-inventary">
           <CiWarning className="icon-warning-modal-delete" />
-          <span>Se eliminara la cantidad total en el inventario.</span>
+          <span>Se eliminara la cantidad total de inventario.</span>
           <p className="warning">
-            !Esta seguro de querer eliminar
-            <strong> {producto.nombre}</strong> con una cantidad en el
-            inventario de
+            !Esta seguro de querer eliminar el producto
+            <strong> {producto.nombre}.</strong> En inventario tiene
             <strong> {producto.Inventarios[0].cantidad} productos</strong>!
           </p>
         </Modal.Body>
-        <Modal.Footer style={{ border: "none" }}>
+        <Modal.Footer style={{ border: "none" }} className="content-modal-btns">
           <Button variant="danger" onClick={handleDelete}>
             Elimininar producto
           </Button>
           <Button
-            variant="secondary"
-            className="mt-1"
+            variant="light"
+            className="mt-1 delete"
             onClick={() => setShowModal(false)}>
             Cancelar
           </Button>

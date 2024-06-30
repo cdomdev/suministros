@@ -3,6 +3,7 @@ import axios from "axios";
 import { API_HOST } from "../../../config/config";
 import { useNotification } from "../../../hook";
 import { useState } from "react";
+import { api } from "../../../config/axios.conf";
 
 export const GuardarProductos = ({ listadoState, setListadoState }) => {
   const { setShowToast, setToastMessage, setBgToast } = useNotification();
@@ -23,14 +24,14 @@ export const GuardarProductos = ({ listadoState, setListadoState }) => {
         image: producto.image,
       }));
 
-      const response = await axios.post(`${API_HOST}/api/guardarproductos`, {
+      const response = await api.post(`${API_HOST}/api/save-news-products`, {
         productos: updatedList,
       });
 
-      if (response.status === 200 || response.status === 201) {
+      if (response.status === 200) {
         setBgToast("success");
         setShowToast(true);
-        setToastMessage("Productos guardados");
+        setToastMessage("Productos guardados con exito");
         setListadoState([]);
         localStorage.removeItem("productos");
       } else {
@@ -41,6 +42,15 @@ export const GuardarProductos = ({ listadoState, setListadoState }) => {
         );
       }
     } catch (error) {
+      if (error.response.status === 403) {
+        setBgToast("danger");
+        setShowToast(true);
+        setToastMessage("No tienes permiso para esta operacion");
+      } else if (error.response.status === 500) {
+        setBgToast("danger");
+        setShowToast(true);
+        setToastMessage("Error interno en el servidor");
+      }
       setBgToast("danger");
       setShowToast(true);
       setToastMessage(

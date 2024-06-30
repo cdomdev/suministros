@@ -184,6 +184,9 @@ $color-complementario: #f2efe1;
             margin: 0;
             font-size: 14px;
         }
+        span{
+            margin: 0;
+        }
 
 
     }
@@ -214,6 +217,7 @@ $color-complementario: #f2efe1;
             text-wrap: wrap;
         }
 
+    
 
 
         form {
@@ -247,8 +251,7 @@ $color-complementario: #f2efe1;
 
     .title-delete-modal {
         margin: auto;
-        font-size: 20px;
-        font-weight: bold;
+        font-size: 19px;
         font-family: $tittlesFonts;
     }
 
@@ -264,14 +267,24 @@ $color-complementario: #f2efe1;
         font-size: 11px;
         margin-bottom: 1em;
         color: rgb(246, 24, 12);
-        text-transform: uppercase;
     }
 
     .warning {
         font-size: 14px;
         font-weight: 500;
-        margin: 0 20px 10px;
+        margin: 0 ;
         line-height: 19px;
         text-wrap: wrap;
+    }
+
+    .content-modal-btns{
+        display: flex;
+        flex-direction: column;
+        .btn{
+            width: 100%;
+        }
+        .delete{
+            background-color: #dadad9;
+        }
     }
 }

@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "vite",
-    "sass:watch": "sass --watch src/styles/App.scss  src/styles/App.css",
+    "sass": "sass --watch src/styles/App.scss  src/styles/App.css",
     "test": "vitest",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",

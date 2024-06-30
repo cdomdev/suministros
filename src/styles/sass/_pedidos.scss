@@ -232,18 +232,17 @@ $otro: 'Lato', sans-serif;
                 display: flex;
                 gap: 10px;
                 flex-direction: column;
-                height: 400px;
+                height: auto;
                 overflow-x: auto;
                 max-height: 400px;
                 padding: 5px 10px;
 
                 .pedido-contenedor {
-                    padding: 5px 10px;
+                    padding: 10px 10px;
                     background-color: white;
                     box-sizing: border-box;
-                    box-shadow: 0 0 5px 1px rgb(227, 227, 227);
+                    box-shadow: 0 0 5px rgb(227, 227, 227);
 
-                    // box-shadow: 0 0 5px  rgba(84, 84, 84, 0); ;
                     .body-pedido {
                         display: flex;
                         gap: 20px;
@@ -252,9 +251,15 @@ $otro: 'Lato', sans-serif;
                             width: 5em;
                         }
 
-                        .text-body p {
+                        .text-body span {
                             font-size: 14px;
                             margin: 0;
+                        }
+                       
+                        .state-content{
+                            gap: 5px;
+                            display: flex;
+                            
                         }
                     }
 

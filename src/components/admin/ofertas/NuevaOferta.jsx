@@ -1,18 +1,16 @@
 import axios from "axios";
+import moment from "moment";
 import React, { useEffect, useState } from "react";
 import { Col, Row, Form, Button } from "react-bootstrap";
 import { PopoverProductos } from "./PopoverProductos";
-import moment from "moment";
 import { useNotification } from "../../../hook";
 import { NotificationToast } from "../../../utils";
 import { API_HOST } from "../../../config/config";
+import { api } from "../../../config/axios.conf";
 
 export const NuevaOferta = ({ setOfertaListado }) => {
   const [listaProductos, setListaProductos] = useState([]);
   const [selectedProducts, setSelectedProducts] = useState([]);
-
-  const { setShowToast, setToastMessage, setBgToast } = useNotification();
-
   // inicar el estado de la oferta
   const [oferta, setOferta] = useState({
     nombre: "",
@@ -20,6 +18,8 @@ export const NuevaOferta = ({ setOfertaListado }) => {
     fechaIni: "",
     fechaFin: "",
   });
+
+  const { setShowToast, setToastMessage, setBgToast } = useNotification();
 
   // solcuiar la lista de productos para ofertas
   useEffect(() => {
@@ -79,23 +79,23 @@ export const NuevaOferta = ({ setOfertaListado }) => {
         productos: selectedProducts,
       };
 
-      const response = await axios.post(
+      const response = await api.post(
         `${API_HOST}/api/crear/ofertas`,
         newOferta
       );
 
       const { ofertas } = response.data;
 
-      if (response.status === 200 || response.status === 201) {
+      if (response.status === 201) {
         setSelectedProducts("");
         setOfertaListado(ofertas);
         setBgToast("success");
         setShowToast(true);
-        setToastMessage("Nueva oferta agregada ");
+        setToastMessage("Nueva oferta agregada con exito");
       } else {
         setBgToast("danger");
         setShowToast(true);
-        setToastMessage(" No se pudo crear la oferta");
+        setToastMessage("Hubo un error al crear la oferta, intentalo de nuevo");
       }
 
       // reestablecer el estado
@@ -106,12 +106,16 @@ export const NuevaOferta = ({ setOfertaListado }) => {
         fechaFin: "",
       });
     } catch (error) {
-      if (error.status === 400) {
+      if (error.response.status === 403) {
         setBgToast("danger");
         setShowToast(true);
-        setToastMessage("Hubo un error en el servidor");
+        setToastMessage("No tienes permisos para esta operacion");
+      } else {
+        setBgToast("danger");
+        setShowToast(true);
+        setToastMessage("Hubo un error al crear la oferta, intentalo de nuevo");
       }
-      console.log(error);
+      console.log("Error en la creacion de la oferta:", error);
     }
   };
 

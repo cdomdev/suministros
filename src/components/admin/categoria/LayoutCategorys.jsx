@@ -3,12 +3,12 @@ import { Form, Button, Table } from "react-bootstrap";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import { useNotification } from "../../../hook";
 import { NotificationToast } from "../../../utils";
-import axios from "axios";
 import { API_HOST } from "../../../config/config";
+import { api } from "../../../config/axios.conf";
 
 // crear
 
-export const Crear = ({ setCategorias, url }) => {
+export const Crear = ({ setCategorias, url, guy }) => {
   const [categoryName, setCategoryName] = useState("");
 
   const { setShowToast, setToastMessage, setBgToast } = useNotification();
@@ -23,9 +23,9 @@ export const Crear = ({ setCategorias, url }) => {
       }
 
       const data = { nombre: categoryName };
-      const response = await axios.post(`${API_HOST}/api/${url}`, data);
+      const response = await api.post(`${API_HOST}/api/${url}/create`, data);
 
-      if (response.status === 200 || response.status === 201) {
+      if (response.status === 201) {
         setCategorias(response.data.categorias);
         setCategoryName("");
         setBgToast("success");
@@ -33,20 +33,25 @@ export const Crear = ({ setCategorias, url }) => {
         setToastMessage("Se agrego una nueva categoria");
       }
     } catch (error) {
-      if (error.response && error.response.status === 400) {
+      if (error.response.status === 403 || error.response.status === 401) {
+        setBgToast("danger");
+        setShowToast(true);
+        setToastMessage("No tienes los permisos para esta operacion");
+      } else if (error.response && error.response.status === 400) {
         setBgToast("danger");
         setShowToast(true);
         setToastMessage("No se pudo crear la categoria, intentalo de nuevo");
       }
+      console.log("Error en la crecion de la categoria", error);
     }
   };
   return (
     <div className="body-category">
       <NotificationToast text={"Categorias"} />
-      <h2 className="title-add-category">Agregar nueva categoria</h2>
+      <h2 className="title-add-category">Agregar nueva {guy}</h2>
       <FloatingLabel
         controlId="floatingInput"
-        label="Nombre de la categoría"
+        label={`Nombre de la ${guy}`}
         className="mb-3">
         <Form.Control
           type="text"
@@ -57,22 +62,20 @@ export const Crear = ({ setCategorias, url }) => {
         />
       </FloatingLabel>
 
-      <div>
-        <Button variant="primary" onClick={handleCategory}>
-          Agregar categoría
-        </Button>
-      </div>
+      <Button variant="primary" onClick={handleCategory}>
+        Agregar {guy}
+      </Button>
     </div>
   );
 };
 
 // Listar
-export const Listar = ({ setCategorias, url, categorias }) => {
+export const Listar = ({ setCategorias, url, categorias, guy }) => {
   try {
     useEffect(() => {
       const fechtData = async () => {
-        await axios
-          .get(`${API_HOST}/api/obtener/${url}`)
+        await api
+          .get(`${API_HOST}/api/${url}/list`)
           .then((response) => {
             const { categorias } = response.data;
             if (response.status === 200) {
@@ -91,7 +94,7 @@ export const Listar = ({ setCategorias, url, categorias }) => {
   return (
     <>
       <div className="lista-categrtorias">
-        <h2 className="title-table-category">Lista de categorias:</h2>
+        <h2 className="title-table-category">Lista de {guy}</h2>
         <Table
           striped
           bordered
@@ -99,11 +102,6 @@ export const Listar = ({ setCategorias, url, categorias }) => {
           size="sm"
           responsive
           className="table-category">
-          <thead>
-            <tr>
-              <th className="thead-table">Categorias:</th>
-            </tr>
-          </thead>
           <tbody className="tbody-table-category">
             {categorias &&
               categorias.map((categoria) => (
@@ -119,7 +117,7 @@ export const Listar = ({ setCategorias, url, categorias }) => {
 };
 // Eliminar
 
-export const Eliminar = ({ setCategorias, categorias, url }) => {
+export const Eliminar = ({ setCategorias, categorias, url, guy }) => {
   const [selectedCategoryId, setSelectedCategoryId] = useState(null);
 
   const { setShowToast, setToastMessage, setBgToast } = useNotification();
@@ -138,13 +136,10 @@ export const Eliminar = ({ setCategorias, categorias, url }) => {
       }
       const id = parseInt(selectedCategoryId);
 
-      const response = await axios.delete(
-        `${API_HOST}/api/delete/${id}/${url}`,
-        {
-          data: { id },
-        }
-      );
-      if (response.status === 200 || response.status === 201) {
+      const response = await api.delete(`${API_HOST}/api/${url}/delete/${id}`, {
+        data: { id },
+      });
+      if (response.status === 200) {
         setCategorias(response.data.categorias);
         setToastMessage("Se elimino una categoria");
         setShowToast(true);
@@ -155,19 +150,19 @@ export const Eliminar = ({ setCategorias, categorias, url }) => {
         setToastMessage("No se puedo eliminar la oferta la categoria");
       }
     } catch (error) {
-      console.error("Error al intentar eliminar la categoría", error);
-      if (error.response && error.response.data && error.response.data.error) {
+      if (error.response.status === 401 || error.response.status === 403) {
         setBgToast("danger");
         setShowToast(true);
-        setToastMessage("No se pudo eliminar la categoria, intentalo de nuevo");
+        setToastMessage("No tienes permisos para esta operacion");
       }
+      console.error("Error al intentar eliminar la categoría", error);
     }
   };
 
   return (
     <>
       <div className="contenedor-category-delete">
-        <h4 className="title-delete-category">Eliminar categoria:</h4>
+        <h4 className="title-delete-category">Eliminar {guy}</h4>
         <NotificationToast text={"Categorias"} />
         <p className="text">
           Antes de eliminar una categoria, asegurece que no tenga productos
@@ -175,9 +170,9 @@ export const Eliminar = ({ setCategorias, categorias, url }) => {
           <br />
           <br />
         </p>
-        <p className="text">Selecione la categoria a eliminar:</p>
+        <p className="text">Selecione la {guy} a eliminar:</p>
         <Form.Select className="mt-3" onChange={(e) => handleCategoryChange(e)}>
-          <option>Seleccionar categoría</option>
+          <option>Seleccionar {guy}</option>
           {categorias &&
             categorias.map((categoria) => (
               <option key={categoria.id} value={categoria.id}>
@@ -186,14 +181,12 @@ export const Eliminar = ({ setCategorias, categorias, url }) => {
             ))}
         </Form.Select>
 
-        <div className="mt-5">
-          <Button
-            variant="danger "
-            style={{ float: "right" }}
-            onClick={handleCategoryDelete}>
-            Eliminar categoría
-          </Button>
-        </div>
+        <Button
+          variant="danger "
+          className="mt-4"
+          onClick={handleCategoryDelete}>
+          Eliminar {guy}
+        </Button>
       </div>
     </>
   );

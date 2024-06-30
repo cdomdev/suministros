@@ -5,6 +5,7 @@ import { useNotification } from "../../../hook";
 import { NotificationToast } from "../../../utils";
 import { isEqual } from "lodash";
 import { API_HOST } from "../../../config/config";
+import { api } from "../../../config/axios.conf";
 
 export const Actualizar = ({ producto, setProductos }) => {
   const [showModal, setShowModal] = useState(false);
@@ -110,21 +111,26 @@ export const Actualizar = ({ producto, setProductos }) => {
         setShowToast(true);
         setToastMessage("No hay cambios para actualizar este producto");
       } else {
-        axios
-          .put(`${API_HOST}/api/productos/${producto.id}/actualizar`, {
+        api
+          .put(`${API_HOST}/api/inventary/products/update/${producto.id}`, {
             producto_Id: producto.id,
             newProduct: productosActualizado,
           })
           .then((response) => {
-            if (response.status === 200 || response.status === 201) {
+            if (response.status === 200) {
               setProductos(response.data.productosUpdate);
               setBgToast("success");
-              setToastMessage("Producto actulizado");
+              setToastMessage("Producto actulizado con exito");
               setShowToast(true);
             }
           });
       }
     } catch (error) {
+      if (error.response.status === 403) {
+        setShowToast(true);
+        setToastMessage("No tienes los permisos para esta operacion");
+        setBgToast("danger");
+      }
       console.log("Error en el servidor", error);
       setShowToast(true);
       setToastMessage("No se puedo actulizar el producto, intentalo de nuevo");

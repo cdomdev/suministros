@@ -22,13 +22,13 @@ $color-complementario: #f2efe1;
         display: grid;
         grid-template-columns: 1.5fr 3fr;
         flex-direction: column;
-        gap: 10px;
+        gap: 2px;
         padding: 5px;
         align-items: flex-start;
         .body-category {
             border-radius: 0px;
             @include bordeBox();
-            padding: 25px;
+            padding: 10px;
             height: 250px;
             display: flex;
             width: 100%;
@@ -43,7 +43,7 @@ $color-complementario: #f2efe1;
             }
 
             .input-category {
-                width: 300px;
+                width: 460px;
             }
 
             .contenedor-message-server {
@@ -55,7 +55,8 @@ $color-complementario: #f2efe1;
             }
 
             .btn {
-                width: 300px;
+                width: 93%;
+                padding: 8px 0px;
             }
 
 
@@ -66,7 +67,7 @@ $color-complementario: #f2efe1;
             padding: 20px;
             height: 300px;
             max-height: 350px;
-            margin-top: 10px;
+            margin-top: 2px;
             @include bordeBox();
 
             .title-delete-category {
@@ -94,12 +95,16 @@ $color-complementario: #f2efe1;
                 margin-top: 10px;
                 text-align: center;
             }
+            .btn{
+                width: 100%;
+                padding: 8px 0;
+            }
         }
 
         .lista-categrtorias {
             padding: 20px;
             @include bordeBox();
-            max-height: 400px;
+            max-height: 552px;
             overflow-y: auto;
             overflow-wrap: break-word;
 

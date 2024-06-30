@@ -1,9 +1,9 @@
-import axios from "axios";
 import React, { useState } from "react";
 import { Button, Modal, Form } from "react-bootstrap";
 import { useNotification } from "../../../hook";
 import { NotificationToast } from "../../../utils";
 import { API_HOST } from "../../../config/config";
+import { api } from "../../../config/axios.conf";
 
 export const Editar = ({ producto, currentStock, setProductos }) => {
   const [showModal, setShowModal] = useState(false);
@@ -14,21 +14,28 @@ export const Editar = ({ producto, currentStock, setProductos }) => {
   const handleSaveChanges = () => {
     if (!isNaN(newStock) && newStock.trim() !== "") {
       const updatedStock = parseInt(newStock);
-      axios
-        .put(`${API_HOST}/api/productos/${producto.id}/inventario`, {
+      api
+        .put(`${API_HOST}/api/inventary/products/update-stock/${producto.id}`, {
           producto_Id: producto.id,
           newStock: updatedStock,
         })
         .then((response) => {
-          if (response.status === 200 || response.status === 201) {
+          if (response.status === 200) {
             setProductos(response.data.inventaryUpdate);
-            setToastMessage("Cantidad en stock actualizada");
+            setToastMessage("Cantidad en stock actualizada con exito");
             setBgToast("success");
             setShowToast(true);
           }
         })
         .catch((error) => {
-          if (error.response.status === 400 || error.response.status === 500) {
+          if (error.response.status === 403) {
+            setToastMessage("No tienes los permisos para esta operacion");
+            setBgToast("danger");
+            setShowToast(true);
+          } else if (
+            error.response.status === 400 ||
+            error.response.status === 500
+          ) {
             setToastMessage(
               "No se puedo actulizar la cantidad en stock, intentale de nuevo"
             );

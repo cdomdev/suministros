@@ -19,9 +19,10 @@ $color-complementario: #f2efe1;
     .container-ofertas {
         display: grid;
         padding: 5px;
-        gap: 10px;
-        grid-template-columns: 25% 75%;
+        gap: 2px;
+        grid-template-columns: 25% 74%;
         .section-add-ofertas {
+
             .add-ofertas {
                 @include bordeBox();
                 height: auto;
@@ -34,8 +35,7 @@ $color-complementario: #f2efe1;
                 .title-add-ofertas {
                     font-size: 20px;
                     font-family: $tittlesFonts;
-                    color: #243a5e;
-                    margin-bottom: 20px;
+                    text-align: center;
                 }
 
                 .label-date {
@@ -84,20 +84,24 @@ $color-complementario: #f2efe1;
             @include bordeBox();
             padding: 5px;
             border-radius: 1px;
-
             .accordion {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                
                 .accordion-button {
                     border-radius: 1px;
+                    font-size: 15px;
                     text-transform: uppercase;
-                    color: #243a5e;
                 }
             }
-
-            .title-list-ofertas {
+            h4{
+                font-size: 19px;
                 font-family: $tittlesFonts;
-                color: #243a5e;
-                padding: 20px;
+                padding: 10px;
+
             }
+
 
             .ofertas-no-disponibles {
                 color: #243a5e;
@@ -112,6 +116,12 @@ $color-complementario: #f2efe1;
                 display: flex;
                 gap: 3em;
                 max-height: 300px;
+                p{
+                    margin: 0;
+                }
+                span{
+                    font-weight: bold;
+                }
 
                 .content-buttons-section {
                     display: flex;
@@ -147,7 +157,7 @@ $color-complementario: #f2efe1;
 
         }
 
-    }
+    } 
 
 
 
@@ -174,15 +184,14 @@ $color-complementario: #f2efe1;
 
 
 .modal-ofertas-delete {
-
+    font-family: $contenidoFonts;
     .title-modal-delete {
-        color: red;
         font-family: $tittlesFonts;
         padding: 10px;
         font-size: 19px;
         text-align: center;
     }
-
+   
     .w-ofertas {
         display: block;
         width: 80px;
@@ -190,22 +199,28 @@ $color-complementario: #f2efe1;
         height: 80px;
         color: red;
     }
+   
 
     .content-button-ofertas {
         display: flex;
-        gap: 10px;
+        flex-direction: column;
+        gap: 5px;
         justify-content: end;
         padding: 10px;
-
         .btn {
-            width: 45%;
+            width: 100%;
             margin: auto;
+            font-size: 15px;
+        }
+        .delete{
+            background-color: #dadad9;
         }
     }
 
     .text-delete-oferta {
-        font-family: $contenidoFonts;
         text-align: center;
+        margin: 0;
+        font-size: 14px ;
     }
 
     .t {

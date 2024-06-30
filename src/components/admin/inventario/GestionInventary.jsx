@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import { Editar } from "./Editar";
 import { Elminar } from "./Eliminar";
 import { Actualizar } from "./Actualizar";
@@ -9,6 +8,7 @@ import { NotificationToast } from "../../../utils";
 import { LoaderComponent } from "../../../utils";
 import { API_HOST } from "../../../config/config";
 import { formateValue } from "../../../utils/funtionsProducts";
+import { api } from "../../../config/axios.conf";
 
 const GestionInventary = () => {
   const [productos, setProductos] = useState([]);
@@ -18,7 +18,9 @@ const GestionInventary = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`${API_HOST}/api/listar/productos`);
+        const response = await api.get(
+          `${API_HOST}/api/inventary/list-products`
+        );
         setProductos(response.data.productos);
       } catch (error) {
         console.error("Error al obtener productos:", error);

@@ -8,10 +8,16 @@ $contenido2: "Montserrat", sans-serif;
     box-sizing: border-box;
     border-radius: 1px;
 }
+@mixin borderContent{
+    border: solid 1px #ffffff;
+    box-shadow: 0 0 5px rgba(133, 133, 133, 0);
+    box-sizing: border-box;
+    border-radius: 1px;
+}
 
 .layout-body-admin {
     width: 100vw;
-    margin: 5em auto 0 auto;
+    margin: 4.3em auto 0 auto;
     display: grid;
     grid-template-areas:
         'header header header header'
@@ -25,12 +31,14 @@ $contenido2: "Montserrat", sans-serif;
         grid-area: header;
         text-align: center;
         display: flex;
-        padding: 5px 0;
+        padding: 10px 0;
         justify-content: center;
         align-items: center;
         @include bordeBox();
-
+        
         h1 {
+            text-transform: uppercase;
+            font-size: 17px !important;
             margin: 0;
             font-weight: bold;
             font-family: $tittlesFonts;
@@ -40,7 +48,7 @@ $contenido2: "Montserrat", sans-serif;
     .body-content {
         padding: 0;
         grid-area: content;
-        @include bordeBox();
+        @include borderContent();
         height: auto ;
     }
 }

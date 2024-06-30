@@ -12,18 +12,24 @@ const Subcategorias = () => {
         component={
           <div className="categorias">
             <div>
-              <Crear setCategorias={setCategoria} url={"crear/sub-categoria"} />
+              <Crear
+                setCategorias={setCategoria}
+                url={"subcategories"}
+                guy={"subcategoria"}
+              />
               <Eliminar
                 categorias={categorias}
                 setCategorias={setCategoria}
-                url={"sub-categoria"}
+                url={"subcategories"}
+                guy={"subcategoria"}
               />
             </div>
             <div>
               <Listar
                 categorias={categorias}
                 setCategorias={setCategoria}
-                url={"sub-categorias"}
+                url={"subcategories"}
+                guy={"subcategorias"}
               />
             </div>
           </div>

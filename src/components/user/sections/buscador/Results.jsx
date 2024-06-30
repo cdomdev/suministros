@@ -1,18 +1,39 @@
 import React, { useState, useEffect } from "react";
-import { NotificationToast, getDataSesionStorega } from "../../../../utils";
-import { useNotification, useCarShop } from "../../../../hook";
+import { useParams } from "react-router-dom";
+import { NotificationToast } from "../../../../utils";
+import { useCarShop, useNotification } from "../../../../hook";
 import { IoCartOutline } from "../../../../assets/icons/reactIcons";
 import NotProduct from "./NotProduct";
 import { formateValue } from "../../../../utils/funtionsProducts";
+import axios from "axios";
+import { API_HOST } from "../../../../config/config";
 
 const Results = () => {
   const [busqueda, setBusqueda] = useState([]);
+  const { query } = useParams();
   const { addToCart } = useCarShop();
   const { setShowToast, setToastMessage, setBgToast } = useNotification();
 
   useEffect(() => {
-    setBusqueda(getDataSesionStorega("searchResultProducts"));
-  }, []);
+    const fetchSearchResults = async () => {
+      try {
+        const response = await axios.post(`${API_HOST}/busqueda-productos`, {
+          query: query,
+        });
+        if (response.data.resultados) {
+          const dataResponse = response.data.resultados;
+          setBusqueda(dataResponse);
+        } else {
+          setBusqueda([]);
+        }
+      } catch (error) {
+        console.error("Error al buscar productos:", error);
+        setBusqueda([]);
+      }
+    };
+
+    fetchSearchResults();
+  }, [query]);
 
   const handleAgregarAlCarrito = (producto) => {
     addToCart({ ...producto, cantidad: 1 });
@@ -23,14 +44,14 @@ const Results = () => {
 
   return (
     <>
-      {busqueda.length > 0 && (
+      {busqueda && busqueda.length > 0 && (
         <span className="text-center total ">{busqueda.length} Productos</span>
       )}
-      {busqueda.length === 0 ? (
+      {!busqueda || busqueda.length === 0 ? (
         <NotProduct />
       ) : (
         <div className="contenedor-card">
-          <NotificationToast text={"Resultado de busqueda"} />
+          <NotificationToast text={"Resultado de búsqueda"} />
           {busqueda.map((producto) => (
             <ul key={producto.id} className="card-products">
               <span className="text-ref">REF: {producto.referencia}</span>

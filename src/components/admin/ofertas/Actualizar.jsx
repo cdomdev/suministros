@@ -1,13 +1,14 @@
-import { Button, Form, Modal, Row, Col } from "react-bootstrap";
-import axios from "axios";
+import { Button, Form, Modal, Row, Col, Spinner } from "react-bootstrap";
 import React, { useState, useRef } from "react";
 import { useNotification } from "../../../hook";
 import { NotificationToast } from "../../../utils";
-import {API_HOST} from '../../../config/config'
+import { API_HOST } from "../../../config/config";
+import { api } from "../../../config/axios.conf";
 
-export const Actualizar = ({ ofertaData, ofertaListado, setOfertaListado }) => {
+export const Actualizar = ({ ofertaData, setOfertaListado }) => {
   const [showModal, setShowModal] = useState(false);
   const [updatedValues, setUpdatedValues] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
 
   const { setShowToast, setToastMessage, setBgToast } = useNotification();
 
@@ -36,31 +37,27 @@ export const Actualizar = ({ ofertaData, ofertaListado, setOfertaListado }) => {
     setUpdatedValues(updatedValues);
     // Actualizar el estado con el nuevo objeto
   };
-  const handleUpdate = () => {
+
+  const handleUpdate = async () => {
     // Realizar la solicitud para actualizar la oferta
-
-    if (ofertaData.id || updatedValues === null || updatedValues.length === 0) {
-      setToastMessage("¡No hay datos para actualizar la oferta!");
-      setBgToast("danger");
-      setShowToast(true);
-      return;
-    }
-
-    const fechtData = async () => {
-      await axios
-        .put(`${API_HOST}/api/oferta/${ofertaData.id}/actualizar`, {
+    setIsLoading(true);
+    try {
+      if (!ofertaData || !updatedValues) {
+        setToastMessage("No hay datos para actulzar la oferta");
+        setBgToast("danger");
+        setShowToast(true);
+      }
+      await api
+        .put(`${API_HOST}/api/oferta/update/${ofertaData.id}`, {
           oferta_id: ofertaData.id,
           updatedValues: updatedValues,
         })
         .then((response) => {
-          const updatedOferta = response.data.ofertas;
-          if (updatedOferta) {
-            const updatedList = ofertaListado.map((oferta) =>
-              oferta.id === ofertaData.id ? updatedOferta : oferta
-            );
-            setOfertaListado(updatedList);
-            setToastMessage("¡ Se aactulizo una oferta !");
-            setBgToast("succes");
+          console.log(response.data);
+          if (response.status === 200) {
+            setOfertaListado(response.data.ofertas);
+            setToastMessage("Oferta actualizada con exito");
+            setBgToast("success");
             setShowToast(true);
             setTimeout(() => {
               setShowModal(false);
@@ -69,10 +66,20 @@ export const Actualizar = ({ ofertaData, ofertaListado, setOfertaListado }) => {
         })
         .catch((error) => {
           console.error(error);
+          if (error.response.status === 403) {
+            setToastMessage("No tienes permisos para esta operacion");
+            setBgToast("danger");
+            setShowToast(true);
+          }
+          setToastMessage("No se pudo crear la oferta, intentalo de nuevo");
+          setBgToast("danger");
+          setShowToast(true);
         });
-
-      fechtData();
-    };
+    } catch (error) {
+      console.log("Error al intentar actulizar un oferta", error);
+    } finally {
+      setIsLoading(false);
+    }
   };
   return (
     <>
@@ -144,7 +151,13 @@ export const Actualizar = ({ ofertaData, ofertaListado, setOfertaListado }) => {
 
         <div className="content-button-ofertas">
           <Button variant="primary" onClick={handleUpdate}>
-            Actualizar oferta
+            {isLoading ? (
+              <div className="spinner-container">
+                <Spinner animation="border" role="status" size="sm" />
+              </div>
+            ) : (
+              <> Actualizar oferta</>
+            )}
           </Button>
         </div>
       </Modal>

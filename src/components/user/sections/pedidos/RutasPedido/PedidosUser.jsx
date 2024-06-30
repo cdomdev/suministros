@@ -14,6 +14,8 @@ const PedidosUser = () => {
     setDataLocal(getDataStorage("userOnValidateScesOnline"));
   }, []);
 
+  console.log(pedidos);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -53,17 +55,22 @@ const PedidosUser = () => {
                     alt={detalle.Producto.nombre}
                   />
                   <div className="d-flex flex-column text-body">
-                    <p>
+                    <span>
                       {" "}
                       <strong>Producto:</strong> {detalle.Producto.nombre}
-                    </p>
-                    <p>
-                      <strong>Valor unidad:</strong> {detalle.Producto.valor}
-                    </p>
-                    <p>
-                      <strong>Ref: </strong>
-                      {detalle.Producto.referencia}
-                    </p>
+                    </span>
+                    <span>
+                      <strong>Valor unidad:</strong> ${" "}
+                      {formateValue(parseInt(detalle.Producto.valor))}
+                    </span>
+                    <span>
+                      <strong>Valor de envio: </strong> $
+                      {formateValue(parseFloat(detalle.costo_de_envio))}
+                    </span>
+                    <span className="state-content">
+                      <strong>Estado del pedido: </strong>
+                      <p className="state"> En {detalle.estado_pedido}...</p>
+                    </span>
                   </div>
                 </div>
               ))}

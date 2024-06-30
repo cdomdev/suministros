@@ -7,7 +7,6 @@ import axios from "axios";
 
 const Buscador = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [searchResults, setSearchResults] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -27,13 +26,10 @@ const Buscador = () => {
           "searchResultProducts",
           JSON.stringify(dataResponse)
         );
-        // Navegar a la página de resultados de búsqueda
         navigate(`/suministros/resultados-busqueda/${searchTerm}`);
-
         setSearchTerm("");
         setIsLoading(false);
       } else {
-        setSearchResults([]);
         setIsLoading(false);
       }
     } catch (error) {
@@ -41,7 +37,6 @@ const Buscador = () => {
       navigate(`/suministros/resultados-busqueda/${searchTerm}`);
       setSearchTerm("");
       setIsLoading(false);
-      setSearchResults([]);
     }
   };
 
@@ -50,7 +45,7 @@ const Buscador = () => {
       <Form className="input-nav">
         <Form.Control
           type="search"
-          placeholder="¿ Buscas algo en especial ? "
+          placeholder="¿Buscas algo en especial?"
           aria-label="Search"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}

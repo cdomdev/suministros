@@ -93,7 +93,7 @@ export const DashboardUser = () => {
           <Route index element={<HomeUser />} />
           <Route path="/suministros/home" element={<HomeUser />} />
           <Route
-            path="/suministros/resultados-busqueda/:nombre"
+            path="/suministros/resultados-busqueda/:query"
             element={<BuscadorPage />}
           />
           <Route

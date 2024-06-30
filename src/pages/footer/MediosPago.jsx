@@ -1,5 +1,5 @@
 import React from "react";
-import { BtnWhatsapp } from "../../utils/ComponentsUtils";
+import { BtnWhatsapp } from "../../utils";
 
 const MediosPago = () => {
   return (
@@ -72,7 +72,7 @@ const MediosPago = () => {
           </ul>
         </section>
       </div>
-      <BtnWhatsapp/>
+      <BtnWhatsapp />
     </div>
   );
 };

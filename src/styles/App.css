@@ -1341,6 +1341,9 @@ p {
   margin: 0;
   font-size: 14px;
 }
+.modal-edit-inventary .modal-body-editar-inventary span {
+  margin: 0;
+}
 .modal-edit-inventary .modal-footer .btn {
   width: 100%;
 }
@@ -1379,8 +1382,7 @@ p {
 }
 .modal-delete-inventary .title-delete-modal {
   margin: auto;
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 19px;
   font-family: "Roboto Condensed", sans-serif;
 }
 .modal-delete-inventary .icon-warning-modal-delete {
@@ -1394,14 +1396,23 @@ p {
   font-size: 11px;
   margin-bottom: 1em;
   color: rgb(246, 24, 12);
-  text-transform: uppercase;
 }
 .modal-delete-inventary .warning {
   font-size: 14px;
   font-weight: 500;
-  margin: 0 20px 10px;
+  margin: 0;
   line-height: 19px;
   text-wrap: wrap;
+}
+.modal-delete-inventary .content-modal-btns {
+  display: flex;
+  flex-direction: column;
+}
+.modal-delete-inventary .content-modal-btns .btn {
+  width: 100%;
+}
+.modal-delete-inventary .content-modal-btns .delete {
+  background-color: #dadad9;
 }
 
 .body-content {
@@ -1412,7 +1423,7 @@ p {
   display: grid;
   grid-template-columns: 1.5fr 3fr;
   flex-direction: column;
-  gap: 10px;
+  gap: 2px;
   padding: 5px;
   align-items: flex-start;
 }
@@ -1422,7 +1433,7 @@ p {
   box-shadow: 0 0 5px rgba(84, 84, 84, 0);
   box-sizing: border-box;
   background-color: white;
-  padding: 25px;
+  padding: 10px;
   height: 250px;
   display: flex;
   width: 100%;
@@ -1436,7 +1447,7 @@ p {
   margin: 0 0 20px 0;
 }
 .body-content .categorias .body-category .input-category {
-  width: 300px;
+  width: 460px;
 }
 .body-content .categorias .body-category .contenedor-message-server {
   height: 10px;
@@ -1445,14 +1456,15 @@ p {
   text-align: center;
 }
 .body-content .categorias .body-category .btn {
-  width: 300px;
+  width: 93%;
+  padding: 8px 0px;
 }
 .body-content .categorias .contenedor-category-delete {
   border-radius: 0px;
   padding: 20px;
   height: 300px;
   max-height: 350px;
-  margin-top: 10px;
+  margin-top: 2px;
   border: solid 1px #d9d9d9;
   box-shadow: 0 0 5px rgba(84, 84, 84, 0);
   box-sizing: border-box;
@@ -1480,13 +1492,17 @@ p {
   margin-top: 10px;
   text-align: center;
 }
+.body-content .categorias .contenedor-category-delete .btn {
+  width: 100%;
+  padding: 8px 0;
+}
 .body-content .categorias .lista-categrtorias {
   padding: 20px;
   border: solid 1px #d9d9d9;
   box-shadow: 0 0 5px rgba(84, 84, 84, 0);
   box-sizing: border-box;
   background-color: white;
-  max-height: 400px;
+  max-height: 552px;
   overflow-y: auto;
   overflow-wrap: break-word;
 }
@@ -1521,8 +1537,8 @@ p {
 .body-content .container-ofertas {
   display: grid;
   padding: 5px;
-  gap: 10px;
-  grid-template-columns: 25% 75%;
+  gap: 2px;
+  grid-template-columns: 25% 74%;
 }
 .body-content .container-ofertas .section-add-ofertas .add-ofertas {
   border: solid 1px #d9d9d9;
@@ -1539,8 +1555,7 @@ p {
 .body-content .container-ofertas .section-add-ofertas .add-ofertas .title-add-ofertas {
   font-size: 20px;
   font-family: "Roboto Condensed", sans-serif;
-  color: #243a5e;
-  margin-bottom: 20px;
+  text-align: center;
 }
 .body-content .container-ofertas .section-add-ofertas .add-ofertas .label-date {
   padding-left: 20px;
@@ -1580,15 +1595,20 @@ p {
   padding: 5px;
   border-radius: 1px;
 }
+.body-content .container-ofertas .section-listado-ofertas .accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 .body-content .container-ofertas .section-listado-ofertas .accordion .accordion-button {
   border-radius: 1px;
+  font-size: 15px;
   text-transform: uppercase;
-  color: #243a5e;
 }
-.body-content .container-ofertas .section-listado-ofertas .title-list-ofertas {
+.body-content .container-ofertas .section-listado-ofertas h4 {
+  font-size: 19px;
   font-family: "Roboto Condensed", sans-serif;
-  color: #243a5e;
-  padding: 20px;
+  padding: 10px;
 }
 .body-content .container-ofertas .section-listado-ofertas .ofertas-no-disponibles {
   color: #243a5e;
@@ -1602,6 +1622,12 @@ p {
   display: flex;
   gap: 3em;
   max-height: 300px;
+}
+.body-content .container-ofertas .section-listado-ofertas .body-ofertas-acordeon p {
+  margin: 0;
+}
+.body-content .container-ofertas .section-listado-ofertas .body-ofertas-acordeon span {
+  font-weight: bold;
 }
 .body-content .container-ofertas .section-listado-ofertas .body-ofertas-acordeon .content-buttons-section {
   display: flex;
@@ -1643,8 +1669,10 @@ p {
   overflow-y: auto;
 }
 
+.modal-ofertas-delete {
+  font-family: "Roboto", sans-serif;
+}
 .modal-ofertas-delete .title-modal-delete {
-  color: red;
   font-family: "Roboto Condensed", sans-serif;
   padding: 10px;
   font-size: 19px;
@@ -1659,17 +1687,23 @@ p {
 }
 .modal-ofertas-delete .content-button-ofertas {
   display: flex;
-  gap: 10px;
+  flex-direction: column;
+  gap: 5px;
   justify-content: end;
   padding: 10px;
 }
 .modal-ofertas-delete .content-button-ofertas .btn {
-  width: 45%;
+  width: 100%;
   margin: auto;
+  font-size: 15px;
+}
+.modal-ofertas-delete .content-button-ofertas .delete {
+  background-color: #dadad9;
 }
 .modal-ofertas-delete .text-delete-oferta {
-  font-family: "Roboto", sans-serif;
   text-align: center;
+  margin: 0;
+  font-size: 14px;
 }
 .modal-ofertas-delete .t {
   color: red;
@@ -3214,16 +3248,16 @@ p {
   display: flex;
   gap: 10px;
   flex-direction: column;
-  height: 400px;
+  height: auto;
   overflow-x: auto;
   max-height: 400px;
   padding: 5px 10px;
 }
 .main-pedidos .body .body-deatils .table-pedidos .pedido-contenedor {
-  padding: 5px 10px;
+  padding: 10px 10px;
   background-color: white;
   box-sizing: border-box;
-  box-shadow: 0 0 5px 1px rgb(227, 227, 227);
+  box-shadow: 0 0 5px rgb(227, 227, 227);
 }
 .main-pedidos .body .body-deatils .table-pedidos .pedido-contenedor .body-pedido {
   display: flex;
@@ -3232,9 +3266,13 @@ p {
 .main-pedidos .body .body-deatils .table-pedidos .pedido-contenedor .body-pedido img {
   width: 5em;
 }
-.main-pedidos .body .body-deatils .table-pedidos .pedido-contenedor .body-pedido .text-body p {
+.main-pedidos .body .body-deatils .table-pedidos .pedido-contenedor .body-pedido .text-body span {
   font-size: 14px;
   margin: 0;
+}
+.main-pedidos .body .body-deatils .table-pedidos .pedido-contenedor .body-pedido .state-content {
+  gap: 5px;
+  display: flex;
 }
 .main-pedidos .body .body-deatils .table-pedidos .pedido-contenedor .footer-table {
   font-size: 14px;
@@ -3602,6 +3640,9 @@ section .content-not-products .oops span {
 section .content-not-products .oops .icon {
   margin-left: 10px;
   font-size: 50px;
+}
+section .content-not-products .list {
+  text-align: left;
 }
 section .content-not-products .list h4 {
   font-size: 20px;
@@ -4373,7 +4414,7 @@ section .details .summary .box4 .send {
 
 .layout-body-admin {
   width: 100vw;
-  margin: 5em auto 0 auto;
+  margin: 4.3em auto 0 auto;
   display: grid;
   grid-template-areas: "header header header header" "content content content content" "content content content content" "content content content content";
   grid-template-columns: repeat(4, 1fr);
@@ -4383,7 +4424,7 @@ section .details .summary .box4 .send {
   grid-area: header;
   text-align: center;
   display: flex;
-  padding: 5px 0;
+  padding: 10px 0;
   justify-content: center;
   align-items: center;
   border: solid 1px #dbdbdb;
@@ -4392,6 +4433,8 @@ section .details .summary .box4 .send {
   border-radius: 1px;
 }
 .layout-body-admin .header-admin h1 {
+  text-transform: uppercase;
+  font-size: 17px !important;
   margin: 0;
   font-weight: bold;
   font-family: "Roboto Condensed", sans-serif;
@@ -4399,7 +4442,7 @@ section .details .summary .box4 .send {
 .layout-body-admin .body-content {
   padding: 0;
   grid-area: content;
-  border: solid 1px #dbdbdb;
+  border: solid 1px #ffffff;
   box-shadow: 0 0 5px rgba(133, 133, 133, 0);
   box-sizing: border-box;
   border-radius: 1px;
