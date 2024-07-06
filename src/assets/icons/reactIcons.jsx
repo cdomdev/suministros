@@ -3,13 +3,13 @@
 // Icono del home
 
 import { TbTruckDelivery } from "react-icons/tb";
-export {TbTruckDelivery}
+export { TbTruckDelivery };
 export { SiMercadopago };
 import { SiMercadopago } from "react-icons/si";
 
 // icono de whatsapp
 import { FaWhatsapp } from "react-icons/fa";
-export {FaWhatsapp}
+export { FaWhatsapp };
 
 // svg del compoennte GoogleLogin
 
@@ -38,7 +38,6 @@ export const IconGoogle = () => {
     </svg>
   );
 };
-
 
 // Iconos del carrito de compras
 import { PiShoppingCartSimpleThin } from "react-icons/pi";
@@ -103,67 +102,81 @@ export { RiAddFill };
 import { FaHandHoldingDollar } from "react-icons/fa6";
 export { FaHandHoldingDollar };
 
-// icones de la page Nosotros 
+// icones de la page Nosotros
 
 import { FaFacebook } from "react-icons/fa";
-export {FaFacebook}
+export { FaFacebook };
 import { AiFillInstagram } from "react-icons/ai";
-export {AiFillInstagram}
+export { AiFillInstagram };
 import { FaXTwitter } from "react-icons/fa6";
-export {FaXTwitter}
+export { FaXTwitter };
 
-
-// icono de la page finnnalyBuy 
+// icono de la page finnnalyBuy
 
 import { FaRegCheckCircle } from "react-icons/fa";
-export {FaRegCheckCircle}
+export { FaRegCheckCircle };
 
-// icono de la page recovetyPAge 
+// icono de la page recovetyPAge
 
 import { CiCircleChevRight } from "react-icons/ci";
-export {CiCircleChevRight}
+export { CiCircleChevRight };
 
-// iconos en el componentes DataUSer 
+// iconos en el componentes DataUSer
 
 import { FaLocationDot } from "react-icons/fa6";
-export {FaLocationDot}
+export { FaLocationDot };
 
 // icono en la el componente NOtProduct
 
 import { VscSearchStop } from "react-icons/vsc";
-export {VscSearchStop}
+export { VscSearchStop };
 
 // icono en el compoennte cardCategorias
 import { BsDatabaseX } from "react-icons/bs";
-export {BsDatabaseX}
+export { BsDatabaseX };
 
 import { IoIosMedical } from "react-icons/io";
-export {IoIosMedical}
+export { IoIosMedical };
 
 // icocones en el compoennte footer
 
 import { IoLogoWhatsapp } from "react-icons/io";
-export {IoLogoWhatsapp}
+export { IoLogoWhatsapp };
 import { MdOutlinePhone } from "react-icons/md";
-export {MdOutlinePhone}
+export { MdOutlinePhone };
 import { IoPhonePortraitOutline } from "react-icons/io5";
-export {IoPhonePortraitOutline}
+export { IoPhonePortraitOutline };
 import { CiMail } from "react-icons/ci";
-export {CiMail}
-
-
+export { CiMail };
 
 // ----------------//---------------------------
 // iconos lado administrador
 
-
 // icocos del nav lado admin
 
 import { IoIosPerson } from "react-icons/io";
-export {IoIosPerson}
+export { IoIosPerson };
 import { AiOutlinePoweroff } from "react-icons/ai";
-export {AiOutlinePoweroff}
+export { AiOutlinePoweroff };
 
+import { PiUsersFill } from "react-icons/pi";
+
+export { PiUsersFill };
+
+import { BsBox2Fill } from "react-icons/bs";
+export { BsBox2Fill };
+
+import { BsGraphUpArrow } from "react-icons/bs";
+export { BsGraphUpArrow };
+import { MdOutlinePendingActions } from "react-icons/md";
+
+export { MdOutlinePendingActions };
+import { BsSendCheck } from "react-icons/bs";
+
+export { BsSendCheck };
+
+import { GiHistogram } from "react-icons/gi";
+export { GiHistogram };
 
 // Svg icon e el COmponente ForApp del lado admin
 

@@ -4,6 +4,7 @@ import axios from "axios";
 import { FormAdd } from "./FormAdd";
 import { useNotification } from "../../../hook/AppContextProvider";
 import { API_HOST } from "../../../config/config";
+import { api } from "../../../config/axios.conf";
 
 export const Crear = ({ setListadoState }) => {
   const [fileName, setFileName] = useState("");
@@ -28,8 +29,8 @@ export const Crear = ({ setListadoState }) => {
   useEffect(() => {
     // Peticion de la categoria
     const fetchData = async () => {
-      await axios
-        .get(`${API_HOST}/api/obtener/categorias`)
+      await api
+        .get(`${API_HOST}/api/categories/list`)
         .then((response) => {
           if (response.status === 200) {
             setCategorias(response.data.categorias);
@@ -44,8 +45,8 @@ export const Crear = ({ setListadoState }) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      await axios
-        .get(`${API_HOST}/api/obtener/sub-categorias`)
+      await api
+        .get(`${API_HOST}/api/subcategories/list`)
         .then((response) => {
           if (response.status === 200) {
             setSubcategorias(response.data.categorias);

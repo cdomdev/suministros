@@ -17,48 +17,107 @@ $color-complementario: #f2efe1;
 
 .body-content {
   .container-cards-home-admin {
+    display: flex;
+    flex-direction: column;
+
+    .dahsboard {
+      background-image: linear-gradient(to right bottom, #000000, #020202, #040404, #060605, #080807, #111111, #181717, #1d1d1d, #2a2a2a, #373737, #454545, #545454);
+      width: 96%;
+      border-radius: 10px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      margin: 20px auto 0px auto;
+      justify-content: center;
+      align-items: center;
+      height: 12em;
+
+      .profile {
+        width: 100px;
+        border-radius: 50%;
+        height: 5em;
+        margin: 10px 0 20px;
+        box-shadow: 0 0 30px 1px rgb(86, 86, 86);
+      }
+
+      h2 {
+        color: #eeeeee;
+
+        strong {
+          text-transform: capitalize;
+
+        }
+      }
+    }
+
     .box-rutas-admin {
       display: grid;
-      gap: 20px;
+      gap: 30px;
       padding: 20px;
       grid-template-columns: repeat(auto-fit, minmax(17em, 1em));
+      place-content: center;
 
       .link-box {
-        text-decoration: none;
         border-radius: 10px;
-        width: 16em;
-        height: 15em;
-        padding: 10px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-shadow: 0 0 5px rgb(217, 216, 216);
+        height: 10em;
+        box-shadow: 0 0 5px rgb(239, 239, 239);
         transition: all ease 0.3s;
         font-family: $contenidoFonts;
+        background-color: rgb(255, 255, 255);
 
-        .box-rutas {
+        .icon-box-content {
+          width: 100%;
+          margin: 0px auto 7px auto;
+          padding: 10px;
           display: flex;
-          flex-direction: column;
           justify-content: center;
-          align-items: center;
-          text-align: center;
+          border-radius: 10px 10px 0px 0px;
 
           .icon-box {
             display: block;
-            width: 100px;
-            height: 100px;
-            color: #243a5e;
+            width: 80px;
+            height: 80px;
+            color: rgb(235, 235, 235);
           }
 
-          .text-content {
-            padding: 0;
-            margin: 0;
+        }
 
-            h2 {
-              margin: 10px 0 -6px 0 !important;
-            }
+        .icb-1 {
+          background-color: #fbddb9;
+        }
 
-           
+        .icb-2 {
+          background-color: #6ee35e;
+        }
+
+        .icb-3 {
+          background-color: #cd76d8;
+        }
+
+        .icb-4 {
+          background-color: #c86464;
+        }
+
+        .icb-5 {
+          background-color: #33ddc0;
+        }
+
+        .icb-6 {
+          background-color: #75efff;
+        }
+
+        .icb-7 {
+          background-color: #284cc5;
+        }
+
+        .body-rutas {
+          display: flex;
+          flex-direction: column;
+          padding: 0px 0px 0px 10px;
+          margin: 0;
+
+          h2 {
+            margin:0;
           }
         }
 
@@ -66,10 +125,14 @@ $color-complementario: #f2efe1;
           box-shadow: 0 0 5px 1px rgb(199, 199, 199);
         }
       }
+
+
     }
-    h2{
+
+    h2 {
       font-weight: bold;
     }
+
     span {
       font-size: 13px !important;
       color: #525252;
@@ -159,6 +222,11 @@ $color-complementario: #f2efe1;
     }
   }
 
+  .body-content .container-cards-home-admin .box-rutas-admin {
+    padding-top: 10px !important;
+
+
+  }
 
 }
 
@@ -187,11 +255,18 @@ $color-complementario: #f2efe1;
 
   }
 
+  .body-content .container-cards-home-admin .box-rutas-admin {
+    place-content: center;
+
+  }
+
 }
 
 /* Estilos para dispositivos medianos */
 @media (min-width: 769px) and (max-width: 1024px) {
-  
+  .body-content .container-cards-home-admin .box-rutas-admin {
+    place-content: center;
 
+  }
 
 }

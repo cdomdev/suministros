@@ -51,7 +51,6 @@ const Login = ({ handleCloseModal, handleLoginSuccess }) => {
         const URL = `${API_HOST}/user/login`;
         const response = await axios.post(URL, { email1, password });
         const { accessToken } = response.data;
-        console.log("acesss del inicio ----> ", accessToken);
 
         const { id, name, email, picture, telefono, direccion } = response.data;
         const dataUserSesion = {

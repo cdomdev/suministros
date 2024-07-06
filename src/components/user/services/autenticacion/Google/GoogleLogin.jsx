@@ -12,10 +12,7 @@ const CLIENT_ID = import.meta.env.VITE_CLIENT_ID;
 
 // componente en uso
 
-const GoogleLogin = ({
-  setIsLoggedIn,
-  texto,
-}) => {
+const GoogleLogin = ({ setIsLoggedIn, texto }) => {
   useEffect(() => {
     const authChangeCallback = (isLoggedIn) => {
       if (isLoggedIn) {
@@ -45,10 +42,7 @@ const GoogleLogin = ({
   );
 };
 
-const LoginButton = ({
-  notifyAuthChange,
-  texto,
-}) => {
+const LoginButton = ({ notifyAuthChange, texto }) => {
   const { setShowToast, setToastMessage, setBgToast } = useNotification();
 
   const navigate = useNavigate();
@@ -64,8 +58,16 @@ const LoginButton = ({
             token: response.access_token,
           }
         );
-        const { id, role, name, email, picture, telefono, direccion } =
-          serverResponse.data;
+        const {
+          id,
+          role,
+          name,
+          email,
+          picture,
+          telefono,
+          direccion,
+          accessToken,
+        } = serverResponse.data;
         const dataUserSesion = {
           role: role,
           id: id,
@@ -74,6 +76,7 @@ const LoginButton = ({
           picture: picture,
           direccion: direccion,
           telefono: telefono,
+          accessToken: accessToken,
         };
 
         localStorage.setItem(
@@ -85,8 +88,9 @@ const LoginButton = ({
           login(role);
           notifyAuthChange(true);
           if (role === "admin") {
+            localStorage.setItem("HttpOnlyAdmin", accessToken);
             navigate("/admin");
-          } 
+          }
         } else {
           setToastMessage("Hubo problemas con el inicio de sesion");
           setBgToast("danger");

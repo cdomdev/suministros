@@ -8,7 +8,7 @@ $color-complementario: #f2efe1;
 
 
 @mixin bordeBox {
-    border: solid 1px #d9d9d9;
+    border: solid 1px #efefef;
     box-shadow: 0 0 5px rgba(84, 84, 84, 0);
     box-sizing: border-box;
     background-color: white;
@@ -22,7 +22,7 @@ $color-complementario: #f2efe1;
         display: grid;
         grid-template-columns: 1.5fr 3fr;
         flex-direction: column;
-        gap: 2px;
+        gap: 1px;
         padding: 5px;
         align-items: flex-start;
         .body-category {

@@ -9,7 +9,7 @@ $color-principal: #243a5e;
 $color-complementario: #f2efe1;
 
 @mixin bordeBox {
-    border: solid 1px #d9d9d9;
+    border: solid 1px  #efefef;;
     box-shadow: 0 0 5px rgba(84, 84, 84, 0);
     box-sizing: border-box;
     background-color: white;

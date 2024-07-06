@@ -33,8 +33,8 @@ export const Actualizar = ({ producto, setProductos }) => {
   useEffect(() => {
     // Peticion de la categoria
     const fetchData = async () => {
-      await axios
-        .get(`${API_HOST}/api/obtener/categorias`)
+      await api
+        .get(`${API_HOST}/api/categories/list`)
         .then((response) => {
           if (response.status === 200) {
             setCategorias(response.data.categorias);
@@ -49,8 +49,8 @@ export const Actualizar = ({ producto, setProductos }) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      await axios
-        .get(`${API_HOST}/api/obtener/sub-categorias`)
+      await api
+        .get(`${API_HOST}/api/subcategories/list`)
         .then((response) => {
           if (response.status === 200) {
             setSubcategorias(response.data.categorias);

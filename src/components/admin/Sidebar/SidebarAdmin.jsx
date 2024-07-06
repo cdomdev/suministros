@@ -27,7 +27,9 @@ import { useUser } from "../../../hook";
 import {
   AiOutlinePoweroff,
   IoIosPerson,
+  GiHistogram,
 } from "../../../assets/icons/reactIcons";
+import logo from "../img/logo.webp";
 
 const drawerWidth = 240;
 
@@ -116,6 +118,11 @@ export function SidebarAdmin() {
       path: "/admin/gestionar/subcategorias",
       icon: <MdAssignmentAdd className="icon" />,
     },
+    {
+      name: "Balances",
+      path: "/admin/balances",
+      icon: <GiHistogram className="icon" />,
+    },
   ];
 
   return (
@@ -133,7 +140,7 @@ export function SidebarAdmin() {
           </IconButton>
           <div className="nav-sidebar">
             <Typography variant="h6" noWrap component="div">
-              Dashboard administrador
+              SUMINISTROS
             </Typography>
             <div className="box-infor-admin">
               <div className="admin" onClick={redirectToHome}>

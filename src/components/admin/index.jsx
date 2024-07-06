@@ -14,3 +14,4 @@ export const Subcategorias = lazy(() => import("./subCategorias/SubCategoria"));
 export const Pedidos = lazy(() => import("./usuarios/pedidos/Pedidos"));
 export const Detalles = lazy(() => import("./usuarios/pedidos/Detalles"));
 export const Layout = lazy(() => import("./layout/Layout"));
+export const Balances = lazy(() => import("./balances/Balances"));

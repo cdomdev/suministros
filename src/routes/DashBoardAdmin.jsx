@@ -12,6 +12,7 @@ import {
   HomeAdmin,
   NotExisting,
   Detalles,
+  Balances,
 } from "../components/admin";
 import GestionInventary from "../components/admin/inventario/GestionInventary";
 import { SidebarAdmin } from "../components/admin/Sidebar/SidebarAdmin";
@@ -48,6 +49,8 @@ const DashboardAdmin = () => {
                 path="/gestion/inventario"
                 element={<GestionInventary />}
               />
+              <Route path="/balances" element={<Balances />} />
+
               <Route path="/crear/ofertas" element={<Ofertas />} />
               <Route path="/gestionar/categorias" element={<Categorias />} />
               <Route

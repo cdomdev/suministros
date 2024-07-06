@@ -2,17 +2,13 @@ $tittlesFonts: "Roboto Condensed", sans-serif;
 $contenidoFonts: "Roboto", sans-serif;
 $contenido2: "Montserrat", sans-serif;
 
-@mixin bordeBox {
-    border: solid 1px #dbdbdb;
-    box-shadow: 0 0 5px rgba(133, 133, 133, 0);
-    box-sizing: border-box;
-    border-radius: 1px;
-}
+
 @mixin borderContent{
     border: solid 1px #ffffff;
     box-shadow: 0 0 5px rgba(133, 133, 133, 0);
     box-sizing: border-box;
     border-radius: 1px;
+
 }
 
 .layout-body-admin {
@@ -28,13 +24,18 @@ $contenido2: "Montserrat", sans-serif;
 
     .header-admin {
         width: 100%;
+        background-color:white;
+        margin: auto;
         grid-area: header;
         text-align: center;
         display: flex;
         padding: 10px 0;
         justify-content: center;
         align-items: center;
-        @include bordeBox();
+        box-shadow: 0 0 5px 1px rgba(80, 80, 80, 0);
+        box-sizing: border-box;
+        border-radius: 2px;
+        // border: solid 1px #ececec;
         
         h1 {
             text-transform: uppercase;
@@ -49,7 +50,8 @@ $contenido2: "Montserrat", sans-serif;
         padding: 0;
         grid-area: content;
         @include borderContent();
-        height: auto ;
+        height: 100vh ;
+        background-color: #F5F6FA;
     }
 }
 

@@ -7,7 +7,7 @@ $color-principal: #243a5e;
 $color-complementario: #f2efe1;
 
 @mixin bordeBox {
-  border: solid 1px #dbdbdb;
+  border: solid 1px #efefef;
   box-shadow: 0 0 5px rgba(133, 133, 133, 0);
   box-sizing: border-box;
   border-radius: 1px;
@@ -19,6 +19,7 @@ $color-complementario: #f2efe1;
   .table-user {
     padding: 10px;
     @include bordeBox();
+    background-color: white;
     width: 99%;
     margin: 0 auto 10px auto;
     h2{
