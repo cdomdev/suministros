@@ -6,7 +6,6 @@ import Avatar from "@mui/material/Avatar";
 
 const HomeAdmin = () => {
   const [data, setData] = useState({});
-  let nombre = "carlos";
   useEffect(() => {
     setData(getDataStorage("userOnValidateScesOnline"));
   }, []);

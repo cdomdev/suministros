@@ -37,8 +37,8 @@ export const Marcas = ({
   return (
     <>
       {marcasUnicas &&
-        marcasUnicas.map((marca) => (
-          <ul key={marca}>
+        marcasUnicas.map((marca, index) => (
+          <ul key={marca || index}>
             <li>
               <input
                 className="m-2 check"
@@ -73,8 +73,4 @@ export const Precio = ({ precioSeleccionado, handlePrecioChange }) => {
       </div>
     </>
   );
-};
-
-export const Descuento = () => {
-  return <></>;
 };

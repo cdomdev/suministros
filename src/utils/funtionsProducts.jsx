@@ -3,7 +3,7 @@
 // Funcion para obtenrlas marcas unicas de un array de productos
 export const obtenerMarcasUnicas = (productos) => {
   const marcasUnicas = [
-    ...new Set(productos.map((producto) => producto.title)),
+    ...new Set(productos.map((producto) => producto.marca)),
   ];
   return marcasUnicas;
 };

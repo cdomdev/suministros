@@ -24,12 +24,9 @@ import { BsBoxSeam } from "react-icons/bs";
 import { BiSolidOffer } from "react-icons/bi";
 import { IoBagAddSharp } from "react-icons/io5";
 import { useUser } from "../../../hook";
-import {
-  AiOutlinePoweroff,
-  IoIosPerson,
-  GiHistogram,
-} from "../../../assets/icons/reactIcons";
-import logo from "../img/logo.webp";
+import { GiHistogram } from "../../../assets/icons/reactIcons";
+import { ProfileMenu } from "../Nav/ProfileMenu";
+import NotificationMenu from "../Nav/NotificationMenu";
 
 const drawerWidth = 240;
 
@@ -61,22 +58,6 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 export function SidebarAdmin() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
-
-  const { logout } = useUser();
-
-  const redirectToHome = () => {
-    navigate("/admin");
-  };
-  const navigate = useNavigate();
-
-  const finnalySection = () => {
-    localStorage.clear();
-    sessionStorage.clear();
-    navigate("/suministros/home");
-    setTimeout(() => {
-      logout();
-    }, 2000);
-  };
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -143,15 +124,8 @@ export function SidebarAdmin() {
               SUMINISTROS
             </Typography>
             <div className="box-infor-admin">
-              <div className="admin" onClick={redirectToHome}>
-                <IoIosPerson className="icon" />
-                ADMIN
-              </div>
-              <div className="logout">
-                <button onClick={finnalySection}>
-                  <AiOutlinePoweroff className="off" />
-                </button>
-              </div>
+              <NotificationMenu />
+              <ProfileMenu />
             </div>
           </div>
         </Toolbar>

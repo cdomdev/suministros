@@ -74,7 +74,7 @@ const CardCategorias = ({ rutaCategoria, nombreCategoria }) => {
       producto.subcategoria.nombre === categoriaSeleccionada;
     const marca =
       marcaSeleccionada.length === 0 ||
-      marcaSeleccionada.includes(producto.title);
+      marcaSeleccionada.includes(producto.marca);
     return marca && subcategoria;
   });
 
@@ -135,7 +135,7 @@ const CardCategorias = ({ rutaCategoria, nombreCategoria }) => {
                   loading="lazy"
                 />
                 <div className="contenido-card">
-                  <li className="title">{producto.title}</li>
+                  <li className="title">{producto.marca}</li>
                   <li className="text">{producto.nombre}</li>
                   <li className="valor">
                     $ {formateValue(parseInt(producto.valor, 10))}

@@ -1,37 +1,37 @@
 import React, { useState, useEffect } from "react";
 import Table from "react-bootstrap/Table";
 import Pedidos from "./pedidos/Pedidos";
-import { fechtData } from "../../../utils/fechtData";
 import { API_HOST } from "../../../config/config";
+import { api } from "../../../config/axios.conf";
 
 const Usuarios = () => {
   const [usuarios, setUsuarios] = useState([]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fechtData(`${API_HOST}/api/listar/usuarios`);
-        setUsuarios(response.data.usuarios);
-      } catch (error) {
-        console.error("Error al obtener los usuarios:", error);
-      }
-    };
-
-    fetchData();
+    api
+      .get(`${API_HOST}/api/listar/usuarios`)
+      .then((response) => {
+        if (response.status === 200) {
+          setUsuarios(response.data.listaPedidos);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }, []);
 
   return (
     <div className="table-user">
-      <h2 className="text-center">Usuarios</h2>
-      {(usuarios && usuarios.length === 0) || usuarios === null ? (
-        <span>No hay pedido de usuarios</span>
+      <h2 className="text-center">Listado de pedidos</h2>
+      {usuarios & (usuarios === null) ? (
+        <p>cargando...</p>
       ) : (
         <Table striped bordered hover size="sm" responsive>
           <thead>
             <tr>
-              <th className="thead-table-users">Identificador</th>
               <th className="thead-table-users">Nombre</th>
               <th className="thead-table-users">E-mail</th>
+              <th className="thead-table-users">Rol del usuario</th>
               <th className="thead-table-users">Pedidos</th>
             </tr>
           </thead>
@@ -40,15 +40,23 @@ const Usuarios = () => {
               .filter((usuario) => usuario.tienePedidos)
               .map((usuario) => (
                 <tr key={usuario.id}>
-                  <td>{usuario.id}</td>
-                  <td>{usuario.name}</td>
+                  <td>{usuario.name || usuario.nombre}</td>
                   <td>{usuario.email}</td>
+                  <td>{usuario.roles?.rol_name || usuario.role}</td>
                   <td>
-                    <Pedidos
-                      id={usuario.id}
-                      user={usuario}
-                      url={`pedidos-usuario`}
-                    />
+                    {usuario.roles?.rol_name === "user" ? (
+                      <Pedidos
+                        id={usuario.id}
+                        user={usuario}
+                        url={`pedidos-usuario`}
+                      />
+                    ) : (
+                      <Pedidos
+                        url={`pedidos-invitado`}
+                        user={usuario}
+                        id={usuario.id}
+                      />
+                    )}
                   </td>
                 </tr>
               ))}

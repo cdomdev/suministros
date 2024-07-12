@@ -18,6 +18,7 @@ export const Elminar = ({ producto, setProductos }) => {
         data: { producto_Id: producto.id },
       })
       .then((response) => {
+        console.log(response);
         if (response.status === 200) {
           setProductos(response.data.daleteUpdate);
           setBgToast("success");

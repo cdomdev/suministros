@@ -16,6 +16,8 @@ import {
 } from "../components/admin";
 import GestionInventary from "../components/admin/inventario/GestionInventary";
 import { SidebarAdmin } from "../components/admin/Sidebar/SidebarAdmin";
+import Prueba from "../components/admin/Nav/Prueba";
+import { LogoutSuccess } from "../pages/userServices/LogoutSuccess";
 
 const DashboardAdmin = () => {
   const { isAdmin, setIsAdmin } = useUser();
@@ -45,6 +47,7 @@ const DashboardAdmin = () => {
                 element={<Detalles />}
               />
               <Route path="/añadir/productos" element={<Admin />} />
+              <Route path="/logout-success" element={<LogoutSuccess />} />
               <Route
                 path="/gestion/inventario"
                 element={<GestionInventary />}

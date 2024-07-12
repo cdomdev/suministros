@@ -15,7 +15,7 @@ export const Crear = ({ setListadoState }) => {
   const [selectedSubCategoria, setSelectedSubCategoria] = useState("");
 
   const [productState, setProductState] = useState({
-    title: "",
+    marca: "",
     nombre: "",
     description: "",
     valor: "",
@@ -82,7 +82,7 @@ export const Crear = ({ setListadoState }) => {
     e.preventDefault();
 
     const {
-      title,
+      marca,
       description,
       nombre,
       valor,
@@ -95,7 +95,7 @@ export const Crear = ({ setListadoState }) => {
     const precio = parseInt(valor).toFixed(2);
 
     if (
-      !title ||
+      !marca ||
       !description ||
       !precio ||
       !cantidad ||
@@ -137,7 +137,7 @@ export const Crear = ({ setListadoState }) => {
 
         const newProduct = {
           id: uuidv4(),
-          title: title.toUpperCase(),
+          marca: marca.toUpperCase(),
           nombre: nombre,
           description: description,
           valor: precio,
@@ -159,7 +159,7 @@ export const Crear = ({ setListadoState }) => {
         });
 
         setProductState({
-          title: "",
+          marca: "",
           description: "",
           nombre: "",
           valor: "",

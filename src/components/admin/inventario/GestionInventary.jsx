@@ -91,7 +91,7 @@ const GestionInventary = () => {
                       <div className="details">
                         <span>
                           <strong>Marca:</strong>
-                          {producto.title}
+                          {producto.marca}
                         </span>
                         <strong>Descripción:</strong>
                         <p>{producto.description}</p>

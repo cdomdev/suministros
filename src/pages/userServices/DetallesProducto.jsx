@@ -68,7 +68,7 @@ const DetallesProducto = () => {
             </div>
             <div className="details">
               <div className="ref">
-                <strong>{producto.title}</strong>
+                <strong>{producto.marca}</strong>
                 <span className="r"> REF: {producto.referencia}</span>
               </div>
               <strong>{producto.nombre}</strong>
@@ -155,7 +155,7 @@ const CarProductsRelationados = () => {
               className="img-products"
             />
             <div className="contenido-card">
-              <li className="title">{producto.title}</li>
+              <li className="title">{producto.marca}</li>
               <li className="text">{producto.nombre}</li>
               <li className="valor">
                 $ {formateValue(parseInt(producto.valor, 10))}{" "}

@@ -14,8 +14,6 @@ const PedidosUser = () => {
     setDataLocal(getDataStorage("userOnValidateScesOnline"));
   }, []);
 
-  console.log(pedidos);
-
   useEffect(() => {
     const fetchData = async () => {
       try {

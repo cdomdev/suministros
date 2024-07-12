@@ -56,7 +56,7 @@ const CardsOfertas = () => {
                     className="image"
                     loading="lazy"
                   />
-                  <li className="name">{producto.title}</li>
+                  <li className="name">{producto.marca}</li>
 
                   <li>{producto.nombre}</li>
 

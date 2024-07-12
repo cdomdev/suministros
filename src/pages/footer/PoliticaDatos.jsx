@@ -1,5 +1,5 @@
 import React from "react";
-import { BtnWhatsapp } from "../../utils/ComponentsUtils";
+import { BtnWhatsapp } from "../../utils";
 
 const PoliticaDatos = () => {
   return (

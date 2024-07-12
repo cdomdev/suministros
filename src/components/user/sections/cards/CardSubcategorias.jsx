@@ -87,10 +87,10 @@ const CardSubcategorias = ({
 
   const productosFiltrados = productos.filter((producto) => {
     const categoriaPass =
-      !categoriaSeleccionada || producto.title === categoriaSeleccionada;
+      !categoriaSeleccionada || producto.marca === categoriaSeleccionada;
     const marcaPass =
       marcasSeleccionada.length === 0 ||
-      marcasSeleccionada.includes(producto.title);
+      marcasSeleccionada.includes(producto.marca);
     return categoriaPass && marcaPass;
   });
 
@@ -157,7 +157,7 @@ const CardSubcategorias = ({
                   loading="lazy"
                 />
                 <div className="contenido-card">
-                  <li className="title">{producto.title}</li>
+                  <li className="title">{producto.marca}</li>
                   <li className="text">{producto.nombre}</li>
                   <li className="valor">
                     $ {formateValue(parseInt(producto.valor, 10))}

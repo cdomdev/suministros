@@ -1,3 +1,4 @@
+import { getDataStorage } from "../utils";
 import { API_HOST } from "./config";
 import axios from "axios";
 
@@ -13,7 +14,14 @@ export const api = axios.create({
 // Agregar un interceptor para incluir el token en cada solicitud
 api.interceptors.request.use(
   (config) => {
-    const tokenAdmin = localStorage.getItem("HttpOnlyAdmin");
+    let tokenAdmin;
+    const tokenAdminRoleAdmin = localStorage.getItem("HttpOnlyAdmin");
+    const role = getDataStorage("userOnValidateScesOnline");
+    if (role.role === "admin") {
+      tokenAdmin = tokenAdminRoleAdmin;
+    } else {
+      tokenAdmin = role.accessToken;
+    }
     if (tokenAdmin) {
       config.headers.Authorization = `Bearer ${tokenAdmin}`;
     }

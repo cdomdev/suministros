@@ -9,7 +9,6 @@ import { BiArrowBack } from "../../../../../assets/icons/reactIcons";
 import { useNotification } from "../../../../../hook";
 import { Link } from "react-router-dom";
 import { API_HOST } from "../../../../../config/config";
-import axios from "axios";
 import { api } from "../../../../../config/axios.conf";
 
 const DataUserUpdate = () => {
@@ -70,13 +69,12 @@ const DataUserUpdate = () => {
       }
     } catch (e) {
       console.log("Error al actulziar datos", e);
-      if (e.response.status === 403) {
+      if (e.response.status === 403 || e.response.status === 401) {
         setShowToast(true);
         setBgToast("danger");
         setToastMessage(
           "No tienes permisos para esta operacion, algo salio mal con tu sesion, iniciala nuevamente"
         );
-        localStorage.clear();
       }
     } finally {
       setIsLoading(false);

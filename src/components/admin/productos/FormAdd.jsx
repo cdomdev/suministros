@@ -24,7 +24,7 @@ export const FormAdd = ({
           placeholder="Corona"
           value={productState.title}
           onChange={(e) =>
-            setProductState({ ...productState, title: e.target.value })
+            setProductState({ ...productState, marca: e.target.value })
           }
           minLength={1}
           maxLength={50}
@@ -134,7 +134,7 @@ export const FormAdd = ({
             className="btn btn-custom mt-2"
             variant="primary"
             type="submit">
-           Agregar producto
+            Agregar producto
           </Button>
         </span>
       </Form>

@@ -85,11 +85,14 @@ const LoginButton = ({ notifyAuthChange, texto }) => {
         );
         if (serverResponse.status === 200) {
           const { role } = serverResponse.data;
+          console.log(serverResponse.data);
           login(role);
           notifyAuthChange(true);
           if (role === "admin") {
             localStorage.setItem("HttpOnlyAdmin", accessToken);
             navigate("/admin");
+          } else {
+            navigate("/suministros/home");
           }
         } else {
           setToastMessage("Hubo problemas con el inicio de sesion");

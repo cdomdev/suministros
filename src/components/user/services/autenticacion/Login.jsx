@@ -52,7 +52,8 @@ const Login = ({ handleCloseModal, handleLoginSuccess }) => {
         const response = await axios.post(URL, { email1, password });
         const { accessToken } = response.data;
 
-        const { id, name, email, picture, telefono, direccion } = response.data;
+        const { id, name, email, picture, telefono, direccion, role } =
+          response.data;
         const dataUserSesion = {
           name: name,
           id: id,
@@ -60,6 +61,8 @@ const Login = ({ handleCloseModal, handleLoginSuccess }) => {
           direccion: direccion,
           email: email,
           picture: picture || null,
+          role: role,
+          accessToken,
         };
 
         localStorage.setItem(
@@ -75,6 +78,8 @@ const Login = ({ handleCloseModal, handleLoginSuccess }) => {
           if (userData.role === "admin") {
             localStorage.setItem("HttpOnlyAdmin", accessToken);
             navigate("/admin");
+          } else if (userData.role === "user") {
+            localStorage.setItem("HttpOnlyDA?taUSerOnly", accessToken);
           } else {
             const previousLocation =
               sessionStorage.getItem("previousLocation") || "/";

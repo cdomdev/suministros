@@ -78,7 +78,7 @@ export const Actualizar = ({ producto, setProductos }) => {
     setIsLoading(true);
     // Obtener los valores actuales de los campos o utilizar los valores por defecto del producto
     const updatedNombre = nombreRef.current.value || producto.nombre;
-    const updatedTitle = tituloRef.current.value || producto.title;
+    const updatedMarca = tituloRef.current.value || producto.marca;
     const updatedValor = parseFloat(valorRef.current.value) || producto.valor;
     const updatedDescripcion =
       descripcionRef.current.value || producto.description;
@@ -92,7 +92,7 @@ export const Actualizar = ({ producto, setProductos }) => {
     //  nuevo objeto con la informacion el producto
     const productosActualizado = {
       nombre: updatedNombre,
-      title: updatedTitle,
+      marca: updatedMarca,
       valor: updatedValor,
       description: updatedDescripcion,
       referencia: updatedReferencia,
@@ -177,7 +177,7 @@ export const Actualizar = ({ producto, setProductos }) => {
               type="text"
               name="titulo"
               className="titulo-editado mt-3"
-              defaultValue={producto.title}
+              defaultValue={producto.marca}
               ref={tituloRef}
             />
             <Form.Control

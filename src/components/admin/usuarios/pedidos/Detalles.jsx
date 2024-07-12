@@ -64,7 +64,10 @@ const Detalles = () => {
                         </td>
                         <td>{order.detalles_pedido[0]?.cantidad}</td>
                         <td>{order.detalles_pedido[0]?.descuento}</td>
-                        <td>{order.detalles_pedido[0]?.status_detail}</td>
+                        <td>
+                          {order.detalles_pedido[0]?.status_detail ||
+                            "No acreditado"}
+                        </td>
                       </tr>
                     </tbody>
                   </Table>

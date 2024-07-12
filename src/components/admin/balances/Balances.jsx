@@ -1,6 +1,7 @@
 import Layout from "../layout/Layout";
-import { MostSalled } from "./MostSalled";
 import { BalanceCards } from "./BalanceCards";
+import GraficProducts from "./GraficProducts";
+import { MostSalled } from "./MostSalled";
 
 const Balances = () => {
   return (

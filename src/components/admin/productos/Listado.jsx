@@ -23,7 +23,7 @@ export const Listado = ({ listadoState, setListadoState }) => {
                 <div className="details">
                   <span>
                     <strong>Marca: </strong>
-                    {producto.title}
+                    {producto.marca}
                   </span>
                   <span>
                     <strong>Nombre: </strong>

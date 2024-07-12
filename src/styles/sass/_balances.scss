@@ -102,33 +102,18 @@ $otro: 'Lato', sans-serif;
             font-family: $tittlesFonts;
             font-style: normal;
         }
-        .balans-tabale{
+        .balans-table{
             margin: auto;
             height: auto;
             padding: 20px;
             background-color: white;
             border-radius: 10px;
             width: 97%;
-            .contenedor-card{
-                display: flex;
-                flex-direction: column;
-                gap: 5px;
-                .card-products{
-                    border: solid 1px #787878;
-                    align-items: center;
-                    display: flex;
-                    border-radius: 10px;
-                    padding: 0  20px;
-                    gap: 20px;
-                    margin: 0;
-                    img{
-                        width: 3.5em;
-                    }
-                    li{
-                        list-style: none;
-                    }
-                }
+            .recharts-text {
+                color: red !important;
+                font-size: 8px !important;
             }
+        
         }
     }
 }
