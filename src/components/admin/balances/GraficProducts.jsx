@@ -27,10 +27,10 @@ const GraficProducts = ({ data }) => {
     <ResponsiveContainer width="100%" height={400}>
       <BarChart
         width={500}
-        height={300}
+        height={200}
         data={data}
         margin={{
-          top: 5,
+          top: 20,
           right: 30,
           left: 20,
           bottom: 5,

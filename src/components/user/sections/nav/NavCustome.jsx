@@ -1,5 +1,4 @@
 import { Outlet, NavLink, Link } from "react-router-dom";
-import { lazy } from "react";
 import { Container, Nav, Navbar, Offcanvas } from "react-bootstrap";
 import { ContenidoSubmenus } from "./ContenidoSubmenus";
 import BoxIcons from "./BoxIcons";

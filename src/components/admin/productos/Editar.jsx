@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
 import { useNotification } from "../../../hook";
 import { getDataStorage } from "../../../utils/getDataStorage";
@@ -19,7 +19,7 @@ export const Editar = ({ producto, setListadoState }) => {
 
     let productoActualizado = {
       id,
-      title: target.titulo.value || producto.title,
+      marca: target.titulo.value || producto.marca,
       valor: parseInt(target.valor.value).toFixed(2) || producto.valor,
       nombre: target.nombre.value || producto.nombre,
       description: target.descripcion.value || producto.description,
@@ -31,10 +31,7 @@ export const Editar = ({ producto, setListadoState }) => {
       subcategoria: producto.subcategoria,
       subcategoria_id: producto.subcategoria_id,
     };
-    console.log(producto);
 
-    console.log(productosAlmacenados);
-    console.log(productoActualizado);
     productosAlmacenados[indice] = productoActualizado;
     localStorage.setItem("productos", JSON.stringify(productosAlmacenados));
     setListadoState((prevListado) =>
@@ -62,46 +59,46 @@ export const Editar = ({ producto, setListadoState }) => {
           <Modal.Title>Editar Producto</Modal.Title>
         </Modal.Header>
         <Modal.Body className="modal-body-editar">
+          <Form.Label>Cambiar marca del producto</Form.Label>
           <Form onSubmit={(e) => guardarEdicion(e, producto.id)}>
             <Form.Control
               type="text"
               name="titulo"
               className="titulo-editado "
-              defaultValue={producto.title}
+              defaultValue={producto.marca}
             />
-            <Form.Label>Cambiar marca del producto</Form.Label>
+            <Form.Label>Cambiar nombre del producto</Form.Label>
             <Form.Control
               type="text"
               name="nombre"
               className="titulo-editado "
               defaultValue={producto.nombre}
             />
-            <Form.Label>Cambiar nombre del producto</Form.Label>
+            <Form.Label>Cambiar valor del producto</Form.Label>
             <Form.Control
               placeholder="Actualizar precio"
               name="valor"
               defaultValue={producto.valor}
             />
-            <Form.Label>Cambiar valor del producto</Form.Label>
+            <Form.Label>Cambiar catidad del producto</Form.Label>
             <Form.Control
               placeholder="Actualizar cantidad"
               name="cantidad"
               defaultValue={producto.cantidad}
             />
-            <Form.Label>Cambiar catidad del producto</Form.Label>
+            <Form.Label>Cambiar referencia del producto</Form.Label>
             <Form.Control
               placeholder="Actualizar referencia"
               name="referencia"
               defaultValue={producto.referencia}
             />
-            <Form.Label>Cambiar referencia del producto</Form.Label>
+            <Form.Label>Cambiar descripcion del producto</Form.Label>
             <Form.Control
               as="textarea"
               name="descripcion"
               defaultValue={producto.description}
               className="descripcion-editada "
             />
-            <Form.Label>Cambiar descripcion del producto</Form.Label>
 
             <span className="content-btn-card">
               <Button type="submit" className="btn-custom ">

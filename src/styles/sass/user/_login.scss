@@ -31,14 +31,14 @@ $contenido2: "Montserrat", sans-serif;
         }
 
         .btn-custome-goolgle {
-            background-color: white;
+            background-color: rgb(242, 242, 242);
             cursor: pointer;
             border-radius: 5px;
             width: 100%;
             margin: 0 0 1em 0;
             display: flex;
             border: solid 1px #e3e6e8;
-            height: 40px;
+            height: 45px;
             justify-content: center;
             align-items: center;
             gap: 5px;
@@ -53,7 +53,7 @@ $contenido2: "Montserrat", sans-serif;
             }
 
             &:hover {
-                background-color: #4889f4;
+                background-color: #2065d3;
                 color: white;
             }
         }

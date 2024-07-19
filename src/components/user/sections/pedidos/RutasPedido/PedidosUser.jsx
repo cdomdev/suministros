@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { BiArrowBack } from "react-icons/bi";
 import axios from "axios";
@@ -12,9 +12,6 @@ const PedidosUser = () => {
 
   useEffect(() => {
     setDataLocal(getDataStorage("userOnValidateScesOnline"));
-  }, []);
-
-  useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.post(
@@ -67,7 +64,12 @@ const PedidosUser = () => {
                     </span>
                     <span className="state-content">
                       <strong>Estado del pedido: </strong>
-                      <p className="state"> En {detalle.estado_pedido}...</p>
+                      <p className="state">
+                        {" "}
+                        {detalle.estado_pedido
+                          ? detalle.estado_pedido
+                          : "Pedido sin estado"}
+                      </p>
                     </span>
                   </div>
                 </div>

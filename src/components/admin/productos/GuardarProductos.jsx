@@ -1,5 +1,4 @@
 import { Button, Spinner } from "react-bootstrap";
-import axios from "axios";
 import { API_HOST } from "../../../config/config";
 import { useNotification } from "../../../hook";
 import { useState } from "react";

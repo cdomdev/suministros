@@ -1,0 +1,180 @@
+$tittlesFonts: "Roboto Condensed", sans-serif;
+$contenidoFonts: "Roboto", sans-serif;
+$contenido2: "Montserrat", sans-serif;
+
+
+$color-principal: #243a5e;
+$color-complementario: #f2efe1;
+
+
+
+.nav-sidebar {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+
+    .box-info-admin {
+        gap: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: $contenido2;
+
+    }
+
+}
+
+
+.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root {
+    padding: 0 !important;
+   
+}
+
+// popover del perfil
+.css-6hp17o-MuiList-root-MuiMenu-list {
+    padding: 0 !important;
+    display: flex;
+    flex-direction: column !important;
+
+    .profile{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .header{
+            hr{
+                margin: 0;
+            }
+            p{
+                margin: 0;
+            }
+        }
+        .body{
+            gap: 5px;
+            padding: 5px 20px 10px 20px;
+            display: flex;
+            flex-direction: column;
+            .profile-link{
+                border: solid 1px #c4c4c4;
+                padding: 8px 5px;
+                border-radius: 10px;
+                font-size: 18px;
+                align-items: center;
+                .icon{
+                    font-size: 30px;
+                    color: #757575;
+                    margin: -5px 0px 0px 4px;
+                }
+                &:hover{
+                    background-color: #2a6cd7;
+                    color: white;
+                }
+               
+            }
+            .btn-logout {
+                border: none;
+                padding: 10px 20px;
+                border-radius: 10px;
+                color: black;
+                transition: all ease 0.3s;
+                border: solid 1px #bdbdbd;
+                background-color: white;
+               
+                .icon{
+                    font-size: 20px;
+                    color: #757575;
+                    margin: -2px 0px 0px 5px;
+    
+                }
+                &:hover{
+                    background-color: red;
+                    color: white;
+                }
+            }
+        }
+       
+    }
+    
+
+    .item-notifications{
+        p{
+            margin: 0;
+        }
+    }
+    .body{
+        .header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .close{
+                padding-right: 10px;
+                font-size: 30px;
+            }
+            span{
+                margin: 0;
+                padding-left: 20px;
+            }
+        }
+       
+        hr{
+            margin: 0px 0px 10px 0px;
+        }
+        .body-notifications{
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+            padding: 0;
+            .notification{
+               padding: 3px 0;
+              
+                span{
+                    font-size: 11px;
+                    font-weight: bold;
+                    padding-left: 30px;
+                    margin: 0;
+                }
+                p{
+                    margin: 0;
+                    padding: 0px 10px;
+                    font-size: 12px;
+                    
+                }
+                .date{
+                    display: flex;
+                    justify-content: space-between;
+                    a{
+                        margin-right: 30px;
+                        text-decoration: overline;
+                        font-size: 13px;
+                        color: white;
+                       
+                    }
+                }
+
+                &:hover{
+                    background-color: green;
+                    color: white;
+                }
+            }
+           
+         
+        }
+    }
+ 
+    .empty{
+        display: flex;
+        align-items: center;
+        padding: 0px 10px;
+    }
+   
+    
+}
+
+
+// barra lateral del menu
+.list-icons {
+    .icon {
+        font-size: 30px;
+        color: #4a4a4a;
+    }
+}

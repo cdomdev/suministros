@@ -267,7 +267,7 @@ $contenido2: "Montserrat", sans-serif;
                         font-weight: bold;
                         font-size: 11px;
                         opacity: 90%;
-                        margin: 3em 0 5px 0;
+                        margin: 1em 0 5px 0;
                         color: rgb(63, 63, 63);
                     }
 
@@ -327,8 +327,11 @@ $contenido2: "Montserrat", sans-serif;
     .migajas {
         padding-left: 1em;
     }
-
+   
     .container-productos {
+       .mobile-select{
+        display: block;
+       }
         h1 {
             line-height: 20px;
         }

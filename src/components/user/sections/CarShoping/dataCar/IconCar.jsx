@@ -1,11 +1,11 @@
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCarShop } from "../../../../../hook";
 import { PiShoppingCartSimpleThin } from "../../../../../assets/icons/reactIcons";
 
 // icono con navegacion al carrito
-// 🎉
-const IconCar = React.forwardRef(() => {
+
+export const IconCar = () => {
   const [cartItemCount, setCartItemCount] = useState(0);
   localStorage.setItem("count", cartItemCount);
   const targetRef = useRef(null);
@@ -34,6 +34,4 @@ const IconCar = React.forwardRef(() => {
       </div>
     </>
   );
-});
-
-export default IconCar;
+};

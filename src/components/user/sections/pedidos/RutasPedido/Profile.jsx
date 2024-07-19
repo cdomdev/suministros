@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Form, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FaRegEdit } from "../../../../../assets/icons/reactIcons";

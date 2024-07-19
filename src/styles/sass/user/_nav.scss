@@ -6,6 +6,12 @@ $contenido2: "Montserrat", sans-serif;
 $color-principal: #243a5e;
 $color-complementario: #f2efe1;
 
+@mixin bordeBox {
+    border: solid 1px #bdbdbd;
+    box-shadow: 0 0 5px rgba(84, 84, 84, 0);
+    box-sizing: border-box;
+}
+
 // barra de navegacion 
 .nav-custom {
     background-color: white;
@@ -268,6 +274,45 @@ $color-complementario: #f2efe1;
     }
 
 
+}
+
+
+// componente de perfil de usuarios
+.popover {
+    border: none;
+    border-radius: 10px;
+    .popover-user-profile {
+        box-shadow: 0 0 6px 2px rgb(216, 216, 216);
+        display: flex;
+        flex-direction: column;
+        border-radius: 10px;
+        align-items: center;
+        gap: 10px;
+        span{
+            font-size: 15px;
+            font-style: normal;
+            font-weight: bold;
+        }
+        .btn-profile-users {
+            background-color: white;
+            color: black;
+            width: 90%;
+            border-radius: 20px;
+            cursor: pointer;
+            @include bordeBox();
+    
+            &:hover {
+                background-color: rgb(241, 28, 28);
+                color:white;
+            }
+        }
+    
+        .icon-btn-off {
+            margin: -3px 5px 0 0;
+            font-size: 19px;
+        }
+    }
+    
 }
 
 

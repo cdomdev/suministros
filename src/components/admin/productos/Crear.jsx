@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
 import { FormAdd } from "./FormAdd";
@@ -159,7 +159,7 @@ export const Crear = ({ setListadoState }) => {
         });
 
         setProductState({
-          marca: "",
+          marca: " ",
           description: "",
           nombre: "",
           valor: "",
@@ -178,7 +178,11 @@ export const Crear = ({ setListadoState }) => {
         error.response.status === 400 &&
         error.response.data.error
       ) {
-        setMessage(error.response.data.error);
+        setBgToast("danger");
+        setShowToast(true);
+        setToastMessage(
+          "Hubo un error al agregar el producto, intentalo de nuevo"
+        );
       } else {
         setBgToast("danger");
         setShowToast(true);

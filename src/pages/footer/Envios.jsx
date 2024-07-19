@@ -1,4 +1,3 @@
-import React from "react";
 import { BtnWhatsapp } from "../../utils";
 
 const Envio = () => {
@@ -10,12 +9,9 @@ const Envio = () => {
           <strong>Suministros</strong> se compromete a realizar la entrega a
           domicilio de los productos comprados en el sitio web dentro del
           territorio colombiano, siempre que esté dentro de la cobertura de{" "}
-          <strong>Transportadora Nacional S.A.S.</strong>, transportador
-          contratado por <strong>Suministros</strong>, y que las condiciones de
-          seguridad y acceso así lo permitan. Las entregas no se realizarán en
-          los siguientes departamentos: Amazonas, Arauca, Caquetá, Casanare,
-          Chocó, Guainía, Guaviare, La Guajira, Putumayo, San Andrés y
-          Providencia, Sucre, Vaupés, y Vichada.
+          <strong>Transportadoras Nacionales</strong>, estas seran contratadas
+          por <strong>Suministros</strong> para el envio de su pedido, y que las
+          condiciones de seguridad y acceso así lo permitan.
         </p>
         <h2>Modalidades y Tiempos de Entrega</h2>
         <ul>
@@ -29,13 +25,8 @@ const Envio = () => {
             <strong>Domicilio programado:</strong> Hasta 5 días hábiles.
             Disponible únicamente para el perímetro urbano y metropolitano en
             los departamentos con cobertura. El pedido llegará en un solo envío
-            en el horario de 8:00 a.m. a 6:00 p.m.
-          </li>
-          <li>
-            <strong>Domicilio express:</strong> 4 a 8 horas hábiles. Disponible
-            únicamente dentro del perímetro urbano para las ciudades de Bogotá,
-            Medellín y Cali, de lunes a viernes de 12:00 p.m. a 6:00 p.m. Aplica
-            para pedidos con peso de hasta 50 kilogramos.
+            en el horario de 8:00 a.m. a 6:00 p.m. Para este modo de envio debe
+            comunicarse a las lineas de atencion.
           </li>
           <li>
             <strong>Domicilio nacional:</strong> Hasta 15 días hábiles.
@@ -64,8 +55,8 @@ const Envio = () => {
           </li>
           <li>
             La persona que recibe el producto deberá revisarlo antes de firmar
-            el documento de entrega proporcionado por{" "}
-            <strong>Transportadora Nacional S.A.S.</strong>.
+            el documento de entrega proporcionado por la{" "}
+            <strong>Transportadora Nacional </strong>.
           </li>
           <li>
             Si la entrega no se puede realizar por razones no imputables a{" "}
@@ -78,10 +69,17 @@ const Envio = () => {
         <h2>Costos de Envío</h2>
         <ul>
           <li>
-            <strong>Bogotá y alrededores:</strong> $15.000 COP
+            <strong>Bogotá y alrededores:</strong> $15.000 COP para productos
+            por unidad
           </li>
           <li>
-            <strong>Resto del país:</strong> $25.000 COP
+            <strong>Resto del país:</strong> $25.000 COP para productos por
+            unidad
+          </li>
+          <li>
+            <strong>ENvio al por mayor: </strong>
+            Si su pedido es al por mayor uno de nuestro asesores se comunicara
+            con usted para validad el tema del envio
           </li>
         </ul>
         <p>

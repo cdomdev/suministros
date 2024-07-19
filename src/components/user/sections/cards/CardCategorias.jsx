@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { BsDatabaseX } from "../../../../assets/icons/reactIcons";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { obtenerMarcasUnicas, obtenerSubCategorias } from "../../../../utils";
 import { Categorias, Marcas } from "./Filtros";
 import { Button } from "react-bootstrap";
@@ -37,7 +37,7 @@ const CardCategorias = ({ rutaCategoria, nombreCategoria }) => {
     fetchData();
   }, []);
 
-  // Extraer las categorias de los productos
+  // // Extraer las categorias de los productos
   useEffect(() => {
     setSubCategorias(obtenerSubCategorias(categorias));
     setMarcasUnicas(obtenerMarcasUnicas(categorias));
@@ -112,6 +112,9 @@ const CardCategorias = ({ rutaCategoria, nombreCategoria }) => {
           <p>Productos</p>
         </div>
         <div className="filter-form"></div>
+        <div className="mobile-select">
+          <p>Encuentra todos los productos que necesitas</p>
+        </div>
       </div>
       <div className="contenedor-card">
         {categorias.length === 0 ? (
@@ -142,11 +145,9 @@ const CardCategorias = ({ rutaCategoria, nombreCategoria }) => {
                     <span className="unidad"> * UN</span>
                   </li>
                 </div>
-                {/* <Link to={`/suministros/details/${producto.nombre}`}> */}
                 <Button onClick={() => navigateDetail(producto)}>
                   Ver producto
                 </Button>
-                {/* </Link> */}
               </ul>
             ))}
           </>

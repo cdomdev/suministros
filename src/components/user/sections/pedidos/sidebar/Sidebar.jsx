@@ -1,5 +1,5 @@
 import { BsBoxSeam, IoIosLogOut } from "../../../../../assets/icons/reactIcons";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { LoaderComponent, getDataStorage } from "../../../../../utils";
 import { API_HOST } from "../../../../../config/config";
 import { Link } from "react-router-dom";

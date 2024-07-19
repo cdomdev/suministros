@@ -3,7 +3,7 @@ import {
   NotificationToast,
   LoaderComponent,
 } from "../../../../../utils";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Button, Form, Spinner } from "react-bootstrap";
 import { BiArrowBack } from "../../../../../assets/icons/reactIcons";
 import { useNotification } from "../../../../../hook";

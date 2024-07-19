@@ -45,16 +45,15 @@ export const NuevaOferta = ({ setOfertaListado }) => {
   };
 
   // sleccion del id del la lista de productos
-  const handleProductSelection = (e, productId) => {
+  const handleProductSelection = (e, product) => {
     const isChecked = e.target.checked;
     if (isChecked) {
-      setSelectedProducts([...selectedProducts, productId]);
+      setSelectedProducts([...selectedProducts, product]);
     } else {
       const updatedSelections = selectedProducts.filter(
-        (selectedId) => selectedId !== productId
+        (selectedProduct) => selectedProduct.id !== product.id
       );
       setSelectedProducts(updatedSelections);
-      console.log(updatedSelections);
     }
   };
 

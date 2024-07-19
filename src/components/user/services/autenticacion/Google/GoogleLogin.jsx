@@ -85,7 +85,6 @@ const LoginButton = ({ notifyAuthChange, texto }) => {
         );
         if (serverResponse.status === 200) {
           const { role } = serverResponse.data;
-          console.log(serverResponse.data);
           login(role);
           notifyAuthChange(true);
           if (role === "admin") {

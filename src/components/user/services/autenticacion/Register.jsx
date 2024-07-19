@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { Formik } from "formik";
 import { Form, Button, Spinner } from "react-bootstrap";
@@ -8,13 +8,11 @@ import EventEmitter from "../../../../hook/EventEmitter";
 import { NotificationToast } from "../../../../utils";
 import { API_HOST } from "../../../../config/config";
 import { isAuthenticated } from "../../../../helpers/isAuthenticated";
-import { useNavigate } from "react-router";
 
 const Register = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(isAuthenticated());
 
-  // const navigate = useNavigate();
   const { login } = useUser();
   const { setShowToast, setToastMessage, setBgToast } = useNotification();
 
@@ -127,7 +125,7 @@ const Register = () => {
           }) => (
             <Form className="login-form" onSubmit={handleSubmit}>
               <h1 className="text-form">Registro personas</h1>
-              <GoogleLogin texto={"Registrarme con google"} />
+              <GoogleLogin texto={"Registrate con google"} />
               <div className="contenedor-liner">
                 <hr className="liner-separator" />
                 <span className="m-1 o">O</span>

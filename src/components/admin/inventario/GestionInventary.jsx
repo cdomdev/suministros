@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Editar } from "./Editar";
 import { Elminar } from "./Eliminar";
 import { Actualizar } from "./Actualizar";
@@ -59,6 +59,7 @@ const GestionInventary = () => {
         <div className="body-components-inventary">
           <NotificationToast text={"Actualizacion de productos"} />
           <div className="filtros-content">
+            <span>Filtrar por: </span>
             <div className="filtros">
               <Filtros
                 categoriaSeleccionada={categoriaSeleccionada}
@@ -81,7 +82,6 @@ const GestionInventary = () => {
                     <div className="contenedor-det-img">
                       <div className="content-img">
                         <img
-                          variant="top"
                           src={producto.image}
                           alt="producto"
                           className="img-productos-inventario"

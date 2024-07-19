@@ -40,6 +40,10 @@ $color-complementario: #f2efe1;
             justify-content: flex-end;
             display: flex;
             padding-right: 4em;
+            span{
+                text-transform: uppercase;
+                margin: -12px 20px 0px 0px;
+            }
 
             .filtros {
                 display: flex;

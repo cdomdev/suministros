@@ -1,4 +1,3 @@
-import React from "react";
 import {
   PiUsersFill,
   BsBox2Fill,
@@ -31,7 +30,7 @@ export const BalanceCards = () => {
     <div className="balans-cards-header">
       <div className="card">
         <p className="title">Total usuarios</p>
-        <div className="body">
+        <div className="body-card">
           <span>{balances.users}</span>
           <div className="icon-content f-ci1 ">
             <PiUsersFill className="icon f-i1" />
@@ -41,7 +40,7 @@ export const BalanceCards = () => {
       </div>
       <div className="card">
         <p className="title">Total ordenes</p>
-        <div className="body">
+        <div className="body-card">
           <span>{balances.totalOrders}</span>
           <div className="icon-content f-ci2">
             <BsBox2Fill className="icon f-i2" />
@@ -51,7 +50,7 @@ export const BalanceCards = () => {
       </div>
       <div className="card">
         <p className="title">Total vendido</p>
-        <div className="body">
+        <div className="body-card">
           <span>$ {formateValue(parseInt(balances.totalSales))}</span>
           <div className="icon-content f-ci3">
             <BsGraphUpArrow className="icon f-i3" />
@@ -61,7 +60,7 @@ export const BalanceCards = () => {
       </div>
       <div className="card">
         <p className="title">Pendientes por envio</p>
-        <div className="body">
+        <div className="body-card">
           <span>{balances.totalPending}</span>
           <div className="icon-content f-ci4">
             <MdOutlinePendingActions className="icon f-i4" />
@@ -73,7 +72,7 @@ export const BalanceCards = () => {
       </div>
       <div className="card">
         <p className="title">Total despachados</p>
-        <div className="body">
+        <div className="body-card">
           <span>{balances.totalShipped}</span>
           <div className="icon-content f-ci5">
             <BsSendCheck className="icon f-i5" />

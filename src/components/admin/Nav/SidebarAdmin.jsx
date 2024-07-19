@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useState } from "react";
 import { styled, useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
@@ -16,17 +16,15 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
 import { AiFillHome } from "react-icons/ai";
 import { MdOutlineInventory, MdAssignmentAdd } from "react-icons/md";
 import { BsBoxSeam } from "react-icons/bs";
 import { BiSolidOffer } from "react-icons/bi";
 import { IoBagAddSharp } from "react-icons/io5";
-import { useUser } from "../../../hook";
 import { GiHistogram } from "../../../assets/icons/reactIcons";
-import { ProfileMenu } from "../Nav/ProfileMenu";
-import NotificationMenu from "../Nav/NotificationMenu";
+import { ProfileMenu } from "./ProfileMenu";
+import NotificationMenu from "./NotificationMenu";
 
 const drawerWidth = 240;
 
@@ -57,7 +55,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 
 export function SidebarAdmin() {
   const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -123,7 +121,7 @@ export function SidebarAdmin() {
             <Typography variant="h6" noWrap component="div">
               SUMINISTROS
             </Typography>
-            <div className="box-infor-admin">
+            <div className="box-info-admin">
               <NotificationMenu />
               <ProfileMenu />
             </div>

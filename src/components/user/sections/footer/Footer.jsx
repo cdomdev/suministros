@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import {
   IoLogoWhatsapp,
@@ -74,7 +73,7 @@ export const Footer = () => {
               </li>
               <li>
                 <IoPhonePortraitOutline />
-                <Link>
+                <Link to={"https://wa.me/573208132304"} target="_blank">
                   {" "}
                   <IoLogoWhatsapp className="what" /> +57 3208132305
                 </Link>

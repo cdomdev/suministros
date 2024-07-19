@@ -1,5 +1,5 @@
 // DashboardAdmin.jsx
-import React, { useEffect, Suspense } from "react";
+import { useEffect, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import { useUser } from "../hook";
 import { LoaderPage } from "../utils";
@@ -13,11 +13,13 @@ import {
   NotExisting,
   Detalles,
   Balances,
+  PageProfile,
 } from "../components/admin";
 import GestionInventary from "../components/admin/inventario/GestionInventary";
-import { SidebarAdmin } from "../components/admin/Sidebar/SidebarAdmin";
-import Prueba from "../components/admin/Nav/Prueba";
-import { LogoutSuccess } from "../pages/userServices/LogoutSuccess";
+import { SidebarAdmin } from "../components/admin/Nav/SidebarAdmin";
+import { Data } from "../components/admin/perfil/rutas/Data";
+import { UpdateProfile } from "../components/admin/perfil/rutas/UpdateProfile";
+import { NotificacionesList } from "../components/admin/perfil/rutas/NotificacionesList";
 
 const DashboardAdmin = () => {
   const { isAdmin, setIsAdmin } = useUser();
@@ -28,6 +30,7 @@ const DashboardAdmin = () => {
       setIsAdmin(true);
     }
   }, [isAdmin]);
+
   return (
     <>
       <Suspense
@@ -47,7 +50,6 @@ const DashboardAdmin = () => {
                 element={<Detalles />}
               />
               <Route path="/añadir/productos" element={<Admin />} />
-              <Route path="/logout-success" element={<LogoutSuccess />} />
               <Route
                 path="/gestion/inventario"
                 element={<GestionInventary />}
@@ -60,6 +62,15 @@ const DashboardAdmin = () => {
                 path="/gestionar/subcategorias"
                 element={<Subcategorias />}
               />
+              <Route
+                path="/gestionar/subcategorias"
+                element={<Subcategorias />}
+              />
+              <Route path="/profile/" element={<PageProfile />}>
+                <Route index element={<Data />} />
+                <Route path="profile-update" element={<UpdateProfile />} />
+                <Route path="notifications" element={<NotificacionesList />} />
+              </Route>
             </>
           )}
           {!isAdmin && <Route path="/*" element={<NotExisting />} />}

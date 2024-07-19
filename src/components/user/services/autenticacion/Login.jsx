@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Button, Form, Spinner } from "react-bootstrap";
 import imgFav from "../../../../assets/images/favicon.webp";
@@ -20,6 +20,7 @@ const Login = ({ handleCloseModal, handleLoginSuccess }) => {
   useEffect(() => {
     const authChangeCallback = (isLoggedIn) => {
       if (isLoggedIn) {
+        console.log("loggin succes");
       }
     };
     const unsubscribe = EventEmitter.subscribe(
@@ -123,7 +124,7 @@ const Login = ({ handleCloseModal, handleLoginSuccess }) => {
         handleCloseModal={handleCloseModal}
         setIsLoggedIn={setIsLoggedIn}
         handleLoginSuccess={handleLoginSuccess}
-        texto={"Inicar sesion con google"}
+        texto={"Inicia sesion con google"}
       />
       <div className="contenedor-liner">
         <hr className="liner-separator" />

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Layout from "../layout/Layout";
 import { Crear, Eliminar, Listar } from "./LayoutCategorys";
 

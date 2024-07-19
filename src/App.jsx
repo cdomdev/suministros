@@ -17,7 +17,7 @@ export const App = () => {
       <div className="App">
         <AppContextProvider>
           <Routes>
-            {/* Ruta para el dashboard del usuario normal */}
+            {/* Ruta para el dashboard del usuario  */}
             <Route path="/*" element={<DashboardUser />} />
 
             {/* Ruta para el dashboard del administrador */}

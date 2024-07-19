@@ -27,10 +27,14 @@ const Admin = () => {
               </div>
             </div>
             <div className="btn-save">
-              <GuardarProductos
-                setListadoState={setListadoState}
-                listadoState={listadoState}
-              />
+              {listadoState && listadoState.length > 0 ? (
+                <GuardarProductos
+                  setListadoState={setListadoState}
+                  listadoState={listadoState}
+                />
+              ) : (
+                <></>
+              )}
             </div>
           </div>
         }

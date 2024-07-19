@@ -15,6 +15,7 @@ $color-principal: #243a5e;
 $color-complementario: #f2efe1;
 
 
+
 .body-content {
   .container-cards-home-admin {
     display: flex;
@@ -140,75 +141,7 @@ $color-complementario: #f2efe1;
   }
 }
 
-.nav-sidebar {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: space-between;
 
-  .box-infor-admin {
-    gap: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: $contenido2;
-
-    .admin {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      font-size: 10px;
-      cursor: pointer;
-
-      .icon {
-        font-size: 30px;
-      }
-
-      &:hover {
-        color: #213C65;
-      }
-    }
-
-    .logout {
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      button {
-        height: 40px;
-        border: none;
-        border-radius: 50%;
-        transition: all ease 0.3s;
-        padding: 5px 10px;
-        color: rgb(15, 14, 14);
-      }
-
-      .off {
-        font-size: 21px;
-        margin: -1px auto 0 auto;
-      }
-
-      &:hover {
-        button {
-          background-color: red;
-          color: white;
-
-        }
-      }
-    }
-
-  }
-
-
-}
-
-.list-icons {
-  .icon {
-    font-size: 30px;
-    color: #4a4a4a;
-  }
-}
 
 
 // /* Estilos para dispositivos de 300px a 499px */

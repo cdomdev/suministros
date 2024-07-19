@@ -1,6 +1,6 @@
-import IconCar from "../CarShoping/dataCar/IconCar";
 import Pedidos from "../../sections/pedidos/Pedidos";
 import Perfil from "./Perfil";
+import { IconCar } from "../CarShoping/dataCar/IconCar";
 
 const BoxIcons = () => {
   return (

@@ -3,7 +3,9 @@ $contenidoFonts: "Roboto", sans-serif;
 $contenido2: "Montserrat", sans-serif;
 
 
-
+*{
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;

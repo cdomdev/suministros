@@ -259,7 +259,9 @@ $otro: 'Lato', sans-serif;
                         .state-content{
                             gap: 5px;
                             display: flex;
-                            
+                            p{
+                                text-transform: capitalize;
+                            }
                         }
                     }
 

@@ -3,6 +3,7 @@ import { CategoriasCards } from "../../components/user/sections/homeComponents/C
 import { IconNavigateCar } from "../../utils";
 import "../../styles/App.css";
 import { BtnWhatsapp } from "../../utils";
+import { MasVendidos } from "../../components/user/sections/homeComponents/MasVendidos";
 
 export const HomeUser = () => {
   return (
@@ -12,13 +13,17 @@ export const HomeUser = () => {
         <div>
           <h1>
             Haz de tu hogar un espacio unico, aqui encontraras Sanitarios,
-            pinturas y mas productos para remodelar tus esapcios.
+            pinturas, lavamanos, cocinas y mas productos para remodelar tus
+            espacios.
           </h1>
+        </div>
+        <h2>Productos mas vendidos</h2>
+        <div className="most-salleds">
+          <MasVendidos />
         </div>
         <h2>Visita nuestras categorias</h2>
         <div className="card-categorias">
           <CategoriasCards />
-          {/* <Prueba /> */}
         </div>
         <div>
           <p>

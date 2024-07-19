@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { api } from "../../../config/axios.conf";
 import { API_HOST } from "../../../config/config";
 import GraficProducts from "./GraficProducts";

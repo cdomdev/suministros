@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import {
   Box,
   IconButton,
@@ -13,6 +13,7 @@ import axios from "axios";
 import { useUser } from "../../../hook";
 import { API_HOST } from "../../../config/config";
 import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
 
 export const ProfileMenu = () => {
   const { logout } = useUser();
@@ -77,8 +78,21 @@ export const ProfileMenu = () => {
         open={Boolean(anchorElUser)}
         onClose={handleCloseUserMenu}>
         <MenuItem onClick={handleCloseUserMenu}>
-          <Typography textAlign="center">
-            <button onClick={finnalySection}>Logout</button>
+          <Typography textAlign="center" className="logout">
+            <div className="profile">
+              <div className="header">
+                <p>Hola {data.name || data.nombre}</p>
+                <hr />
+              </div>
+              <div className="body">
+                <Link className="profile-link" to={"/admin/profile/"}>
+                  <span>Mi Perfil</span>
+                </Link>
+                <button onClick={finnalySection} className="btn-logout">
+                  Cerrar sesion
+                </button>
+              </div>
+            </div>
           </Typography>
         </MenuItem>
       </Menu>
