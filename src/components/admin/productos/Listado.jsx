@@ -64,8 +64,8 @@ export const Listado = ({ listadoState, setListadoState }) => {
           );
         })
       ) : (
-        <div className="contendor-alter-products-card d-flex">
-          <span className="text-shadow" style={{ margin: "auto" }}>
+        <div className="contendor-alter-products-card d-flex text-center">
+          <span className="text-center text-shadow " style={{ margin: "auto" }}>
             Agregue nuevos productos para verlos aquí.
           </span>
         </div>

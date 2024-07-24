@@ -31,6 +31,7 @@ export const InvitadoDate = ({ handleClose }) => {
           direccion: "",
           telefono: "",
           destino: "",
+          detalles: "",
         }}
         validate={(values) => {
           const errors = {};
@@ -52,7 +53,7 @@ export const InvitadoDate = ({ handleClose }) => {
             errors.telefono = "*El teléfono es requerido*";
           }
           if (!values.detalles) {
-            errors.detalles = "*Por favor ingrese detalles adicionales*";
+            errors.detalles = "*Por favor ingrese los detalles adicionales*";
           }
           return errors;
         }}
@@ -78,7 +79,7 @@ const FormFormik = ({ formik }) => {
             </Form.Label>
             <Form.Control
               type="text"
-              placeholder="Ingrese nombre completos"
+              placeholder="Ingrese nombre completo"
               name="nombre"
               value={formik.values.nombre}
               onChange={formik.handleChange}
@@ -92,7 +93,7 @@ const FormFormik = ({ formik }) => {
             <Form.Label>Apellidos</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Ingrese apellidos"
+              placeholder="Ingrese apellidos (opcional)"
               name="apellidos"
               value={formik.values.apellidos}
               onChange={formik.handleChange}
@@ -167,26 +168,30 @@ const FormFormik = ({ formik }) => {
             ) : null}
           </Form.Group>
 
+          <Form.Label>
+            Detalles <IoIosMedical className="icon" />
+          </Form.Label>
           <div className="add">
             <p className="details-text">
               Ingrese detalles adicionales, si veve en cunjunto (nombre , apto ,
               torre ). Barrio (Nombre del barrio). O localidad (Nombre de la
               localidad), de talles nos ayuden a localizar
             </p>
-            {formik.touched.detalles && formik.errors.detalles ? (
-              <div className="error">{formik.errors.detalles}</div>
-            ) : null}
+
             <Form.Group controlId="exampleForm.ControlTextarea1">
               <Form.Control
                 as="textarea"
                 className="mt-3"
                 rows={3}
-                placeholder="Detalles adiciones para su entrega"
+                placeholder="Detalles adicionales para su entrega"
                 name="detalles"
                 value={formik.values.detalles}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
               />
+              {formik.touched.detalles && formik.errors.detalles ? (
+                <div className="error">{formik.errors.detalles}</div>
+              ) : null}
             </Form.Group>
           </div>
           <Button

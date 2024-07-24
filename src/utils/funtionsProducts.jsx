@@ -16,9 +16,21 @@ export const obtenerSubCategorias = (productos) => {
   return subcategorias;
 };
 
-export const calcularEnvio = (destino) => {
+export const calcularEnvio = (destino, precio) => {
+  const free = parseFloat(400000, 10);
   const destinoInt = parseInt(destino, 10);
-  return destinoInt === 1 ? 15000 : 25000;
+  if (precio >= free) {
+    return 0;
+  } else {
+    return destinoInt === 1 ? 15000 : 25000;
+  }
+};
+
+export const calculateTotal = (cartItems) => {
+  return cartItems.reduce(
+    (total, item) => total + item.cantidad * item.valor,
+    0
+  );
 };
 
 export function calcalateDiscount(value, discount) {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Table from "react-bootstrap/Table";
 import Pedidos from "./pedidos/Pedidos";
 import { API_HOST } from "../../../config/config";
@@ -23,12 +23,13 @@ const Usuarios = () => {
   return (
     <div className="table-user">
       <h2 className="text-center">Listado de pedidos</h2>
-      {usuarios & (usuarios === null) ? (
-        <p>cargando...</p>
+      {!usuarios.length ? (
+        <p className="text-center mt-3">cargando...</p>
       ) : (
         <Table striped bordered hover size="sm" responsive>
           <thead>
             <tr>
+              <th className="thead-table-users">Indice</th>
               <th className="thead-table-users">Nombre</th>
               <th className="thead-table-users">E-mail</th>
               <th className="thead-table-users">Rol del usuario</th>
@@ -38,8 +39,9 @@ const Usuarios = () => {
           <tbody>
             {usuarios
               .filter((usuario) => usuario.tienePedidos)
-              .map((usuario) => (
-                <tr key={usuario.id}>
+              .map((usuario, index) => (
+                <tr key={usuario.id || index}>
+                  <td>{index + 1}</td>
                   <td>{usuario.name || usuario.nombre}</td>
                   <td>{usuario.email}</td>
                   <td>{usuario.roles?.rol_name || usuario.role}</td>

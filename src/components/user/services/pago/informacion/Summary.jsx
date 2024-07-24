@@ -2,7 +2,10 @@ import { useEffect, useState } from "react";
 import { useCarShop } from "../../../../../hook";
 import { LoaderComponent } from "../../../../../utils";
 import { getDataSesionStorega } from "../../../../../utils/getDataStorage";
-import { calcularEnvio } from "../../../../../utils/funtionsProducts";
+import {
+  calcularEnvio,
+  calculateTotal,
+} from "../../../../../utils/funtionsProducts";
 import { formateValue } from "../../../../../utils/funtionsProducts";
 
 export const Summary = () => {
@@ -14,6 +17,7 @@ export const Summary = () => {
   }, []);
 
   const destino = location.destino;
+  const valorTotal = calculateTotal(cartItems, destino);
 
   return (
     <>
@@ -31,15 +35,24 @@ export const Summary = () => {
                   <div className="info-products">
                     <img src={item.image} alt="" className="img-car-shop" />
                     <div>
-                      <p>{item.nombre}</p>
-                      <p>Ref: {item.referencia} </p>
-                      <p>Unidades: {item.cantidad} </p>
+                      <div className="box-text-details-product">
+                        <strong>Producto:</strong>
+                        <p>{item.nombre}</p>
+                      </div>
+                      <div className="box-text-details-product">
+                        <strong>Ref:</strong>
+                        <p> {item.referencia} </p>
+                      </div>
+                      <div className="box-text-details-product">
+                        <strong>Unidades:</strong>
+                        <p className="uni">{item.cantidad} </p>
+                      </div>
                     </div>
                   </div>
                   <div className="item-sub">
                     <div>
                       <strong>Valor unidad: </strong>
-                      <span> $ {formateValue(parseInt(item.valor, 10))}</span>
+                      <span> $ {formateValue(parseFloat(item.valor, 10))}</span>
                     </div>
                     <div>
                       <strong>Subtotal: </strong>
@@ -53,7 +66,7 @@ export const Summary = () => {
         </div>
         <div className="send">
           <strong>Costo de envio: </strong>
-          <span>$ {formateValue(calcularEnvio(destino))}</span>
+          <span>$ {formateValue(calcularEnvio(destino, valorTotal))}</span>
         </div>
       </div>
     </>

@@ -82,7 +82,9 @@ export const ProfileMenu = () => {
             <div className="profile">
               <div className="header">
                 <p>Hola {data.name || data.nombre}</p>
-                <hr />
+                <div>
+                  <hr />
+                </div>
               </div>
               <div className="body">
                 <Link className="profile-link" to={"/admin/profile/"}>

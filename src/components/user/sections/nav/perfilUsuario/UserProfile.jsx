@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Button, OverlayTrigger, Popover } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AiOutlinePoweroff } from "../../../../../assets/icons/reactIcons";
 import Avatar from "@mui/material/Avatar";
 import { useUser } from "../../../../../hook";
 import { getDataStorage } from "../../../../../utils/getDataStorage";
+import { IoPersonOutline } from "react-icons/io5";
 
 const UserProfile = ({ setIsLoggedIn }) => {
   const navigate = useNavigate();
@@ -66,6 +67,12 @@ const UserProfile = ({ setIsLoggedIn }) => {
         <Popover id={`popover-positioned-bottom`} style={{ width: "270px" }}>
           <Popover.Body className="popover-user-profile">
             <span className="name-user-profile">{data.name}</span>
+            <Link
+              className="btn-profile-users profile"
+              to={"/suministros/user/"}>
+              <IoPersonOutline className="icon-btn-off" />
+              Mi perfil
+            </Link>
             <Button className="btn-profile-users" onClick={loginOff}>
               <AiOutlinePoweroff className="icon-btn-off" />
               Cerrar sesión

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { UserNotLoggin } from "./UserNotLoggin";
 import { TiShoppingCart } from "../../../../../assets/icons/reactIcons";
 import { useNavigate } from "react-router";
@@ -40,9 +40,16 @@ export const InfoCar = () => {
                       <img src={item.image} alt="" className="img-car-shop" />
                       <div>
                         <ul className="data-products">
+                          <strong>Producto:</strong>
                           <li>{item.nombre}</li>
-                          <li>Ref: {item.referencia} </li>
-                          <li>Unidades: {item.cantidad} </li>
+                          <li>
+                            {" "}
+                            <strong> Ref: </strong> {""} {item.referencia}{" "}
+                          </li>
+                          <li>
+                            {" "}
+                            <strong>Unidades:</strong> {item.cantidad}{" "}
+                          </li>
                         </ul>
                       </div>
                     </li>

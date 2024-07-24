@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { Button } from "react-bootstrap";
 import { FaRegCheckCircle } from "../../assets/icons/reactIcons";
 import { getDataStorage } from "../../utils";
-import { calcularEnvio } from "../../utils/funtionsProducts";
+import { calcularEnvio, calculateTotal } from "../../utils/funtionsProducts";
 import { formateValue } from "../../utils/funtionsProducts";
 
 const Ticket = () => {
@@ -20,12 +20,8 @@ const Ticket = () => {
   }, []);
 
   const destino = data.destino;
-  const calculateTotal = () => {
-    return (
-      item.reduce((total, item) => total + item.cantidad * item.valor, 0) +
-      calcularEnvio(destino)
-    );
-  };
+  const valorTotal = calculateTotal(item);
+  const valorEnvio = calcularEnvio(destino, valorTotal);
 
   const handleDeleteLocal = () => {
     navigate("/suministros/home");
@@ -73,12 +69,12 @@ const Ticket = () => {
             <div className="send">
               <span>Envio</span>
               <ul>
-                <li> ${formateValue(calcularEnvio(destino))}</li>
+                <li> ${formateValue(valorEnvio)}</li>
               </ul>
             </div>
             <span>
               <strong>total: $ </strong>
-              {formateValue(calculateTotal())}{" "}
+              {formateValue(valorTotal + valorEnvio)}{" "}
             </span>
           </div>
           <hr />

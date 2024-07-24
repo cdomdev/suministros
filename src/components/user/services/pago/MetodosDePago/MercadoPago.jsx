@@ -10,7 +10,10 @@ import { useCarShop, useNotification } from "../../../../../hook";
 import { Spinner } from "react-bootstrap";
 import { API_HOST } from "../../../../../config/config";
 import axios from "axios";
-import { calcularEnvio } from "../../../../../utils/funtionsProducts";
+import {
+  calcularEnvio,
+  calculateTotal,
+} from "../../../../../utils/funtionsProducts";
 
 export const MercadoPago = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -29,7 +32,8 @@ export const MercadoPago = () => {
 
   // calcular costos de envio
   const destino = data.destino;
-  const costoEnvio = calcularEnvio(destino);
+  const valorTotal = calculateTotal(cartItems);
+  const costoEnvio = calcularEnvio(destino, valorTotal);
 
   const localStorageData = getDataStorage("userOnValidateScesOnline");
   const sessionData = getDataSesionStorega("DtUerForEnComp");

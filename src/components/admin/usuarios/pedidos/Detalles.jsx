@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { getDataStorage } from "../../../../utils/getDataStorage";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import { IoArrowUndoOutline } from "react-icons/io5";
@@ -24,8 +24,8 @@ const Detalles = () => {
         {orders.length === 0 ? (
           <span className="loader-details">Cargando datos...</span>
         ) : (
-          orders.map((order) => (
-            <div key={order.id} className="order">
+          orders.map((order, index) => (
+            <div key={order.id || index} className="order">
               <div className="header">
                 <OverlayTrigger
                   placement="top"

@@ -56,10 +56,12 @@ $otro: 'Lato', sans-serif;
         height: 40px;
         display: flex;
         align-items: center;
+        
 
         .carrito-text {
           font-size: 18px;
           padding: 10px;
+          margin: 0;
           font-family: $tittlesFonts;
           color: #213C65;
         }
@@ -159,7 +161,7 @@ $otro: 'Lato', sans-serif;
 
             li {
               padding: 0;
-              font-size: 13px;
+              font-size: 15px;
               display: flex;
               align-items: center;
               max-width: 350px;
@@ -367,10 +369,12 @@ $otro: 'Lato', sans-serif;
         @include bordeBox();
         height: 40px;
         padding: 5px;
-
+        display: flex;
+        align-items: center;
+        
         .summary-text {
           font-size: 18px;
-          margin-left: 10px;
+          margin: 0px 0px 0px 10px;
           font-family: $tittlesFonts;
         }
 
@@ -520,6 +524,7 @@ $otro: 'Lato', sans-serif;
     font-weight: bold;
     text-align: center;
     margin: 0;
+    font-family: $tittlesFonts;
   }
   .content-use {
     padding: 10px 15px 15px 15px;
@@ -528,10 +533,10 @@ $otro: 'Lato', sans-serif;
     }
 
     .outh {
+      font-family: $contenido2;
       p {
-        font-family: $otro;
         line-height: 19px;
-        font-size: 14px;
+        font-size: 15px;
         font-style: normal;
         font-weight: 500;
       }
@@ -540,8 +545,6 @@ $otro: 'Lato', sans-serif;
         padding: 10px 0;
         display: grid;
         gap: 10px;
-
-
 
         .btn-invitado {
           border-radius: 3px;
@@ -581,7 +584,7 @@ $otro: 'Lato', sans-serif;
       p {
         margin: 1em 0;
         line-height: 18px;
-        font-size: 14px;
+        font-size: 15px;
         font-weight: normal;
         font-style: normal;
       }

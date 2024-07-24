@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { FaTruck } from "../../../../../assets/icons/reactIcons";
 import { ModalEntrega } from "./ModalEntrega";
 import { InvitadoDate } from "./InvitadoDate";
@@ -15,7 +15,6 @@ export const EnvioInvitado = () => {
     setCheck(!check);
     setExpanded(!expanded);
   };
-
 
   return (
     <div className={`envio-programado ${expanded ? "expanded" : ""}`}>

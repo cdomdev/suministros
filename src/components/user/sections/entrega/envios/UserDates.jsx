@@ -120,13 +120,12 @@ const FormFormik = ({ formik }) => {
               torre ). Barrio (Nombre del barrio). O localidad (Nombre de la
               localidad), de talles nos ayuden a localizar
             </p>
-            {formik.touched.detalles ? (
-              <div className="error">{formik.errors.detalles}</div>
-            ) : null}
+            <Form.Label className="mt-2">
+              Detalles <IoIosMedical className="icon" />
+            </Form.Label>
             <Form.Group controlId="exampleForm.ControlTextarea1">
               <Form.Control
                 as="textarea"
-                className="mt-3"
                 rows={3}
                 placeholder="Detalles"
                 name="detalles"
@@ -134,6 +133,9 @@ const FormFormik = ({ formik }) => {
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
               />
+              {formik.touched.detalles ? (
+                <div className="error">{formik.errors.detalles}</div>
+              ) : null}
             </Form.Group>
           </div>
           <Button

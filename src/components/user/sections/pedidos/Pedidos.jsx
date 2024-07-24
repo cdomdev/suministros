@@ -39,6 +39,7 @@ const Pedidos = () => {
               closeButton
               style={{ border: "none", padding: "0 10px" }}
             />
+            <h4>Pedidos</h4>
             <hr />
             <Modal.Body>
               <p>

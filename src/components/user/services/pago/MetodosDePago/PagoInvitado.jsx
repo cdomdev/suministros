@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { getDataSesionStorega } from "../../../../../utils/getDataStorage";
 import { API_HOST } from "../../../../../config/config";
 import { useNavigate } from "react-router";
 import { Button, Spinner, Modal } from "react-bootstrap";
 import { useCarShop, useNotification } from "../../../../../hook";
 import axios from "axios";
-import { calcularEnvio } from "../../../../../utils/funtionsProducts";
+import {
+  calcularEnvio,
+  calculateTotal,
+} from "../../../../../utils/funtionsProducts";
 import { NotificationToast } from "../../../../../utils";
 import { FaHandHoldingDollar } from "../../../../../assets/icons/reactIcons";
 
@@ -56,15 +59,8 @@ const Informacion = ({ setShow }) => {
 
   // calcular costos de envio
   const destino = data.destino;
-  const costoEnvio = calcularEnvio(destino);
-
-  // // Modificar el valor para incluir el costo de envío
-  // const updatedCartItems = cartItems.map((item) => {
-  //   return {
-  //     ...item,
-  //     envio: costoEnvio,
-  //   };
-  // });
+  const valorTotal = calculateTotal(cartItems, destino);
+  const costoEnvio = calcularEnvio(destino, valorTotal);
 
   const finnalyBuy = async () => {
     setLoading(true);

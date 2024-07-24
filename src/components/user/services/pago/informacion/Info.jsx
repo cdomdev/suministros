@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { DataUser } from "./DataUser";
 import { MercadoPago, PagoUser, PagoInvitado } from "../MetodosDePago";
 

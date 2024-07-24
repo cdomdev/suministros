@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { EnvioInvitado } from "./envios";
 import { EnvioUser } from "./envios";
 import { isAuthenticated } from "../../../../helpers/isAuthenticated";
@@ -15,7 +15,7 @@ export const InfoCarEntrega = () => {
       <div className="contendor-infor-car">
         <div className="box1">
           <span className="carrito-text">
-            Ingresa los datos para la entrega
+            Ingresa los datos para la entrega de tu pedido
           </span>
         </div>
         <div className="box-entrega">

@@ -1,4 +1,4 @@
-import React, { lazy, useEffect, useState } from "react";
+import { lazy, useEffect, useState } from "react";
 const UserProfile = lazy(() => import("./perfilUsuario/UserProfile"));
 import Avatar from "@mui/material/Avatar";
 import { isAuthenticated } from "../../../../helpers/isAuthenticated";

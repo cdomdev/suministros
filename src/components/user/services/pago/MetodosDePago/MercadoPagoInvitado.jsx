@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import mercadopagoIMg from "../../../../../assets/images/mercadopago.webp";
 import { NotificationToast, getDataSesionStorega } from "../../../../../utils";
 import { initMercadoPago } from "@mercadopago/sdk-react";
@@ -6,7 +6,10 @@ import { useCarShop, useNotification } from "../../../../../hook";
 import { API_HOST } from "../../../../../config/config";
 import { Spinner } from "react-bootstrap";
 import axios from "axios";
-import { calcularEnvio } from "../../../../../utils/funtionsProducts";
+import {
+  calcularEnvio,
+  calculateTotal,
+} from "../../../../../utils/funtionsProducts";
 
 export const MercadoPagoInvitado = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -25,7 +28,8 @@ export const MercadoPagoInvitado = () => {
 
   // calcular costos de envio
   const destino = data.destino;
-  const costoEnvio = calcularEnvio(destino);
+  const valorTotal = calculateTotal(cartItems);
+  const costoEnvio = calcularEnvio(destino, valorTotal);
 
   const createOrder = async () => {
     try {

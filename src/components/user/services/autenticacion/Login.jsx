@@ -17,21 +17,21 @@ const Login = ({ handleCloseModal, handleLoginSuccess }) => {
   const { login, setIsLoggedIn } = useUser();
   const { setShowToast, setToastMessage, setBgToast } = useNotification();
 
-  useEffect(() => {
-    const authChangeCallback = (isLoggedIn) => {
-      if (isLoggedIn) {
-        console.log("loggin succes");
-      }
-    };
-    const unsubscribe = EventEmitter.subscribe(
-      "authChange",
-      authChangeCallback
-    );
+  // useEffect(() => {
+  //   const authChangeCallback = (isLoggedIn) => {
+  //     if (isLoggedIn) {
+  //       console.log("loggin succes");
+  //     }
+  //   };
+  //   const unsubscribe = EventEmitter.subscribe(
+  //     "authChange",
+  //     authChangeCallback
+  //   );
 
-    return () => {
-      unsubscribe();
-    };
-  }, []);
+  //   return () => {
+  //     unsubscribe();
+  //   };
+  // }, []);
 
   const recoveryRoute = () => {
     handleCloseModal();

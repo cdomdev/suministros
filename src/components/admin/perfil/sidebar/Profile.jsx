@@ -5,6 +5,7 @@ import Avatar from "@mui/material/Avatar";
 import Nav from "react-bootstrap/Nav";
 import { useEffect, useState } from "react";
 import { IoNotificationsOutline } from "react-icons/io5";
+import { BsBoxSeam } from "react-icons/bs";
 
 export const Profile = () => {
   const [data, setData] = useState([]);
@@ -32,6 +33,9 @@ export const Profile = () => {
               <p>¿ Que quieres hacer hoy?</p>
             </div>
             <Nav className="flex-column">
+              <Link to={"/admin/gestion/usuarios"} className="box-link">
+                Ver nuevos pedidos <BsBoxSeam className="icon" />
+              </Link>
               <Link to={"notifications"} className="box-link">
                 Ver notificaciones <IoNotificationsOutline className="icon" />
               </Link>

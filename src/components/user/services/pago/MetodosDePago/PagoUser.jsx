@@ -9,7 +9,10 @@ import { API_HOST } from "../../../../../config/config";
 import { Button, Spinner, Modal } from "react-bootstrap";
 import { useNavigate } from "react-router";
 import axios from "axios";
-import { calcularEnvio } from "../../../../../utils/funtionsProducts";
+import {
+  calcularEnvio,
+  calculateTotal,
+} from "../../../../../utils/funtionsProducts";
 import { FaHandHoldingDollar } from "../../../../../assets/icons/reactIcons";
 
 export const PagoUser = () => {
@@ -57,7 +60,8 @@ const Informacion = ({ handleClose }) => {
 
   // calcular costos de envio
   const destino = sessionData.destino;
-  const costoEnvio = calcularEnvio(destino);
+  const valorTotal = calculateTotal(cartItems);
+  const costoEnvio = calcularEnvio(destino, valorTotal);
 
   const combinedData = { ...sessionData, email: localStorageData.email };
 

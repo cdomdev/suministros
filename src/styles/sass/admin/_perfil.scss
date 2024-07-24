@@ -17,9 +17,8 @@
         .sidebar {
             grid-area: sidebar;
             background-color: white;
-            max-height: 300px;
             position: relative;
-            height: 300px;
+            height: auto;
             border-radius: 20px;
             display: flex;
             flex-direction: column;

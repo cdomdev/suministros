@@ -15,6 +15,7 @@ $otro: 'Lato', sans-serif;
         background: #FBFBFB;
         box-shadow: 0px 0px 10px #a7a7a7;
         padding: 20px;
+        font-family: $contenido2;
 
         &:before,
         &:after {
@@ -40,6 +41,7 @@ $otro: 'Lato', sans-serif;
             align-items: center;
             justify-content: center;
             gap: 10px;
+
 
             .ticket-text {
                 margin: 0;
@@ -148,6 +150,7 @@ $otro: 'Lato', sans-serif;
                     font-weight: bold;
                 }
                 p {
+                    font-family: $contenido2;
                     text-transform: capitalize;
                     font-size: 14px;
                     text-align: left;

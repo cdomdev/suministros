@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useCarShop } from "../../../../../hook";
 import {
   IoIosPerson,
@@ -9,8 +9,11 @@ import {
   getDataStorage,
 } from "../../../../../utils/getDataStorage";
 import { LoaderComponent } from "../../../../../utils";
-import { calcularEnvio } from "../../../../../utils/funtionsProducts";
-import { formateValue } from "../../../../../utils/funtionsProducts";
+import {
+  calcularEnvio,
+  calculateTotal,
+  formateValue,
+} from "../../../../../utils/funtionsProducts";
 
 export const DataUser = () => {
   const [data, setData] = useState([]);
@@ -23,13 +26,8 @@ export const DataUser = () => {
   }, []);
 
   const destino = data.destino;
-
-  const calculateTotal = () => {
-    return cartItems.reduce(
-      (total, item) => total + item.cantidad * item.valor,
-      0 + calcularEnvio(destino)
-    );
-  };
+  const valorTotal = calculateTotal(cartItems);
+  const costoEnvio = calcularEnvio(destino, valorTotal);
 
   return (
     <>
@@ -76,7 +74,7 @@ export const DataUser = () => {
         </div>
         <div className="total">
           <span>TOTAL A PAGAR </span>
-          <strong>$: {formateValue(calculateTotal())}</strong>
+          <strong>$: {formateValue(valorTotal + costoEnvio)}</strong>
         </div>
       </div>
     </>
