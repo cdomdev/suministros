@@ -1,5 +1,5 @@
 import { Button, Form, Modal, Row, Col, Spinner } from "react-bootstrap";
-import React, { useState, useRef } from "react";
+import { useState, useRef } from "react";
 import { useNotification } from "../../../hook";
 import { NotificationToast } from "../../../utils";
 import { API_HOST } from "../../../config/config";
@@ -31,7 +31,7 @@ export const Actualizar = ({ ofertaData, setOfertaListado }) => {
     const updatedValues = {
       nombre: nombreUPdate,
       descuento: descuentoUpdate,
-      fecheIni: fechaIniUpdate,
+      fechaIni: fechaIniUpdate,
       fechaFin: fechaFinUpdate,
     };
     setUpdatedValues(updatedValues);
@@ -53,7 +53,6 @@ export const Actualizar = ({ ofertaData, setOfertaListado }) => {
           updatedValues: updatedValues,
         })
         .then((response) => {
-          console.log(response.data);
           if (response.status === 200) {
             setOfertaListado(response.data.ofertas);
             setToastMessage("Oferta actualizada con exito");

@@ -675,7 +675,7 @@ section .contanier-cards .contenedor-card .card-products:hover .icon {
   margin: 0 auto;
   display: flex;
   height: auto;
-  margin-top: -9.5px;
+  margin-top: -9.6px;
 }
 .carrusel .carousel-image {
   object-fit: unset;

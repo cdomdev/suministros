@@ -101,7 +101,7 @@ export const Editar = ({ producto, setListadoState }) => {
             />
 
             <span className="content-btn-card">
-              <Button type="submit" className="btn-custom ">
+              <Button type="submit" className="btn-custom mt-3">
                 Guardar
               </Button>
             </span>
