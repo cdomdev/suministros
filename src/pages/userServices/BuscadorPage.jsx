@@ -1,6 +1,6 @@
 import { IconNavigateCar } from "../../utils";
 import Results from "../../components/user/sections/buscador/Results";
-import { BtnWhatsapp } from "../../utils";
+import { BtnWhatsapp } from "../../components/common";
 
 const BuscadorPage = () => {
   return (

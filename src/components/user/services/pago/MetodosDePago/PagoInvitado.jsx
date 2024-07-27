@@ -9,8 +9,8 @@ import {
   calcularEnvio,
   calculateTotal,
 } from "../../../../../utils/funtionsProducts";
-import { NotificationToast } from "../../../../../utils";
-import { FaHandHoldingDollar } from "../../../../../assets/icons/reactIcons";
+import { NotificationToast } from "../../../../common/NotificationToast";
+import { FaHandHoldingDollar } from "../../../../../../public/icons/reactIcons";
 
 export const PagoInvitado = () => {
   const [show, setShow] = useState(false);

@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import EventEmitter from "../../../../../hook/EventEmitter";
 import { GoogleOAuthProvider, useGoogleLogin } from "@react-oauth/google";
-import { IconGoogle } from "../../../../../assets/icons/reactIcons";
+import { IconGoogle } from "../../../../../../public/icons/reactIcons";
 import { useUser, useNotification } from "../../../../../hook";
 import { NotificationToast } from "../../../../../utils";
 import { API_HOST } from "../../../../../config/config";
@@ -13,20 +13,21 @@ const CLIENT_ID = import.meta.env.VITE_CLIENT_ID;
 // componente en uso
 
 const GoogleLogin = ({ setIsLoggedIn, texto }) => {
-  useEffect(() => {
-    const authChangeCallback = (isLoggedIn) => {
-      if (isLoggedIn) {
-      }
-    };
-    const unsubscribe = EventEmitter.subscribe(
-      "authChange",
-      authChangeCallback
-    );
+  // useEffect(() => {
+  //   const authChangeCallback = (isLoggedIn) => {
+  //     if (isLoggedIn) {
+  //       setIsLoggedIn(isLoggedIn);
+  //     }
+  //   };
+  //   const unsubscribe = EventEmitter.subscribe(
+  //     "authChange",
+  //     authChangeCallback
+  //   );
 
-    return () => {
-      unsubscribe();
-    };
-  }, []);
+  //   return () => {
+  //     unsubscribe();
+  //   };
+  // }, []);
 
   const notifyAuthChange = (isLoggedIn) => {
     EventEmitter.emit("authChange", isLoggedIn);

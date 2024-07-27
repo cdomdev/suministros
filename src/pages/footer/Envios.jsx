@@ -1,4 +1,4 @@
-import { BtnWhatsapp } from "../../utils";
+import { BtnWhatsapp } from "../../components/common/BtnWhatsapp";
 
 const Envio = () => {
   return (

@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
-import { FaAngleDown } from "../../../../assets/icons/reactIcons";
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
+import { FaAngleDown } from "../../../../../public/icons/reactIcons";
 
 export const SubMenu = ({ label, items, className, link }) => {
   const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);

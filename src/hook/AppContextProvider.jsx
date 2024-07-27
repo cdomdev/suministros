@@ -1,5 +1,5 @@
 // UserContext.js
-import React, { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 const UserContext = createContext();
 const NotificationContext = createContext();
 const CarShopContext = createContext();
@@ -23,7 +23,6 @@ export const AppContextProvider = ({ children }) => {
   const [activeStep, setActiveStep] = useState(0);
 
   // Estados para la carga en los buttons
-
 
   // funciones de la sesion
   const login = (userData) => {
@@ -90,7 +89,6 @@ export const AppContextProvider = ({ children }) => {
           }}>
           {children}
         </CarShopContext.Provider>
-       
       </NotificationContext.Provider>
     </UserContext.Provider>
   );

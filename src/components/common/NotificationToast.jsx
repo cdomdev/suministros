@@ -1,4 +1,4 @@
-import { useNotification } from "../hook";
+import { useNotification } from "../../hook";
 import { Toast } from "react-bootstrap";
 
 export const NotificationToast = ({ text }) => {

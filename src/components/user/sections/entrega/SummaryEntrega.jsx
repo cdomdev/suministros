@@ -1,10 +1,11 @@
 import BoxText from "../CarShoping/summaryCar/BoxText";
+import { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import { useCarShop, useNotification } from "../../../../hook";
-import { NotificationToast, getDataStorage } from "../../../../utils";
+import { NotificationToast } from "../../../common";
+import { getDataStorage } from "../../../../utils";
 import { useNavigate } from "react-router";
 import { formateValue } from "../../../../utils/funtionsProducts";
-import { useEffect, useState } from "react";
 
 export const SummaryEntrega = () => {
   const { activeStep, setStep, cartItems } = useCarShop();

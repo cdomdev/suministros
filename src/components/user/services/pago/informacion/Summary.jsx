@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useCarShop } from "../../../../../hook";
-import { LoaderComponent } from "../../../../../utils";
+import { LoaderComponent } from "../../../../common";
 import { getDataSesionStorega } from "../../../../../utils/getDataStorage";
 import {
   calcularEnvio,
@@ -35,10 +35,8 @@ export const Summary = () => {
                   <div className="info-products">
                     <img src={item.image} alt="" className="img-car-shop" />
                     <div>
-                      <div className="box-text-details-product">
-                        <strong>Producto:</strong>
-                        <p>{item.nombre}</p>
-                      </div>
+                      <strong>Producto:</strong>
+                      <p>{item.nombre}</p>
                       <div className="box-text-details-product">
                         <strong>Ref:</strong>
                         <p> {item.referencia} </p>

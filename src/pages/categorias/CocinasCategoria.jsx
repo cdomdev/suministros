@@ -1,4 +1,4 @@
-import { Migajas, IconNavigateCar, BtnWhatsapp } from "../../utils";
+import { Migajas, IconNavigateCar, BtnWhatsapp } from "../../components/common";
 import { CardCategorias } from "../../components/user/sections/cards";
 
 const CocinasCategoria = () => {

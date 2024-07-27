@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Editar } from "./Editar";
 import { Delete } from "./Delete";
 import { getDataStorage } from "../../../utils/getDataStorage";
-import { NotificationToast } from "../../../utils";
+import { NotificationToast } from "../../common";
 import { formateValue } from "../../../utils/funtionsProducts";
 
 export const Listado = ({ listadoState, setListadoState }) => {

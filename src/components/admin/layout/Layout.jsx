@@ -1,5 +1,3 @@
-import React from "react";
-
 const Layout = ({ component, title }) => {
   return (
     <div className="layout-body-admin">

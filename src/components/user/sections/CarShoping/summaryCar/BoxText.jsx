@@ -3,7 +3,7 @@ import {
   LuPackageCheck,
   GrSecure,
   BsCardChecklist,
-} from "../../../../../assets/icons/reactIcons";
+} from "../../../../../../public/icons/reactIcons";
 
 const BoxText = () => {
   return (

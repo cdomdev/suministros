@@ -22,7 +22,7 @@ import { MdOutlineInventory, MdAssignmentAdd } from "react-icons/md";
 import { BsBoxSeam } from "react-icons/bs";
 import { BiSolidOffer } from "react-icons/bi";
 import { IoBagAddSharp } from "react-icons/io5";
-import { GiHistogram } from "../../../assets/icons/reactIcons";
+import { GiHistogram } from "../../../../public/icons/reactIcons";
 import { ProfileMenu } from "./ProfileMenu";
 import NotificationMenu from "./NotificationMenu";
 

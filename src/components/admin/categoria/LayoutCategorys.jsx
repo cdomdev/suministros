@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Form, Button, Table } from "react-bootstrap";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import { useNotification } from "../../../hook";
-import { NotificationToast } from "../../../utils";
+import { NotificationToast } from "../../common/NotificationToast";
 import { API_HOST } from "../../../config/config";
 import { api } from "../../../config/axios.conf";
 

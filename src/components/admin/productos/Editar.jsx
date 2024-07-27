@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
 import { useNotification } from "../../../hook";
 import { getDataStorage } from "../../../utils/getDataStorage";

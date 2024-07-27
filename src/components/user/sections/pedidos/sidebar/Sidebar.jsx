@@ -1,6 +1,10 @@
-import { BsBoxSeam, IoIosLogOut } from "../../../../../assets/icons/reactIcons";
+import {
+  BsBoxSeam,
+  IoIosLogOut,
+} from "../../../../../..public/icons/reactIcons";
 import { useEffect, useState } from "react";
-import { LoaderComponent, getDataStorage } from "../../../../../utils";
+import { LoaderComponent } from "../../../../common";
+import { getDataStorage } from "../../../../../utils";
 import { API_HOST } from "../../../../../config/config";
 import { Link } from "react-router-dom";
 import Avatar from "@mui/material/Avatar";

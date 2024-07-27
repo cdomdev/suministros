@@ -1,11 +1,8 @@
-import {
-  getDataStorage,
-  NotificationToast,
-  LoaderComponent,
-} from "../../../../../utils";
+import { NotificationToast, LoaderComponent } from "../../../../common";
+import { getDataStorage } from "../../../../../utils";
 import { useEffect, useState } from "react";
 import { Button, Form, Spinner } from "react-bootstrap";
-import { BiArrowBack } from "../../../../../assets/icons/reactIcons";
+import { BiArrowBack } from "../../../../../../public/icons/reactIcons";
 import { useNotification } from "../../../../../hook";
 import { Link } from "react-router-dom";
 import { API_HOST } from "../../../../../config/config";

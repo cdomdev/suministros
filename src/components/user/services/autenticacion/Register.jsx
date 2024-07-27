@@ -20,20 +20,21 @@ const Register = () => {
     setIsLoggedIn(isAuthenticated());
   }, [isLoggedIn]);
 
-  useEffect(() => {
-    const authChangeCallback = (isLoggedIn) => {
-      if (isLoggedIn) {
-      }
-    };
-    const unsubscribe = EventEmitter.subscribe(
-      "authChange",
-      authChangeCallback
-    );
+  // useEffect(() => {
+  //   const authChangeCallback = (isLoggedIn) => {
+  //     if (isLoggedIn) {
+  //       setIsLoading(isLoggedIn);
+  //     }
+  //   };
+  //   const unsubscribe = EventEmitter.subscribe(
+  //     "authChange",
+  //     authChangeCallback
+  //   );
 
-    return () => {
-      unsubscribe();
-    };
-  }, []);
+  //   return () => {
+  //     unsubscribe();
+  //   };
+  // }, []);
 
   const notifyAuthChange = (isLoggedIn) => {
     EventEmitter.emit("authChange", isLoggedIn);

@@ -1,5 +1,5 @@
 // utils.js
-const getTitleFronPath = (path) => {
+export const getTitleFronPath = (path) => {
   switch (path) {
     case "/suministros/home":
       return "Suministros";
@@ -31,5 +31,3 @@ const getTitleFronPath = (path) => {
       return "Suministros";
   }
 };
-
-export default getTitleFronPath;

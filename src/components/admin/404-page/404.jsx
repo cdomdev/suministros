@@ -1,6 +1,5 @@
-import React from "react";
 import { Link } from "react-router-dom";
-import { SvgNotFount } from "../../../assets/icons/reactIcons";
+import { SvgNotFount } from "../../../../public/icons/reactIcons";
 
 const NotExisting = () => {
   return (
@@ -15,5 +14,4 @@ const NotExisting = () => {
   );
 };
 
-
-export default NotExisting
+export default NotExisting;

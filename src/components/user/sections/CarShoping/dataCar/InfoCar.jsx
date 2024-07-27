@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { UserNotLoggin } from "./UserNotLoggin";
-import { TiShoppingCart } from "../../../../../assets/icons/reactIcons";
+import { TiShoppingCart } from "../../../../../../public/icons/reactIcons";
 import { useNavigate } from "react-router";
 import { useCarShop } from "../../../../../hook";
 import { isAuthenticated } from "../../../../../helpers/isAuthenticated";

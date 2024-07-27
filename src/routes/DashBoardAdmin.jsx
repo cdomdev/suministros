@@ -2,7 +2,7 @@
 import { useEffect, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import { useUser } from "../hook";
-import { LoaderPage } from "../utils";
+import { LoaderPage } from "../components/common";
 import {
   GestionUsuarios,
   Admin,

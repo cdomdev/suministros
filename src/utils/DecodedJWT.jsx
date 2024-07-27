@@ -1,4 +1,4 @@
-const DecodedJWT = (token) => {
+export const DecodedJWT = (token) => {
   const parts = token.split(".");
   if (parts.length !== 3) {
     throw new Error("Invalides token fromat");
@@ -7,5 +7,3 @@ const DecodedJWT = (token) => {
   const payload = JSON.parse(atob(parts[1]));
   return { header, payload };
 };
-
-export default DecodedJWT;

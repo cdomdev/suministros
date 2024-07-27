@@ -159,7 +159,7 @@ export const Crear = ({ setListadoState }) => {
         });
 
         setProductState({
-          marca: " ",
+          marca: "",
           description: "",
           nombre: "",
           valor: "",

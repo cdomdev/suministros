@@ -1,4 +1,4 @@
-import { VscSearchStop } from "../../../../assets/icons/reactIcons";
+import { VscSearchStop } from "../../../../../public/icons/reactIcons";
 
 const NotProduct = () => {
   return (

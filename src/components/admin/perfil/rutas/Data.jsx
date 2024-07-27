@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { getDataStorage } from "../../../../utils";
 import { Col, Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import { LoaderComponent } from "../../../../utils";
-import { FaRegEdit } from "../../../../assets/icons/reactIcons";
+import { LoaderComponent } from "../../../common";
+// import { Link } from "react-router-dom";
+// import { FaRegEdit } from "../../../../../public/assets/icons/reactIcons";
 
 export const Data = () => {
   const [data, setData] = useState([]);

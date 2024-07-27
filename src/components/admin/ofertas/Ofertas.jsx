@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { NuevaOferta } from "./NuevaOferta";
 import { Listado } from "./Listado";
 import Layout from "../layout/Layout";

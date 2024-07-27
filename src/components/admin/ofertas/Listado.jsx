@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { Accordion } from "react-bootstrap";
 import { Eliminar } from "./Eliminar";
 import { Actualizar } from "./Actualizar";
 import { API_HOST } from "../../../config/config";
 import { api } from "../../../config/axios.conf";
-import axios from "axios";
+
 export const Listado = ({ ofertaListado, setOfertaListado }) => {
   useEffect(() => {
     const fecthData = async () => {

@@ -3,12 +3,12 @@ import { useCarShop } from "../../../../../hook";
 import {
   IoIosPerson,
   FaLocationDot,
-} from "../../../../../assets/icons/reactIcons";
+} from "../../../../../../public/icons/reactIcons";
 import {
   getDataSesionStorega,
   getDataStorage,
 } from "../../../../../utils/getDataStorage";
-import { LoaderComponent } from "../../../../../utils";
+import { LoaderComponent } from "../../../../common";
 import {
   calcularEnvio,
   calculateTotal,

@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Button, Modal, Form } from "react-bootstrap";
 import { useNotification } from "../../../hook";
-import { NotificationToast } from "../../../utils";
+import { NotificationToast } from "../../common/NotificationToast";
 import { API_HOST } from "../../../config/config";
 import { api } from "../../../config/axios.conf";
 

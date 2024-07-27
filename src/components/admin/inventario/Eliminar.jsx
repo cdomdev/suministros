@@ -1,8 +1,8 @@
 import { Button, Modal } from "react-bootstrap";
-import React, { useState } from "react";
+import { useState } from "react";
 import { CiWarning } from "react-icons/ci";
 import { useNotification } from "../../../hook";
-import { NotificationToast } from "../../../utils";
+import { NotificationToast } from "../../common/NotificationToast";
 import { API_HOST } from "../../../config/config";
 import { api } from "../../../config/axios.conf";
 

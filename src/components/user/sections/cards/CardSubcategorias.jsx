@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Button, Form } from "react-bootstrap";
-import { Link, useNavigate } from "react-router-dom";
-import { BsDatabaseX } from "../../../../assets/icons/reactIcons";
+import { useNavigate } from "react-router-dom";
+import { BsDatabaseX } from "../../../../../public/icons/reactIcons";
 import { obtenerMarcasUnicas } from "../../../../utils";
 import { Marcas, Precio } from "./Filtros";
 import { API_HOST } from "../../../../config/config";

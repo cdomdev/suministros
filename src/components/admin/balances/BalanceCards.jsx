@@ -4,7 +4,7 @@ import {
   BsGraphUpArrow,
   MdOutlinePendingActions,
   BsSendCheck,
-} from "../../../assets/icons/reactIcons";
+} from "../../../../public/icons/reactIcons";
 import { useState, useEffect } from "react";
 import { api } from "../../../config/axios.conf";
 import { API_HOST } from "../../../config/config";

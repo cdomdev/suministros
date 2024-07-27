@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { FaTruck } from "../../../../../assets/icons/reactIcons";
+import { useState } from "react";
+import { FaTruck } from "../../../../../../public/icons/reactIcons";
 import { ModalEntrega } from "./ModalEntrega";
 import { UserDates } from "./UserDates";
 
@@ -51,7 +51,7 @@ export const EnvioUser = () => {
               show={show}
               content={<UserDates handleClose={handleClose} />}
               texto="Agregar Informacion"
-            />            
+            />
           </div>
         </div>
       )}

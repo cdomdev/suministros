@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { RutasBox } from "./RutasBox";
 import Layout from "../layout/Layout";
 import { getDataStorage } from "../../../utils";

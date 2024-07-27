@@ -1,5 +1,6 @@
-import { IoIosLogOut } from "../../../../assets/icons/reactIcons";
-import { LoaderComponent, getDataStorage } from "../../../../utils";
+import { IoIosLogOut } from "../../../../../public/icons/reactIcons";
+import { getDataStorage } from "../../../../utils";
+import { LoaderComponent } from "../../../common";
 import { Link } from "react-router-dom";
 import Avatar from "@mui/material/Avatar";
 import Nav from "react-bootstrap/Nav";

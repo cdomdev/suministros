@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { useCarShop } from "../hook";
+import { useCarShop } from "../../hook";
 import { Link } from "react-router-dom";
-import { TiShoppingCart } from "../assets/icons/reactIcons";
+import { TiShoppingCart } from "../../../public/icons/reactIcons";
 
 // componente reutilizado para la navegcion al carrito
 export const IconNavigateCar = () => {

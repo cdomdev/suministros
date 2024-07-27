@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCarShop } from "../../../../../hook";
-import { PiShoppingCartSimpleThin } from "../../../../../assets/icons/reactIcons";
+import { PiShoppingCartSimpleThin } from "../../../../../../public/icons/reactIcons";
 
 // icono con navegacion al carrito
 

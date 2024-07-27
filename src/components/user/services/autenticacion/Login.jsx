@@ -1,10 +1,10 @@
 import { useRef, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Button, Form, Spinner } from "react-bootstrap";
-import imgFav from "../../../../assets/images/favicon.webp";
+import imgFav from "../../../../../public/images/favicon.webp";
 import EventEmitter from "../../../../hook/EventEmitter";
 import { useUser, useNotification } from "../../../../hook";
-import { NotificationToast } from "../../../../utils";
+import { NotificationToast } from "../../../common";
 import { API_HOST } from "../../../../config/config";
 import { GoogleLogin } from "./";
 import axios from "axios";
@@ -20,7 +20,7 @@ const Login = ({ handleCloseModal, handleLoginSuccess }) => {
   // useEffect(() => {
   //   const authChangeCallback = (isLoggedIn) => {
   //     if (isLoggedIn) {
-  //       console.log("loggin succes");
+  //       setIsLoggedIn(isLoggedIn);
   //     }
   //   };
   //   const unsubscribe = EventEmitter.subscribe(

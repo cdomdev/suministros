@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Button } from "react-bootstrap";
 import { useNotification } from "../../../../hook/AppContextProvider";
 import { NotificationToast } from "../../../../utils";

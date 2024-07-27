@@ -1,8 +1,8 @@
-import React, { lazy, useEffect } from "react";
+import { lazy, useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { DashboardUser } from "./routes";
 const DashboardAdmin = lazy(() => import("./routes/DashBoardAdmin"));
-import getTitleFronPath from "./utils/getTitleFronPath";
+import { getTitleFronPath } from "./utils/getTitleFronPath";
 import { AppContextProvider } from "./hook";
 
 export const App = () => {

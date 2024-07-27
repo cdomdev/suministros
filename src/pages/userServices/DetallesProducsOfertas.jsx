@@ -1,18 +1,14 @@
-import React, { useEffect, useState } from "react";
-import {
-  RiAddFill,
-  TiMinus,
-  IoCartOutline,
-} from "../../assets/icons/reactIcons";
+import { useEffect, useState } from "react";
+import { RiAddFill, TiMinus } from "../../../public/icons/reactIcons";
 import { Form, Button } from "react-bootstrap";
 import { useCarShop, useNotification } from "../../hook";
 import {
   IconNavigateCar,
   NotificationToast,
-  getDataStorage,
   BtnWhatsapp,
   LoaderComponent,
-} from "../../utils";
+} from "../../components/common";
+import { getDataStorage } from "../../utils";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { calcalateDiscount, formateValue } from "../../utils/funtionsProducts";
 

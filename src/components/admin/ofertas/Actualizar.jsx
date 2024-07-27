@@ -1,7 +1,7 @@
 import { Button, Form, Modal, Row, Col, Spinner } from "react-bootstrap";
 import { useState, useRef } from "react";
 import { useNotification } from "../../../hook";
-import { NotificationToast } from "../../../utils";
+import { NotificationToast } from "../../common";
 import { API_HOST } from "../../../config/config";
 import { api } from "../../../config/axios.conf";
 

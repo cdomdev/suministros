@@ -1,8 +1,7 @@
 import { Carrusel } from "../../components/user/sections/Carrusel/Carrusel";
 import { CategoriasCards } from "../../components/user/sections/homeComponents/CategoriasItems";
-import { IconNavigateCar } from "../../utils";
+import { IconNavigateCar, BtnWhatsapp } from "../../components/common";
 import "../../styles/App.css";
-import { BtnWhatsapp } from "../../utils";
 import { MasVendidos } from "../../components/user/sections/homeComponents/MasVendidos";
 
 export const HomeUser = () => {

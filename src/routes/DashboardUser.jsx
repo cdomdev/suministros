@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from "react";
+import { Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
 import {
   BañosCategoria,
@@ -41,7 +41,7 @@ import {
   PedidosUser,
   Profile,
 } from "../components/user/sections/pedidos/RutasPedido";
-import { LoaderPage } from "../utils";
+import { LoaderPage } from "../components/common/Loaders";
 
 import { RecoverForm } from "../components/user/services/autenticacion";
 import { Footer } from "../components/user/sections/footer/Footer";

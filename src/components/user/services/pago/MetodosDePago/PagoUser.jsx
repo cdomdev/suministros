@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   getDataSesionStorega,
   getDataStorage,
 } from "../../../../../utils/getDataStorage";
 import { useCarShop, useNotification } from "../../../../../hook";
-import { NotificationToast } from "../../../../../utils";
+import { NotificationToast } from "../../../../common/NotificationToast";
 import { API_HOST } from "../../../../../config/config";
 import { Button, Spinner, Modal } from "react-bootstrap";
 import { useNavigate } from "react-router";
@@ -13,7 +13,7 @@ import {
   calcularEnvio,
   calculateTotal,
 } from "../../../../../utils/funtionsProducts";
-import { FaHandHoldingDollar } from "../../../../../assets/icons/reactIcons";
+import { FaHandHoldingDollar } from "../../../../../../public/icons/reactIcons";
 
 export const PagoUser = () => {
   const [show, setShow] = useState(false);

@@ -1,6 +1,5 @@
-import React from "react";
 import { Button, Form } from "react-bootstrap";
-import { Upload } from "../../../assets/icons/reactIcons";
+import { Upload } from "../../../../public/icons/reactIcons";
 
 export const FormAdd = ({
   getFormValues,

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { API_HOST } from "../../../../config/config";
 import { formateValue } from "../../../../utils/funtionsProducts";
@@ -34,7 +34,6 @@ export const MasVendidos = () => {
         <ul key={producto.id} className="card-products">
           <span className="text-ref">REF: {producto.referencia}</span>
           <img
-            effect="blur"
             src={producto.image}
             alt="not found"
             className="img-products"

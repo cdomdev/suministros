@@ -3,7 +3,7 @@ import { useNavigate } from "react-router";
 import { isAuthenticated } from "../../../../helpers/isAuthenticated";
 import { Modal, Button } from "react-bootstrap";
 import LoginModal from "../../services/autenticacion/LoginModal";
-import { BsBoxSeam } from "../../../../assets/icons/reactIcons";
+import { BsBoxSeam } from "../../../../../public/icons/reactIcons";
 
 const Pedidos = () => {
   const navigate = useNavigate();

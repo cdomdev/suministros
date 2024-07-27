@@ -1,6 +1,6 @@
 import { useCarShop } from "../../hook";
 import { Info, Summary } from "../../components/user/services/pago";
-import { BtnWhatsapp, Steps } from "../../utils";
+import { BtnWhatsapp, Steps } from "../../components/common";
 
 const Pago = () => {
   const { activeStep } = useCarShop();

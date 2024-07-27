@@ -310,15 +310,16 @@ section{
                     .info-products{
                         gap: 0;
                         display: flex;
+                        p{
+                            margin: 0;
+                            font-size: 14px;
+                            text-wrap: pretty;
+                        }
                         .box-text-details-product{
                             display: flex;
-                            align-items: flex-start;
-                            gap: 2px;
-                            p{
-                                margin: 0;
-                                font-size: 14px;
-                                text-wrap: pretty;
-                            }
+                            align-items: center;
+                            gap: 5px;
+                           
                         }
                        
                         .ref{

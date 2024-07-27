@@ -1,5 +1,5 @@
 import { useCarShop } from "../../hook";
-import { BtnWhatsapp, Steps } from "../../utils";
+import { BtnWhatsapp, Steps } from "../../components/common";
 import {
   InfoCarEntrega,
   SummaryEntrega,

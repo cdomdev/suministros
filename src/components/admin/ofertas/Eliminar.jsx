@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 import { IoIosWarning } from "react-icons/io";
 import { useNotification } from "../../../hook";
-import { NotificationToast } from "../../../utils";
+import { NotificationToast } from "../../common";
 import { API_HOST } from "../../../config/config";
 import { api } from "../../../config/axios.conf";
 

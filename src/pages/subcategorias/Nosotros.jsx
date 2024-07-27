@@ -1,12 +1,11 @@
 import "../../styles/App.css";
-import React from "react";
 import { Container } from "react-bootstrap";
 import {
   FaFacebook,
   AiFillInstagram,
   FaXTwitter,
-} from "../../assets/icons/reactIcons";
-import { BtnWhatsapp } from "../../utils";
+} from "../../../public/icons/reactIcons";
+import { BtnWhatsapp } from "../../components/common";
 
 const Nosotros = () => {
   return (

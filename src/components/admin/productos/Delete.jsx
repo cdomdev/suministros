@@ -1,8 +1,6 @@
-import React from "react";
 import { getDataStorage } from "../../../utils/getDataStorage";
 import { Button } from "react-bootstrap";
 import { useNotification } from "../../../hook";
-
 
 export const Delete = ({ setListadoState, id }) => {
   const { setShowToast, setToastMessage, setBgToast } = useNotification();

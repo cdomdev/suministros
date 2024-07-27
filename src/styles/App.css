@@ -2695,15 +2695,15 @@ section .details .summary .box4 .card-product .info-products {
   gap: 0;
   display: flex;
 }
-section .details .summary .box4 .card-product .info-products .box-text-details-product {
-  display: flex;
-  align-items: flex-start;
-  gap: 2px;
-}
-section .details .summary .box4 .card-product .info-products .box-text-details-product p {
+section .details .summary .box4 .card-product .info-products p {
   margin: 0;
   font-size: 14px;
   text-wrap: pretty;
+}
+section .details .summary .box4 .card-product .info-products .box-text-details-product {
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 section .details .summary .box4 .card-product .info-products .ref {
   font-weight: bold;

@@ -4,11 +4,9 @@ import {
   MdOutlinePhone,
   IoPhonePortraitOutline,
   CiMail,
-} from "../../../../assets/icons/reactIcons";
-import {
   SiMercadopago,
   TbTruckDelivery,
-} from "../../../../assets/icons/reactIcons";
+} from "../../../../../public/icons/reactIcons";
 
 export const Footer = () => {
   return (

@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
 const SuccessRequest = ({ data }) => {
@@ -8,7 +7,9 @@ const SuccessRequest = ({ data }) => {
 
   return (
     <div className="container-request">
-      <h1>{`¡Hola ${data.name} tu informacion ah sido valida con exito!`}</h1>
+      <h1>{`¡Hola ${
+        data.name || data.nombre
+      } tu informacion ah sido valida con exito!`}</h1>
       <p>
         {`
           En los proximos minutos enviaremos un correo a tu cuenta ${data.email} con las

@@ -1,6 +1,4 @@
-import React from "react";
-import { BtnWhatsapp } from "../../utils";
-
+import { BtnWhatsapp } from "../../components/common/BtnWhatsapp";
 const MediosPago = () => {
   return (
     <div className="container">
