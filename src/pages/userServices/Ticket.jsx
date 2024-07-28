@@ -80,7 +80,7 @@ const Ticket = () => {
           <hr />
           <div className="datos-envio">
             <div>
-              <span>Direccion de facturacion</span>
+              <span>Direccion de entrega</span>
               <p>{data.direccion}</p>
               <p>{data.detalles}</p>
             </div>

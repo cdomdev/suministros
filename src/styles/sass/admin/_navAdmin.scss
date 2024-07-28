@@ -36,18 +36,20 @@ $color-complementario: #f2efe1;
     padding: 0 !important;
     display: flex;
     flex-direction: column !important;
-
+    
     .profile{
         display: flex;
         flex-direction: column;
         justify-content: center;
         .header{
+            text-align: center;
+            padding: 10px 0px;
+            font-weight: bold;
+           
             hr{
                 margin: 0;
             }
-            p{
-                margin: 0;
-            }
+           
         }
         .body{
             gap: 5px;

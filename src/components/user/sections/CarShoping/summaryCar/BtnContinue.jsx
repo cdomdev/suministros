@@ -20,6 +20,7 @@ const BtnContinue = ({ setIsLoggedIn, isLoggedIn }) => {
 
   function handleContinue() {
     navigate("/suministros/entrega");
+    setStep((prevStep) => prevStep + 1);
   }
 
   const handleContinueAsGuest = () => {
@@ -44,12 +45,12 @@ const BtnContinue = ({ setIsLoggedIn, isLoggedIn }) => {
         keyboard={false}>
         <div>
           <Modal.Header closeButton></Modal.Header>
-          <h4>Verifica tus datos</h4>
+          <h4>Inicio de sesion</h4>
           <hr />
           <div className="content-use">
             <div className="outh">
               <p>
-                Registrate o inicia sesion para tener una historial de tus
+                Registrate o inicia sesion para tener un historial de tus
                 compras o hacer seguiento del estado de tu pedido.
               </p>
               <div className="btn-content">
@@ -70,7 +71,7 @@ const BtnContinue = ({ setIsLoggedIn, isLoggedIn }) => {
                 <Button
                   className="btn-invitado"
                   onClick={() => handleContinueAsGuest()}>
-                  continuar como invitado
+                  Continuar como invitado
                 </Button>
               </div>
             </div>

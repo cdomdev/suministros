@@ -21,7 +21,7 @@ const Detalles = () => {
   return (
     <>
       <div className="contenedor-orders-user">
-        {orders.length === 0 ? (
+        {!Array.isArray(orders) || orders.length === 0 ? (
           <span className="loader-details">Cargando datos...</span>
         ) : (
           orders.map((order, index) => (
@@ -73,7 +73,6 @@ const Detalles = () => {
                   </Table>
                 </div>
                 <div>
-                  {" "}
                   <div className="data-user-table-response">
                     <h2>Datos del comprador </h2>
                     <Table striped bordered hover size="sm" responsive>

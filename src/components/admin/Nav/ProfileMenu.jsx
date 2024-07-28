@@ -36,7 +36,7 @@ export const ProfileMenu = () => {
     }
   };
 
-  const finnalySection = async () => {
+  const finallySection = async () => {
     try {
       await logoutAdmin();
       localStorage.clear();
@@ -78,24 +78,24 @@ export const ProfileMenu = () => {
         open={Boolean(anchorElUser)}
         onClose={handleCloseUserMenu}>
         <MenuItem onClick={handleCloseUserMenu}>
-          <Typography textAlign="center" className="logout">
-            <div className="profile">
-              <div className="header">
-                <p>Hola {data.name || data.nombre}</p>
-                <div>
-                  <hr />
-                </div>
-              </div>
-              <div className="body">
-                <Link className="profile-link" to={"/admin/profile/"}>
-                  <span>Mi Perfil</span>
-                </Link>
-                <button onClick={finnalySection} className="btn-logout">
-                  Cerrar sesion
-                </button>
+          <div className="profile">
+            <div className="header">
+              <Typography variant="body1 text-center-typografy">
+                Hola {data.name || data.nombre}
+              </Typography>
+              <div>
+                <hr />
               </div>
             </div>
-          </Typography>
+            <div className="body">
+              <Link className="profile-link" to={"/admin/profile/"}>
+                <Typography variant="body2">Mi Perfil</Typography>
+              </Link>
+              <button onClick={finallySection} className="btn-logout">
+                Cerrar sesión
+              </button>
+            </div>
+          </div>
         </MenuItem>
       </Menu>
     </Box>

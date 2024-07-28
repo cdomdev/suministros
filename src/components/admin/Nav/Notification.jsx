@@ -8,17 +8,15 @@ export const Notification = ({ notificaciones }) => {
         <>
           <div className="body-notifications">
             {notificaciones.map((notificacion, index) => (
-              <>
-                <div key={index} className="notification">
-                  <p>{notificacion.mensaje}</p>
-                  <div className="date">
-                    <span>{formatTimestamp(notificacion.createdAt)}</span>
-                    <Link className="link" to={"/admin/gestion/usuarios"}>
-                      Ver Pedidos
-                    </Link>
-                  </div>
+              <div key={notificacion.id || index} className="notification">
+                <p>{notificacion.mensaje}</p>
+                <div className="date">
+                  <span>{formatTimestamp(notificacion.createdAt)}</span>
+                  <Link className="link" to={"/admin/gestion/usuarios"}>
+                    Ver Pedidos
+                  </Link>
                 </div>
-              </>
+              </div>
             ))}
           </div>
         </>

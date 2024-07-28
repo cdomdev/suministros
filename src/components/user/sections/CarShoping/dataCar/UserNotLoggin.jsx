@@ -14,8 +14,8 @@ export const UserNotLoggin = ({ setIsLoggedIn }) => {
       <div className="content-modal-for-loggin">
         <div>
           <span>
-            <strong> Si tienes cuenta, inicia sesión</strong> para ver tus
-            productos o continua navegando por nuestro sitio.
+            <strong> Si tienes una cuenta, inicia sesión</strong> o navega por
+            el sitio para agregar tus productos aqui.
           </span>
         </div>
         <div className="contenedor-btn-custome">

@@ -43,8 +43,8 @@ const Pedidos = () => {
             <hr />
             <Modal.Body>
               <p>
-                Inicia sesion o regitrate y disfruta de todos los beneficios que
-                suministros tiene para ti.
+                Inicia sesion o registrate y disfruta de todos los beneficios
+                que tenemos para ti.
               </p>
               <LoginModal
                 setIsLoggedIn={setIsLoggedIn}
@@ -58,7 +58,7 @@ const Pedidos = () => {
                 variant="light"
                 className="cancelar"
                 onClick={handleClosePedidos}>
-                cancelar
+                Cancelar
               </Button>
             </Modal.Body>
           </Modal>

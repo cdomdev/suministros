@@ -3,18 +3,18 @@ import axios from "axios";
 import { useNavigate } from "react-router";
 import { Spinner } from "react-bootstrap";
 import { API_HOST } from "../../../../config/config";
+import { BsBox2 } from "react-icons/bs";
 
 const Pedidos = ({ user, url }) => {
   const [isLoading, setIsLoading] = useState(false);
 
-  const userId = user.id;
   const navigete = useNavigate();
 
   const viewOrders = async () => {
     setIsLoading(true);
     try {
       const response = await axios.post(
-        `${API_HOST}/api/listar/${url}/${userId}`
+        `${API_HOST}/api/listar/${url}/${user.id}`
       );
       if (response.status === 200) {
         const ordersUser = response.data.pedidos;
@@ -36,7 +36,10 @@ const Pedidos = ({ user, url }) => {
           <Spinner animation="border" role="status" size="sm" />
         </div>
       ) : (
-        <> Tiene un nuevo pedido</>
+        <>
+          {" "}
+          Tiene pedidos <BsBox2 className="icon-box mx-2" />
+        </>
       )}
     </button>
   );

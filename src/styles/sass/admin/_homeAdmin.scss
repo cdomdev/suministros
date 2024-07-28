@@ -55,12 +55,12 @@ $color-complementario: #f2efe1;
       display: grid;
       gap: 30px;
       padding: 20px;
-      grid-template-columns: repeat(auto-fit, minmax(17em, 1em));
+      grid-template-columns: repeat(auto-fit, minmax(19em, 1em));
       place-content: center;
 
       .link-box {
         border-radius: 10px;
-        height: 10em;
+        height: 11em;
         box-shadow: 0 0 5px rgb(239, 239, 239);
         transition: all ease 0.3s;
         font-family: $contenidoFonts;

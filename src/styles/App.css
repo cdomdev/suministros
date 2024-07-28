@@ -34,7 +34,7 @@ p {
 
 /* La barra de desplazamiento completa */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 0px;
 }
 
 /* El "track" de la barra de desplazamiento */
@@ -1888,7 +1888,7 @@ section .contanier-cards .contenedor-card .card-products:hover .icon {
   top: 100%;
   left: -25px;
   right: 0;
-  width: 10em;
+  width: 12em;
   background-color: #fff;
   justify-content: flex-start;
   display: flex;
@@ -3890,12 +3890,12 @@ section .details .summary .box4 .send {
   display: grid;
   gap: 30px;
   padding: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(17em, 1em));
+  grid-template-columns: repeat(auto-fit, minmax(19em, 1em));
   place-content: center;
 }
 .body-content .container-cards-home-admin .box-rutas-admin .link-box {
   border-radius: 10px;
-  height: 10em;
+  height: 11em;
   box-shadow: 0 0 5px rgb(239, 239, 239);
   transition: all ease 0.3s;
   font-family: "Roboto", sans-serif;
@@ -5225,10 +5225,12 @@ section .details .summary .box4 .send {
   flex-direction: column;
   justify-content: center;
 }
-.css-6hp17o-MuiList-root-MuiMenu-list .profile .header hr {
-  margin: 0;
+.css-6hp17o-MuiList-root-MuiMenu-list .profile .header {
+  text-align: center;
+  padding: 10px 0px;
+  font-weight: bold;
 }
-.css-6hp17o-MuiList-root-MuiMenu-list .profile .header p {
+.css-6hp17o-MuiList-root-MuiMenu-list .profile .header hr {
   margin: 0;
 }
 .css-6hp17o-MuiList-root-MuiMenu-list .profile .body {

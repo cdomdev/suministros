@@ -48,7 +48,7 @@ export const InfoCar = () => {
                           </li>
                           <li>
                             {" "}
-                            <strong>Unidades:</strong> {item.cantidad}{" "}
+                            <strong>Cantidad: </strong> {item.cantidad}{" "}
                           </li>
                         </ul>
                       </div>
@@ -73,13 +73,11 @@ export const InfoCar = () => {
             )}
           </>
         )}
-        {cartItems.length !== 0 && (
-          <button
-            onClick={() => navigate("/suministros/cocinas")}
-            className="add-product">
-            Agregar mas productos <TiShoppingCart />
-          </button>
-        )}
+        <button
+          onClick={() => navigate("/suministros/cocinas")}
+          className="add-product">
+          Agregar mas productos <TiShoppingCart />
+        </button>
       </div>
     </>
   );
