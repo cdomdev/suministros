@@ -1,6 +1,6 @@
 import { Breadcrumbs } from "@mui/material";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
-import { BiHomeAlt2 } from "../../../public/icons/reactIcons";
+import { BiHomeAlt2 } from "../../assets/icons/reactIcons";
 import { Link } from "react-router-dom";
 
 // Componentes reutilzado para las migajas de las paginas

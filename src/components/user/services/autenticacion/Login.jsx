@@ -1,7 +1,7 @@
-import { useRef, useEffect, useState } from "react";
+import { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Button, Form, Spinner } from "react-bootstrap";
-import imgFav from "../../../../../public/images/favicon.webp";
+import imgFav from "../../../../assets/images/favicon.webp";
 import EventEmitter from "../../../../hook/EventEmitter";
 import { useUser, useNotification } from "../../../../hook";
 import { NotificationToast } from "../../../common";
@@ -16,22 +16,6 @@ const Login = ({ handleCloseModal, handleLoginSuccess }) => {
 
   const { login, setIsLoggedIn } = useUser();
   const { setShowToast, setToastMessage, setBgToast } = useNotification();
-
-  // useEffect(() => {
-  //   const authChangeCallback = (isLoggedIn) => {
-  //     if (isLoggedIn) {
-  //       setIsLoggedIn(isLoggedIn);
-  //     }
-  //   };
-  //   const unsubscribe = EventEmitter.subscribe(
-  //     "authChange",
-  //     authChangeCallback
-  //   );
-
-  //   return () => {
-  //     unsubscribe();
-  //   };
-  // }, []);
 
   const recoveryRoute = () => {
     handleCloseModal();

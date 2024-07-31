@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getDataSesionStorega, getDataStorage } from "../../../../../utils";
 import { NotificationToast } from "../../../../common/NotificationToast";
-import mercadopagoIMg from "../../../../../../public/images/mercadopago.webp";
+import mercadopagoIMg from "../../../../../assets/images/mercadopago.webp";
 import { initMercadoPago } from "@mercadopago/sdk-react";
 import { useCarShop, useNotification } from "../../../../../hook";
 import { Spinner } from "react-bootstrap";

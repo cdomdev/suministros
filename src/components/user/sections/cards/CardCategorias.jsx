@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { BsDatabaseX } from "../../../../../public/icons/reactIcons";
+import { BsDatabaseX } from "../../../../assets/icons/reactIcons";
 import { useNavigate } from "react-router-dom";
 import { obtenerMarcasUnicas, obtenerSubCategorias } from "../../../../utils";
 import { Categorias, Marcas } from "./Filtros";

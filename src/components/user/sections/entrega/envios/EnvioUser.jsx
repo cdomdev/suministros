@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaTruck } from "../../../../../../public/icons/reactIcons";
+import { FaTruck } from "../../../../../assets/icons/reactIcons";
 import { ModalEntrega } from "./ModalEntrega";
 import { UserDates } from "./UserDates";
 

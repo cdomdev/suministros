@@ -3,7 +3,7 @@ import {
   RiAddFill,
   TiMinus,
   IoCartOutline,
-} from "../../../public/icons/reactIcons";
+} from "../../assets/icons/reactIcons";
 import { Form, Button } from "react-bootstrap";
 import { useCarShop, useNotification } from "../../hook";
 import {

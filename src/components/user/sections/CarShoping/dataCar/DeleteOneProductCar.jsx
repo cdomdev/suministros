@@ -1,5 +1,5 @@
 import { useNotification, useCarShop } from "../../../../../hook";
-import { RiDeleteBin5Line } from "../../../../../../public/icons/reactIcons";
+import { RiDeleteBin5Line } from "../../../../../assets/icons/reactIcons";
 import { NotificationToast } from "../../../../common";
 
 // Boton para eliminar un producto del carrito

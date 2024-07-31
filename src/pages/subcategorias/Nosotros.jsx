@@ -4,7 +4,7 @@ import {
   FaFacebook,
   AiFillInstagram,
   FaXTwitter,
-} from "../../../public/icons/reactIcons";
+} from "../../assets/icons/reactIcons";
 import { BtnWhatsapp } from "../../components/common";
 
 const Nosotros = () => {

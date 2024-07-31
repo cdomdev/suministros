@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { NotificationToast } from "../../../common";
 import { useCarShop, useNotification } from "../../../../hook";
-import { IoCartOutline } from "../../../../../public/icons/reactIcons";
+import { IoCartOutline } from "../../../../assets/icons/reactIcons";
 import NotProduct from "./NotProduct";
 import { formateValue } from "../../../../utils/funtionsProducts";
 import axios from "axios";

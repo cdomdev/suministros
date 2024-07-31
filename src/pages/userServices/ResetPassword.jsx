@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { CiCircleChevRight } from "../../../public/icons/reactIcons";
+import { CiCircleChevRight } from "../../assets/icons/reactIcons";
 import { Form, Button, Spinner } from "react-bootstrap";
 import { Formik, Field, ErrorMessage } from "formik";
 import { useParams } from "react-router";

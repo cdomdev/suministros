@@ -13,7 +13,7 @@ import {
   calcularEnvio,
   calculateTotal,
 } from "../../../../../utils/funtionsProducts";
-import { FaHandHoldingDollar } from "../../../../../../public/icons/reactIcons";
+import { FaHandHoldingDollar } from "../../../../../assets/icons/reactIcons";
 
 export const PagoUser = () => {
   const [show, setShow] = useState(false);

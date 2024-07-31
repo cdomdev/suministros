@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { Button } from "react-bootstrap";
-import { FaRegCheckCircle } from "../../../public/icons/reactIcons";
+import { FaRegCheckCircle } from "../../assets/icons/reactIcons";
 import { getDataStorage } from "../../utils";
 import { calcularEnvio, calculateTotal } from "../../utils/funtionsProducts";
 import { formateValue } from "../../utils/funtionsProducts";

@@ -1,4 +1,4 @@
-import { FaWhatsapp } from "../../../public/icons/reactIcons";
+import { FaWhatsapp } from "../../assets/icons/reactIcons";
 import { Link } from "react-router-dom";
 
 export const BtnWhatsapp = () => {

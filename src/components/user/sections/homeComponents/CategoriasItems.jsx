@@ -1,7 +1,7 @@
-import baños from "../../../../../public/images/baños.webp";
-import cocinas from "../../../../../public/images/cocinas.webp";
-import constr from "../../../../../public/images/constr.webp";
-import pisos from "../../../../../public/images/pisos.webp";
+import baños from "../../../../assets/images/baños.webp";
+import cocinas from "../../../../assets/images/cocinas.webp";
+import constr from "../../../../assets/images/constr.webp";
+import pisos from "../../../../assets/images/pisos.webp";
 import { Link } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 

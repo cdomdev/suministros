@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import mercadopagoIMg from "../../../../../../public/images/mercadopago.webp";
+import mercadopagoIMg from "../../../../../assets/images/mercadopago.webp";
 import { getDataSesionStorega } from "../../../../../utils";
 import { NotificationToast } from "../../../../common/NotificationToast";
 import { initMercadoPago } from "@mercadopago/sdk-react";

@@ -1,4 +1,4 @@
-import { IoIosLogOut } from "../../../../../public/icons/reactIcons";
+import { IoIosLogOut } from "../../../../assets/icons/reactIcons";
 import { getDataStorage } from "../../../../utils";
 import { LoaderComponent } from "../../../common";
 import { Link } from "react-router-dom";

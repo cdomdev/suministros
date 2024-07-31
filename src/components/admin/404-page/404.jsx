@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { SvgNotFount } from "../../../../public/icons/reactIcons";
+import { SvgNotFount } from "../../../assets/icons/reactIcons";
 
 const NotExisting = () => {
   return (

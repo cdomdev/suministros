@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { RiAddFill, TiMinus } from "../../../public/icons/reactIcons";
+import { RiAddFill, TiMinus } from "../../assets/icons/reactIcons";
 import { Form, Button } from "react-bootstrap";
 import { useCarShop, useNotification } from "../../hook";
 import {

@@ -6,7 +6,7 @@ import {
   CiMail,
   SiMercadopago,
   TbTruckDelivery,
-} from "../../../../../public/icons/reactIcons";
+} from "../../../../assets/icons/reactIcons";
 
 export const Footer = () => {
   return (

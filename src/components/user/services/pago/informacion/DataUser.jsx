@@ -3,7 +3,7 @@ import { useCarShop } from "../../../../../hook";
 import {
   IoIosPerson,
   FaLocationDot,
-} from "../../../../../../public/icons/reactIcons";
+} from "../../../../../assets/icons/reactIcons";
 import {
   getDataSesionStorega,
   getDataStorage,

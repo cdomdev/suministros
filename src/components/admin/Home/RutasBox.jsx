@@ -3,7 +3,7 @@ import { IoBagAddSharp } from "react-icons/io5";
 import { MdOutlineInventory, MdAssignmentAdd } from "react-icons/md";
 import { BiSolidOffer } from "react-icons/bi";
 import { BsBoxSeam } from "react-icons/bs";
-import { GiHistogram } from "../../../../public/icons/reactIcons";
+import { GiHistogram } from "../../../assets/icons/reactIcons";
 
 export const RutasBox = () => {
   return (

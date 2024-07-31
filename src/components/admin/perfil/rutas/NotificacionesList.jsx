@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getDataStorage } from "../../../../utils";
 import { LoaderComponent, NotificationToast } from "../../../common";
-import { BiArrowBack } from "../../../../../public/icons/reactIcons";
+import { BiArrowBack } from "../../../../assets/icons/reactIcons";
 import { Link } from "react-router-dom";
 import { formatTimestamp } from "../../../../utils/formatTimestamp";
 import { RiDeleteBin5Line } from "react-icons/ri";

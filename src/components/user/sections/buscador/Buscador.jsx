@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BsSearch } from "../../../../../public/icons/reactIcons";
+import { BsSearch } from "../../../../assets/icons/reactIcons";
 import { API_HOST } from "../../../../config/config";
 import { Form, Spinner } from "react-bootstrap";
 import { useNavigate } from "react-router";

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Button, OverlayTrigger, Popover } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
-import { AiOutlinePoweroff } from "../../../../../../public/icons/reactIcons";
+import { AiOutlinePoweroff } from "../../../../../assets/icons/reactIcons";
 import Avatar from "@mui/material/Avatar";
 import { useUser } from "../../../../../hook";
 import { getDataStorage } from "../../../../../utils/getDataStorage";

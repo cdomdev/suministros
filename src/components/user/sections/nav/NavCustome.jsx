@@ -4,7 +4,7 @@ import { ContenidoSubmenus } from "./ContenidoSubmenus";
 import BoxIcons from "./BoxIcons";
 import Buscador from "../buscador/Buscador";
 import { useUser } from "../../../../hook";
-import LogoImg from "../../../../../public/images/logo.webp";
+import LogoImg from "../../../../assets/images/logo.webp";
 
 export const NavCustome = () => {
   const { isAdmin } = useUser();

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { API_HOST } from "../../../../config/config";
 import { Button } from "react-bootstrap";
-import { BsDatabaseX } from "../../../../../public/icons/reactIcons";
+import { BsDatabaseX } from "../../../../assets/icons/reactIcons";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import axios from "axios";

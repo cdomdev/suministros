@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Form, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { FaRegEdit } from "../../../../../../public/icons/reactIcons";
+import { FaRegEdit } from "../../../../../assets/icons/reactIcons";
 import { getDataStorage } from "../../../../../utils";
 import { LoaderComponent } from "../../../../common";
 

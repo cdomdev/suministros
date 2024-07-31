@@ -3890,12 +3890,12 @@ section .details .summary .box4 .send {
   display: grid;
   gap: 30px;
   padding: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(19em, 1em));
+  grid-template-columns: repeat(auto-fit, minmax(17em, 1em));
   place-content: center;
 }
 .body-content .container-cards-home-admin .box-rutas-admin .link-box {
   border-radius: 10px;
-  height: 11em;
+  height: 10em;
   box-shadow: 0 0 5px rgb(239, 239, 239);
   transition: all ease 0.3s;
   font-family: "Roboto", sans-serif;
