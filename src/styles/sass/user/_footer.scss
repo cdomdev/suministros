@@ -59,7 +59,6 @@ $contenido2: "Montserrat", sans-serif;
     }
 
     footer {
-        // background-color: #fcfcfc;
         .footer-container {
             display: flex;
             justify-content: space-evenly;
@@ -101,4 +100,14 @@ $contenido2: "Montserrat", sans-serif;
         }
     }
 
+}
+// /* Estilos para dispositivos de 300px a 499px */
+@media (min-width: 300px) and (max-width: 499px) {
+   .f-footer-container .svg p{
+    font-size: 10px;
+   }
+   footer .footer-container{
+    flex-direction: column ;
+    padding-left: 1em ;
+   }
 }

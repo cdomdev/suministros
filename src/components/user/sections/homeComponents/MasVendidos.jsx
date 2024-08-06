@@ -15,6 +15,7 @@ export const MasVendidos = () => {
       .then((response) => {
         if (response.status === 200) {
           setProductos(response.data.data);
+          console.log(response.data.data);
         }
       })
       .catch((error) => {

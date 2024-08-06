@@ -2334,7 +2334,7 @@ h3 {
 /* Estilos para dispositivos de 300px a 499px */
 @media (min-width: 300px) and (max-width: 499px) {
   .container-details {
-    margin-top: -4em;
+    margin-top: -1em;
     display: grid;
     grid-template-columns: 1fr;
   }
@@ -2782,14 +2782,10 @@ section .details .summary .box4 .send {
     justify-content: center;
   }
   section .details .info .box2 .info .user .adrres-user {
-    width: 250px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    width: 300px;
   }
   section .details .info .box2 .info .user .total {
-    width: 250px;
+    width: 300px;
   }
   section .details .info .metodos-pago div {
     flex-direction: column;
@@ -2820,12 +2816,6 @@ section .details .summary .box4 .send {
   section .details .info .box2 .info .user {
     display: flex;
     justify-content: center;
-  }
-  section .details .info .box2 .info .user .adrres-user {
-    width: 300px;
-  }
-  section .details .info .box2 .info .user .total {
-    width: 300px;
   }
   section .details .summary .box4 .card-product {
     justify-content: flex-start;
@@ -3117,6 +3107,15 @@ section .details .summary .box4 .send {
   color: rgb(36, 36, 145);
 }
 
+@media (min-width: 300px) and (max-width: 499px) {
+  .f-footer-container .svg p {
+    font-size: 10px;
+  }
+  footer .footer-container {
+    flex-direction: column;
+    padding-left: 1em;
+  }
+}
 .page-info {
   font-family: "Roboto", sans-serif;
   padding: 1em 2em;
