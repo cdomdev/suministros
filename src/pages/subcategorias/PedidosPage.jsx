@@ -1,6 +1,6 @@
 import { Outlet } from "react-router";
-import { Sidebar } from "../../components/user/sections/pedidos/sidebar/Sidebar";
-import { BtnWhatsapp } from "../../components/common";
+import { Sidebar } from "../../components/pedidos/sidebar/Sidebar";
+import { BtnWhatsapp } from "../../common";
 
 const PedidosPage = () => {
   return (

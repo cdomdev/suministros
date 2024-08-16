@@ -10,7 +10,7 @@ import {
   IconNavigateCar,
   NotificationToast,
   BtnWhatsapp,
-} from "../../components/common";
+} from "../../common";
 import { getDataStorage } from "../../utils";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { formateValue } from "../../utils/funtionsProducts";

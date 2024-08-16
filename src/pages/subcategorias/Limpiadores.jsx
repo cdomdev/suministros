@@ -1,5 +1,5 @@
-import { CardSubcategorias } from "../../components/user/sections/cards";
-import { IconNavigateCar, Migajas, BtnWhatsapp } from "../../components/common";
+import { CardSubcategorias } from "../../components/cards";
+import { IconNavigateCar, Migajas, BtnWhatsapp } from "../../common";
 
 const Limpiadores = () => {
   return (

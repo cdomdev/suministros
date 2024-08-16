@@ -1,7 +1,6 @@
-import { lazy, useEffect } from "react";
+import { useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
-import { DashboardUser } from "./routes";
-const DashboardAdmin = lazy(() => import("./routes/DashBoardAdmin"));
+import { DashboardUser } from "../src/routes/DashboardUser";
 import { getTitleFronPath } from "./utils/getTitleFronPath";
 import { AppContextProvider } from "./hook";
 
@@ -17,12 +16,7 @@ export const App = () => {
       <div className="App">
         <AppContextProvider>
           <Routes>
-            {/* Ruta para el dashboard del usuario  */}
             <Route path="/*" element={<DashboardUser />} />
-
-            {/* Ruta para el dashboard del administrador */}
-
-            <Route path="/admin/*" element={<DashboardAdmin />} />
           </Routes>
         </AppContextProvider>
       </div>

@@ -1,4 +1,4 @@
-import { BtnWhatsapp } from "../../components/common/BtnWhatsapp";
+import { BtnWhatsapp } from "../../common/BtnWhatsapp";
 
 const CambiosDevoluciones = () => {
   return (

@@ -1,8 +1,8 @@
-import { Carrusel } from "../../components/user/sections/Carrusel/Carrusel";
-import { CategoriasCards } from "../../components/user/sections/homeComponents/CategoriasItems";
-import { IconNavigateCar, BtnWhatsapp } from "../../components/common";
+import { Carrusel } from "../../components/Carrusel/Carrusel";
+import { CategoriasCards } from "../../components/homeComponents/CategoriasItems";
+import { IconNavigateCar, BtnWhatsapp } from "../../common";
 import "../../styles/App.css";
-import { MasVendidos } from "../../components/user/sections/homeComponents/MasVendidos";
+import { MasVendidos } from "../../components/homeComponents/MasVendidos";
 
 export const HomeUser = () => {
   return (

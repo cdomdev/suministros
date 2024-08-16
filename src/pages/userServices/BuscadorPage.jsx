@@ -1,6 +1,7 @@
-import { IconNavigateCar } from "../../utils";
-import Results from "../../components/user/sections/buscador/Results";
-import { BtnWhatsapp } from "../../components/common";
+// import { IconNavigateCar } from "../../utils";
+import { IconNavigateCar } from "../../common";
+import Results from "../../components/buscador/Results";
+import { BtnWhatsapp } from "../../common";
 
 const BuscadorPage = () => {
   return (

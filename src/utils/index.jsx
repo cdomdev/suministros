@@ -3,4 +3,4 @@ export { getTitleFronPath } from "./getTitleFronPath";
 export { obtenerMarcasUnicas, obtenerSubCategorias } from "./funtionsProducts";
 export { SaveStorage } from "./SaveStorage";
 export { getDataSesionStorega, getDataStorage } from "./getDataStorage";
-export { NotificationToast } from "../components/common/NotificationToast";
+export { NotificationToast } from "../common/NotificationToast";

@@ -3,11 +3,11 @@ import { CiCircleChevRight } from "../../assets/icons/reactIcons";
 import { Form, Button, Spinner } from "react-bootstrap";
 import { Formik, Field, ErrorMessage } from "formik";
 import { useParams } from "react-router";
-import { NotificationToast, BtnWhatsapp } from "../../components/common";
+import { NotificationToast, BtnWhatsapp } from "../../common";
 import { useNotification } from "../../hook";
 import axios from "axios";
 import { API_HOST } from "../../config/config";
-import ResetSucces from "../../components/user/services/autenticacion/passwordRecovery/ResetSucces";
+import ResetSucces from "../../components/autenticacion/passwordRecovery/ResetSucces";
 
 const ResetPassword = () => {
   const { setShowToast, setToastMessage, setBgToast } = useNotification();

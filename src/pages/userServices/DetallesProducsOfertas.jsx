@@ -7,7 +7,7 @@ import {
   NotificationToast,
   BtnWhatsapp,
   LoaderComponent,
-} from "../../components/common";
+} from "../../common";
 import { getDataStorage } from "../../utils";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { calcalateDiscount, formateValue } from "../../utils/funtionsProducts";

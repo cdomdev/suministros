@@ -3,32 +3,19 @@
 
 // estilos dashborad usuarios
 @use 'sass/not-fount';
-@use 'sass/user/buscador';
-@use 'sass/user/login';
-@use 'sass/user/nosotros';
-@use 'sass/user/home';
-@use 'sass/user/page_car';
-@use 'sass/user/page_recovey_password';
-@use 'sass/user/nav';
-@use 'sass/user/detalles';
-@use 'sass/user/pagos';
-@use 'sass/user/tikeck';
-@use 'sass/user/footer';
-@use 'sass/user/informacion_pages';
-@use 'sass/user/ofertas';
-@use 'sass/user/productos';
-@use 'sass/user/pedidos';
+@use 'sass/buscador';
+@use 'sass/login';
+@use 'sass/nosotros';
+@use 'sass/home';
+@use 'sass/page_car';
+@use 'sass/page_recovey_password';
+@use 'sass/nav';
+@use 'sass/detalles';
+@use 'sass/pagos';
+@use 'sass/tikeck';
+@use 'sass/footer';
+@use 'sass/informacion_pages';
+@use 'sass/ofertas';
+@use 'sass/productos';
+@use 'sass/pedidos';
 
-
-// estilos dashboard administrador
-@use 'sass/admin/homeAdmin';
-@use 'sass/admin/crearProductosAdmin';
-@use 'sass/admin/dateUsersAdmin';
-@use 'sass/admin/inventaryAdmin';
-@use 'sass/admin/categoryAdmin';
-@use 'sass/admin/ofertasAdmin';
-@use 'sass/admin/layoutAdmin';
-@use 'sass/admin/detailsOrdersAdmin.scss';
-@use 'sass/admin/navAdmin';
-@use 'sass/admin/balances';
-@use 'sass/admin/perfil'

@@ -33,18 +33,18 @@ import {
   DetalleProductsOfertas,
 } from "../pages";
 
-const NotExisting = lazy(() => import("../components/admin/404-page/404"));
-import LoginModal from "../components/user/services/autenticacion/LoginModal";
-import { NavCustome } from "../components/user/sections/nav/NavCustome";
+const NotExisting = lazy(() => import("../pages/404"));
+import LoginModal from "../components/autenticacion/LoginModal";
+import { NavCustome } from "../components/nav/NavCustome";
 import {
   DataUserUpdate,
   PedidosUser,
   Profile,
-} from "../components/user/sections/pedidos/RutasPedido";
-import { LoaderPage } from "../components/common/Loaders";
+} from "../components/pedidos/RutasPedido";
+import { LoaderPage } from "../common/Loaders";
 
-import { RecoverForm } from "../components/user/services/autenticacion";
-import { Footer } from "../components/user/sections/footer/Footer";
+import { RecoverForm } from "../components/autenticacion";
+import { Footer } from "../components/footer/Footer";
 
 export const DashboardUser = () => {
   return (

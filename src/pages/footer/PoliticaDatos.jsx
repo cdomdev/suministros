@@ -1,4 +1,4 @@
-import { BtnWhatsapp } from "../../components/common";
+import { BtnWhatsapp } from "../../common";
 const PoliticaDatos = () => {
   return (
     <div className="container">

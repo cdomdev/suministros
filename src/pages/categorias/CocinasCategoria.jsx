@@ -1,5 +1,5 @@
-import { Migajas, IconNavigateCar, BtnWhatsapp } from "../../components/common";
-import { CardCategorias } from "../../components/user/sections/cards";
+import { Migajas, IconNavigateCar, BtnWhatsapp } from "../../common";
+import { CardCategorias } from "../../components/cards";
 
 const CocinasCategoria = () => {
   return (
