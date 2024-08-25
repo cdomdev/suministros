@@ -65,7 +65,7 @@ const Envio = () => {
             correspondientes al reproceso, si aplican.
           </li>
         </ul>
-
+{/*  */}
         <h2>Costos de Envío</h2>
         <ul>
           <li>

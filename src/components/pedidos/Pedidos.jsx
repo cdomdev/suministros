@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
-import { isAuthenticated } from "../../helpers/isAuthenticated";
+import { isAuthenticated } from "../../utils/isAuthenticated";
 import { Modal, Button } from "react-bootstrap";
 import LoginModal from "../autenticacion/LoginModal";
 import { BsBoxSeam } from "../../assets/icons/reactIcons";

@@ -1,7 +1,7 @@
 import { lazy, useEffect, useState } from "react";
 const UserProfile = lazy(() => import("./perfilUsuario/UserProfile"));
 import Avatar from "@mui/material/Avatar";
-import { isAuthenticated } from "../../helpers/isAuthenticated";
+import { isAuthenticated } from "../../utils/isAuthenticated";
 import EventEmitter from "../../hook/EventEmitter";
 import LoginModal from '../autenticacion/LoginModal'
 

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { DataUser } from "./DataUser";
 import { MercadoPago, PagoUser, PagoInvitado } from "../MetodosDePago";
 
-import { isAuthenticated } from "../../../helpers/isAuthenticated";
+import { isAuthenticated } from "../../../utils/isAuthenticated";
 import { MercadoPagoInvitado } from "../MetodosDePago/MercadoPagoInvitado";
 
 export const Info = () => {

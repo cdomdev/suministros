@@ -7,7 +7,7 @@ import { GoogleLogin } from "./";
 import EventEmitter from "../../hook/EventEmitter";
 import { NotificationToast } from "../../utils";
 import { API_HOST } from "../../config/config";
-import { isAuthenticated } from "../../helpers/isAuthenticated";
+import { isAuthenticated } from "../../utils/isAuthenticated";
 
 const Register = () => {
   const [isLoading, setIsLoading] = useState(false);

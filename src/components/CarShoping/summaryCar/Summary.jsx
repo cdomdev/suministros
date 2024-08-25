@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useCarShop } from "../../../hook";
-import { isAuthenticated } from "../../../helpers/isAuthenticated";
+import { isAuthenticated } from "../../../utils/isAuthenticated";
 import { useNavigate } from "react-router";
 import { Button } from "react-bootstrap";
 import { BoxText } from "./";

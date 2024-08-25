@@ -3,7 +3,7 @@ import { UserNotLoggin } from "./UserNotLoggin";
 import { TiShoppingCart } from "../../../assets/icons/reactIcons";
 import { useNavigate } from "react-router";
 import { useCarShop } from "../../../hook";
-import { isAuthenticated } from "../../../helpers/isAuthenticated";
+import { isAuthenticated } from "../../../utils/isAuthenticated";
 import { AddToCar } from "./AddToCar";
 import { DeleteOneProductCar } from "./DeleteOneProductCar";
 import { formateValue } from "../../../utils/funtionsProducts";
